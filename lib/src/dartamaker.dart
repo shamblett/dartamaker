@@ -9,12 +9,15 @@ part of dartamaker;
 
 /// The main dartamaker class
 class Dartamaker {
-  DartamakerPluginAirport _airport = DartamakerPluginAirport();
   DartamakerPluginAutoinc _autoinc = DartamakerPluginAutoinc();
 
   /// Airport
-  DartamakerPluginAirport get airport => _airport;
+  DartamakerPluginAirport get airport => DartamakerPluginAirport();
 
   /// Auto increment
   DartamakerPluginAutoinc get autoinc => _autoinc;
+
+  /// Boolean
+  DartamakerPluginBoolean boolean(String probability) =>
+      DartamakerPluginBoolean.withProbability(probability);
 }

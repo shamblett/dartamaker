@@ -9,6 +9,12 @@ part of dartamaker;
 
 /// The main dartamaker class
 class Dartamaker {
+  DartamakerPluginAirport _airport = DartamakerPluginAirport();
+  DartamakerPluginAutoinc _autoinc = DartamakerPluginAutoinc();
+
   /// Airport
-  DartamakerPluginAirport get airport => DartamakerPluginAirport();
+  DartamakerPluginAirport get airport => _airport;
+
+  /// Auto increment
+  DartamakerPluginAutoinc get autoinc => _autoinc;
 }

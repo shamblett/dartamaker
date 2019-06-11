@@ -21,4 +21,11 @@ void main() {
     final String a3 = airport.apply();
     expect(airports.contains(a3), isTrue);
   });
+  test('Auto Increment', () {
+    final DartamakerPluginAutoinc autoinc = Dartamaker().autoinc;
+    expect(autoinc.apply(), '1');
+    expect(autoinc.apply(), '2');
+    expect(autoinc.apply(), '3');
+    expect(autoinc.apply(), '4');
+  });
 }

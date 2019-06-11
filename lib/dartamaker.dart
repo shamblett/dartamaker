@@ -16,3 +16,4 @@ import 'dart:math';
 part 'src/dartamaker.dart';
 part 'src/plugins/dartamaker_plugin_base.dart';
 part 'src/plugins/dartamaker_plugin_airport.dart';
+part 'src/plugins/dartamaker_plugin_autoinc.dart';

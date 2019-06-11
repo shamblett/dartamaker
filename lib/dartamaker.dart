@@ -9,7 +9,10 @@ library dartamaker;
 
 import 'dart:convert';
 import 'dart:io';
+import 'dart:math';
 
 /// The dartamaker package exported interface
 
+part 'src/dartamaker.dart';
 part 'src/plugins/dartamaker_plugin_base.dart';
+part 'src/plugins/dartamaker_plugin_airport.dart';

@@ -61,9 +61,11 @@ enum DartamakerTagNames {
 
 /// Package wide constants
 class DartamakerConstants {
-
   /// Plugin parameters
 
   /// Boolean
   static const String probability = 'probability';
+
+  /// Plugin null parameter
+  static Map<String, String> pluginNullParam = Map<String, String>();
 }

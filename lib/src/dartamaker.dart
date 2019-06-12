@@ -32,9 +32,6 @@ class Dartamaker {
 
   /// Get a tag substitution for a supplied plugin
   String substitute(DartamakerTagNames tagName, Map<String, String> params) =>
-      _internalSubstitute(tagName, params);
-
-  String _internalSubstitute(
-          DartamakerTagNames tagName, Map<String, String> params) =>
       plugin(tagName, params).apply();
+
 }

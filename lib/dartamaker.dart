@@ -22,3 +22,4 @@ part 'src/plugins/dartamaker_plugin_boolean.dart';
 part 'src/plugins/dartamaker_plugin_cat.dart';
 part 'src/plugins/dartamaker_plugin_city.dart';
 part 'src/plugins/dartamaker_plugin_word.dart';
+part 'src/plugins/dartamaker_plugin_company.dart';

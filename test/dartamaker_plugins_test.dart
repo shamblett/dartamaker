@@ -71,4 +71,13 @@ void main() {
     final String a1 = word.apply();
     expect(a1, anyOf(words));
   });
+  test('Company', () {
+    final DartamakerPluginCompany company =
+        Dartamaker().plugin(DartamakerTagNames.company, null);
+    for (int i = 0; i <= 9; i++) {
+      final String name = company.apply();
+      expect(name.isNotEmpty, isTrue);
+      expect(name.substring(0, 1), name.substring(0, 1).toUpperCase());
+    }
+  });
 }

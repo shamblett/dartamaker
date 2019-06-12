@@ -34,6 +34,9 @@ class Dartamaker {
       case DartamakerTagNames.word:
         ret = DartamakerPluginWord();
         break;
+      case DartamakerTagNames.company:
+        ret = DartamakerPluginCompany();
+        break;
     }
 
     return ret;

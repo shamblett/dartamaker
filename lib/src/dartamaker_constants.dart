@@ -66,6 +66,9 @@ class DartamakerConstants {
   /// Boolean
   static const String probability = 'probability';
 
+  /// Digits
+  static const String numdigits = 'numdigits';
+
   /// Plugin null parameter
   static Map<String, String> pluginNullParam = Map<String, String>();
 }

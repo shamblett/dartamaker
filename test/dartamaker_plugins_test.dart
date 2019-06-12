@@ -94,4 +94,15 @@ void main() {
     final String a1 = county.apply();
     expect(a1, anyOf(counties));
   });
+  test('Digits', () {
+    final DartamakerPluginDigits b1 = Dartamaker()
+        .plugin(DartamakerTagNames.digits, DartamakerConstants.pluginNullParam);
+    expect(b1.apply().length, 5);
+    final Map<String, String> p1 = <String, String>{
+      DartamakerConstants.numdigits: '20'
+    };
+    final DartamakerPluginDigits b2 =
+        Dartamaker().plugin(DartamakerTagNames.digits, p1);
+    expect(b2.apply().length, 20);
+  });
 }

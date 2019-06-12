@@ -43,6 +43,9 @@ class Dartamaker {
       case DartamakerTagNames.county:
         ret = DartamakerPluginCounty();
         break;
+      case DartamakerTagNames.digits:
+        ret = DartamakerPluginDigits(params[DartamakerConstants.numdigits]);
+        break;
     }
 
     return ret;

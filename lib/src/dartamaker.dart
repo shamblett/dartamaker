@@ -11,13 +11,30 @@ part of dartamaker;
 class Dartamaker {
   DartamakerPluginAutoinc _autoinc = DartamakerPluginAutoinc();
 
-  /// Airport
-  DartamakerPluginAirport get airport => DartamakerPluginAirport();
+  /// Get a plugin by tag name
+  DartamakerPlugin plugin(
+      DartamakerTagNames tagName, Map<String, String> params) {
+    DartamakerPlugin ret;
+    switch (tagName) {
+      case DartamakerTagNames.airport:
+        ret = DartamakerPluginAirport();
+        break;
+      case DartamakerTagNames.autoinc:
+        ret = _autoinc;
+        break;
+      case DartamakerTagNames.boolean:
+        ret = DartamakerPluginBoolean(params[DartamakerConstants.probability]);
+        break;
+    }
 
-  /// Auto increment
-  DartamakerPluginAutoinc get autoinc => _autoinc;
+    return ret;
+  }
 
-  /// Boolean
-  DartamakerPluginBoolean boolean(String probability) =>
-      DartamakerPluginBoolean.withProbability(probability);
+  /// Get a tag substitution for a supplied plugin
+  String substitute(DartamakerTagNames tagName, Map<String, String> params) =>
+      _internalSubstitute(tagName, params);
+
+  String _internalSubstitute(
+          DartamakerTagNames tagName, Map<String, String> params) =>
+      plugin(tagName, params).apply();
 }

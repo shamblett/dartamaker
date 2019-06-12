@@ -8,7 +8,7 @@
 part of dartamaker;
 
 /// Airport names
-class DartamakerPluginAirport implements DartamakerPluginBase {
+class DartamakerPluginAirport implements DartamakerPlugin {
   final List<String> _airports = <String>[
     'VIX',
     'SGW',

@@ -8,7 +8,7 @@
 part of dartamaker;
 
 /// The abstract base class for formatter plugins
-abstract class DartamakerPluginBase {
+abstract class DartamakerPlugin {
   /// Apply method, return the generated string
   String apply();
 }

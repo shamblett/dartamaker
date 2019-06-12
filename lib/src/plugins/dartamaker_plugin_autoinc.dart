@@ -8,7 +8,7 @@
 part of dartamaker;
 
 /// Auto increment
-class DartamakerPluginAutoinc implements DartamakerPluginBase {
+class DartamakerPluginAutoinc implements DartamakerPlugin {
   int _counter = 1;
 
   @override

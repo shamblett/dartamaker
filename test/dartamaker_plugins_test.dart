@@ -12,7 +12,8 @@ import 'package:test/test.dart';
 
 void main() {
   test('Airports', () {
-    final DartamakerPluginAirport airport = Dartamaker().airport;
+    final DartamakerPluginAirport airport =
+        Dartamaker().plugin(DartamakerTagNames.airport, null);
     final List<String> airports = airport.airports;
     final String a1 = airport.apply();
     expect(airports.contains(a1), isTrue);
@@ -22,7 +23,8 @@ void main() {
     expect(airports.contains(a3), isTrue);
   });
   test('Auto Increment', () {
-    final DartamakerPluginAutoinc autoinc = Dartamaker().autoinc;
+    final DartamakerPluginAutoinc autoinc =
+        Dartamaker().plugin(DartamakerTagNames.autoinc, null);
     expect(autoinc.apply(), '1');
     expect(autoinc.apply(), '2');
     expect(autoinc.apply(), '3');

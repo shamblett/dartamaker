@@ -8,12 +8,9 @@
 part of dartamaker;
 
 /// Random boolean based on probability parameter
-class DartamakerPluginBoolean extends DartamakerPluginBase {
-  /// Default
-  DartamakerPluginBoolean();
-
-  /// Probability supplied
-  DartamakerPluginBoolean.withProbability(String probability) {
+class DartamakerPluginBoolean implements DartamakerPlugin {
+  /// Default, probability in the range 0.0 to 1.0
+  DartamakerPluginBoolean(String probability) {
     if (probability != null) {
       final double p = double.tryParse(probability);
       if (p != null) {

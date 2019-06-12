@@ -17,11 +17,7 @@ void main() {
         Dartamaker().plugin(DartamakerTagNames.airport, null);
     final List<String> airports = airport.airports;
     final String a1 = airport.apply();
-    expect(airports.contains(a1), isTrue);
-    final String a2 = airport.apply();
-    expect(airports.contains(a2), isTrue);
-    final String a3 = airport.apply();
-    expect(airports.contains(a3), isTrue);
+    expect(a1, anyOf(airports));
   });
   test('Auto Increment', () {
     final DartamakerPluginAutoinc autoinc =
@@ -53,5 +49,12 @@ void main() {
     final DartamakerPluginBoolean b4 =
         Dartamaker().plugin(DartamakerTagNames.boolean, p3);
     expect(b4.apply(), anyOf('true', 'false'));
+  });
+  test('Cats', () {
+    final DartamakerPluginCat cat =
+        Dartamaker().plugin(DartamakerTagNames.cat, null);
+    final List<String> cats = cat.cats;
+    final String a1 = cat.apply();
+    expect(a1, anyOf(cats));
   });
 }

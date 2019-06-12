@@ -19,3 +19,4 @@ part 'src/plugins/dartamaker_plugin.dart';
 part 'src/plugins/dartamaker_plugin_airport.dart';
 part 'src/plugins/dartamaker_plugin_autoinc.dart';
 part 'src/plugins/dartamaker_plugin_boolean.dart';
+part 'src/plugins/dartamaker_plugin_cat.dart';

@@ -25,6 +25,9 @@ class Dartamaker {
       case DartamakerTagNames.boolean:
         ret = DartamakerPluginBoolean(params[DartamakerConstants.probability]);
         break;
+      case DartamakerTagNames.cat:
+        ret = DartamakerPluginCat();
+        break;
     }
 
     return ret;
@@ -33,5 +36,4 @@ class Dartamaker {
   /// Get a tag substitution for a supplied plugin
   String substitute(DartamakerTagNames tagName, Map<String, String> params) =>
       plugin(tagName, params).apply();
-
 }

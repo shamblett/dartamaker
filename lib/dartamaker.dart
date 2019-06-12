@@ -24,3 +24,4 @@ part 'src/plugins/dartamaker_plugin_city.dart';
 part 'src/plugins/dartamaker_plugin_word.dart';
 part 'src/plugins/dartamaker_plugin_company.dart';
 part 'src/plugins/dartamaker_plugin_country.dart';
+part 'src/plugins/dartamaker_plugin_county.dart';

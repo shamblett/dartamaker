@@ -87,4 +87,11 @@ void main() {
     final String a1 = country.apply();
     expect(a1, anyOf(countries));
   });
+  test('Counties', () {
+    final DartamakerPluginCounty county =
+        Dartamaker().plugin(DartamakerTagNames.county, null);
+    final List<String> counties = county.counties;
+    final String a1 = county.apply();
+    expect(a1, anyOf(counties));
+  });
 }

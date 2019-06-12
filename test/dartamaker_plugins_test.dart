@@ -120,4 +120,11 @@ void main() {
       expect(ok, isTrue);
     }
   });
+  test('Dogs', () {
+    final DartamakerPluginDog dog =
+        Dartamaker().plugin(DartamakerTagNames.dog, null);
+    final List<String> dogs = dog.dogs;
+    final String a1 = dog.apply();
+    expect(a1, anyOf(dogs));
+  });
 }

@@ -49,6 +49,9 @@ class Dartamaker {
       case DartamakerTagNames.creditcard:
         ret = DartamakerPluginCreditcard();
         break;
+      case DartamakerTagNames.dog:
+        ret = DartamakerPluginDog();
+        break;
     }
 
     return ret;

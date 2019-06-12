@@ -27,3 +27,4 @@ part 'src/plugins/dartamaker_plugin_country.dart';
 part 'src/plugins/dartamaker_plugin_county.dart';
 part 'src/plugins/dartamaker_plugin_digits.dart';
 part 'src/plugins/dartamaker_plugin_creditcard.dart';
+part 'src/plugins/dartamaker_plugin_dog.dart';

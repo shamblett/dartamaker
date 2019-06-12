@@ -134,4 +134,12 @@ void main() {
     final String a1 = tld.apply();
     expect(a1, anyOf(tlds));
   });
+  test('Domain Name', () {
+    final DartamakerPluginDomainname dn =
+        Dartamaker().plugin(DartamakerTagNames.domainname, null);
+    for (int i = 0; i <= 9; i++) {
+      final String name = dn.apply();
+      expect(name.isNotEmpty, isTrue);
+    }
+  });
 }

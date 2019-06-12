@@ -7,7 +7,7 @@
 
 part of dartamaker;
 
-/// Dog names
+/// TLD names
 class DartamakerPluginTLD implements DartamakerPlugin {
   final List<String> _tlds = <String>[
     'khakassia.su',

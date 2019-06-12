@@ -64,4 +64,11 @@ void main() {
     final String a1 = city.apply();
     expect(a1, anyOf(cities));
   });
+  test('Words', () {
+    final DartamakerPluginWord word =
+        Dartamaker().plugin(DartamakerTagNames.word, null);
+    final List<String> words = word.words;
+    final String a1 = word.apply();
+    expect(a1, anyOf(words));
+  });
 }

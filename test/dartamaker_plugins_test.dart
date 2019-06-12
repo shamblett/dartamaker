@@ -80,4 +80,11 @@ void main() {
       expect(name.substring(0, 1), name.substring(0, 1).toUpperCase());
     }
   });
+  test('Countries', () {
+    final DartamakerPluginCountry country =
+        Dartamaker().plugin(DartamakerTagNames.country, null);
+    final List<String> countries = country.countries;
+    final String a1 = country.apply();
+    expect(a1, anyOf(countries));
+  });
 }

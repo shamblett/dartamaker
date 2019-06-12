@@ -37,6 +37,9 @@ class Dartamaker {
       case DartamakerTagNames.company:
         ret = DartamakerPluginCompany();
         break;
+      case DartamakerTagNames.country:
+        ret = DartamakerPluginCountry();
+        break;
     }
 
     return ret;

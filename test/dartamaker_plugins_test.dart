@@ -127,4 +127,11 @@ void main() {
     final String a1 = dog.apply();
     expect(a1, anyOf(dogs));
   });
+  test('TLDs', () {
+    final DartamakerPluginTLD tld =
+        Dartamaker().plugin(DartamakerTagNames.tld, null);
+    final List<String> tlds = tld.tlds;
+    final String a1 = tld.apply();
+    expect(a1, anyOf(tlds));
+  });
 }

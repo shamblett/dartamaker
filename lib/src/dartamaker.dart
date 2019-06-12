@@ -52,6 +52,9 @@ class Dartamaker {
       case DartamakerTagNames.dog:
         ret = DartamakerPluginDog();
         break;
+      case DartamakerTagNames.tld:
+        ret = DartamakerPluginTLD();
+        break;
     }
 
     return ret;

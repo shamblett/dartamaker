@@ -142,4 +142,11 @@ void main() {
       expect(name.isNotEmpty, isTrue);
     }
   });
+  test('First Names', () {
+    final DartamakerPluginFirstname name =
+        Dartamaker().plugin(DartamakerTagNames.firstname, null);
+    final List<String> names = name.names;
+    final String a1 = name.apply();
+    expect(a1, anyOf(names));
+  });
 }

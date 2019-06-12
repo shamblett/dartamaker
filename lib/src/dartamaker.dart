@@ -58,6 +58,9 @@ class Dartamaker {
       case DartamakerTagNames.domainname:
         ret = DartamakerPluginDomainname();
         break;
+      case DartamakerTagNames.firstname:
+        ret = DartamakerPluginFirstname();
+        break;
     }
 
     return ret;

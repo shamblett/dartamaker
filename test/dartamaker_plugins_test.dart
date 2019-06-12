@@ -105,4 +105,19 @@ void main() {
         Dartamaker().plugin(DartamakerTagNames.digits, p1);
     expect(b2.apply().length, 20);
   });
+  test('Credit card', () {
+    final DartamakerPluginCreditcard card =
+        Dartamaker().plugin(DartamakerTagNames.creditcard, null);
+    for (int i = 0; i <= 9; i++) {
+      final String number = card.apply();
+      expect(number.length, 16);
+      bool ok = false;
+      for (String prefix in card.numbers) {
+        if (number.startsWith(prefix)) {
+          ok = true;
+        }
+      }
+      expect(ok, isTrue);
+    }
+  });
 }

@@ -46,6 +46,9 @@ class Dartamaker {
       case DartamakerTagNames.digits:
         ret = DartamakerPluginDigits(params[DartamakerConstants.numdigits]);
         break;
+      case DartamakerTagNames.creditcard:
+        ret = DartamakerPluginCreditcard();
+        break;
     }
 
     return ret;

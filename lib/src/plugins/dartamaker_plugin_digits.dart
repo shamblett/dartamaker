@@ -7,7 +7,7 @@
 
 part of dartamaker;
 
-/// County names
+/// String of digits
 class DartamakerPluginDigits implements DartamakerPlugin {
   /// Default
   DartamakerPluginDigits(String numdigits) {

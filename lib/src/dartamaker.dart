@@ -28,6 +28,9 @@ class Dartamaker {
       case DartamakerTagNames.cat:
         ret = DartamakerPluginCat();
         break;
+      case DartamakerTagNames.city:
+        ret = DartamakerPluginCity();
+        break;
     }
 
     return ret;

@@ -57,4 +57,11 @@ void main() {
     final String a1 = cat.apply();
     expect(a1, anyOf(cats));
   });
+  test('Cities', () {
+    final DartamakerPluginCity city =
+        Dartamaker().plugin(DartamakerTagNames.city, null);
+    final List<String> cities = city.cities;
+    final String a1 = city.apply();
+    expect(a1, anyOf(cities));
+  });
 }

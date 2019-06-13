@@ -100,6 +100,18 @@ class Dartamaker {
       case DartamakerTagNames.letters:
         ret = DartamakerPluginLetters(params[DartamakerConstants.numletters]);
         break;
+      case DartamakerTagNames.name:
+        ret = DartamakerPluginName();
+        break;
+      case DartamakerTagNames.normal:
+        ret = DartamakerPluginNormal(
+            params[DartamakerConstants.mean],
+            params[DartamakerConstants.stddev],
+            params[DartamakerConstants.decimalplaces]);
+        break;
+      case DartamakerTagNames.oneof:
+        ret = DartamakerPluginOneof(params[DartamakerConstants.args]);
+        break;
     }
 
     return ret;

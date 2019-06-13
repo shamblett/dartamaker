@@ -225,7 +225,7 @@ void main() {
   });
   test('Date ISO', () async {
     final DateTime now = DateTime.now();
-    await Future<void>.delayed(const Duration(seconds: 1), (){});
+    await Future<void>.delayed(const Duration(seconds: 1), () {});
     final DartamakerPluginDateiso b1 = Dartamaker().plugin(
         DartamakerTagNames.dateiso, DartamakerConstants.pluginNullParam);
     String res = b1.apply();
@@ -285,5 +285,43 @@ void main() {
         Dartamaker().plugin(DartamakerTagNames.letters, p1);
     final String res = b2.apply();
     expect(res.length, 20);
+  });
+  test('Names', () {
+    final DartamakerPluginName name =
+        Dartamaker().plugin(DartamakerTagNames.name, null);
+    final List<String> firstnames = DartamakerPluginFirstname().names;
+    final List<String> surnames = DartamakerPluginSurname().names;
+    final String a1 = name.apply();
+    expect(a1.split(' ')[0], anyOf(firstnames));
+    expect(a1.split(' ')[1], anyOf(surnames));
+  });
+  test('Normal', () {
+    final DartamakerPluginNormal b1 = Dartamaker()
+        .plugin(DartamakerTagNames.normal, DartamakerConstants.pluginNullParam);
+    String res = b1.apply();
+    expect(res.isNotEmpty, isTrue);
+    expect(res.split('.')[1].length, 4);
+
+    final DartamakerPluginNormal b2 =
+        Dartamaker().plugin(DartamakerTagNames.normal, <String, String>{
+      DartamakerConstants.mean: '10.0',
+      DartamakerConstants.stddev: '2.0',
+      DartamakerConstants.decimalplaces: '6'
+    });
+    res = b2.apply();
+    expect(res.isNotEmpty, isTrue);
+    expect(res.split('.')[1].length, 6);
+  });
+  test('One of', () {
+    final DartamakerPluginOneof name = Dartamaker()
+        .plugin(DartamakerTagNames.oneof, DartamakerConstants.pluginNullParam);
+    final String a1 = name.apply();
+    expect(a1, 'NoneSet');
+    const String names = 'Gryffindor Hufflepuff Ravenclaw Slytherin';
+    final DartamakerPluginOneof b2 = Dartamaker().plugin(
+        DartamakerTagNames.oneof,
+        <String, String>{DartamakerConstants.args: names});
+    final String a2 = b2.apply();
+    expect(names.contains(a2), isTrue);
   });
 }

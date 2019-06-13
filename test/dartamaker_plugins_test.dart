@@ -304,13 +304,13 @@ void main() {
 
     final DartamakerPluginNormal b2 =
         Dartamaker().plugin(DartamakerTagNames.normal, <String, String>{
-      DartamakerConstants.mean: '10.0',
-      DartamakerConstants.stddev: '2.0',
-      DartamakerConstants.decimalplaces: '6'
+      DartamakerConstants.mean: '20000',
+      DartamakerConstants.stddev: '1000',
+      DartamakerConstants.decimalplaces: '2'
     });
     res = b2.apply();
     expect(res.isNotEmpty, isTrue);
-    expect(res.split('.')[1].length, 6);
+    expect(res.split('.')[1].length, 2);
   });
   test('One of', () {
     final DartamakerPluginOneof name = Dartamaker()
@@ -323,5 +323,13 @@ void main() {
         <String, String>{DartamakerConstants.args: names});
     final String a2 = b2.apply();
     expect(names.contains(a2), isTrue);
+  });
+  test('Postcode', () {
+    final DartamakerPluginPostcode code =
+        Dartamaker().plugin(DartamakerTagNames.postcode, null);
+    final String a1 = code.apply();
+    expect(a1.isNotEmpty, isTrue);
+    expect(a1.split(' ')[0].length, anyOf(3, 4));
+    expect(a1.split(' ')[1].length, 3);
   });
 }

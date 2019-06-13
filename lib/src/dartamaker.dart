@@ -112,6 +112,9 @@ class Dartamaker {
       case DartamakerTagNames.oneof:
         ret = DartamakerPluginOneof(params[DartamakerConstants.args]);
         break;
+      case DartamakerTagNames.postcode:
+        ret = DartamakerPluginPostcode();
+        break;
     }
 
     return ret;

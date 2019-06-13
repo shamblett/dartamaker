@@ -215,4 +215,11 @@ void main() {
     expect(val >= 1000, isTrue);
     expect(val <= 2000, isTrue);
   });
+  test('Currency', () {
+    final DartamakerPluginCurrency currency =
+    Dartamaker().plugin(DartamakerTagNames.currency, null);
+    final List<String> currencies = currency.currencies;
+    final String a1 = currency.apply();
+    expect(a1, anyOf(currencies));
+  });
 }

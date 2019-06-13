@@ -40,6 +40,9 @@ class Dartamaker {
       case DartamakerTagNames.country:
         ret = DartamakerPluginCountry();
         break;
+      case DartamakerTagNames.currency:
+        ret = DartamakerPluginCurrency();
+        break;
       case DartamakerTagNames.county:
         ret = DartamakerPluginCounty();
         break;

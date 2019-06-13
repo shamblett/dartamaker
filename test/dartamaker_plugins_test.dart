@@ -223,19 +223,19 @@ void main() {
     final String a1 = currency.apply();
     expect(a1, anyOf(currencies));
   });
-  test('Date ISO', () {
-    DateTime now = DateTime.now();
+  test('Date ISO', () async {
+    final DateTime now = DateTime.now();
+    await Future<void>.delayed(const Duration(seconds: 1), (){});
     final DartamakerPluginDateiso b1 = Dartamaker().plugin(
         DartamakerTagNames.dateiso, DartamakerConstants.pluginNullParam);
-    sleep(Duration(milliseconds: 1000));
     String res = b1.apply();
     DateTime val = DateTime.tryParse(res);
     expect(val.millisecondsSinceEpoch > now.millisecondsSinceEpoch, isTrue);
 
     const String tmin = '2012-02-26 13:27:00';
     const String tmax = '2012-02-28 13:27:00';
-    final DartamakerPluginDateiso b2 =
-        Dartamaker().plugin(DartamakerTagNames.dateiso, <String, String>{
+    final DartamakerPluginDateiso b2 = Dartamaker().plugin(
+        DartamakerTagNames.dateiso, <String, String>{
       DartamakerConstants.min: tmin,
       DartamakerConstants.max: tmax
     });
@@ -249,5 +249,41 @@ void main() {
         DateTime.tryParse(res).millisecondsSinceEpoch <=
             DateTime.tryParse(tmax).millisecondsSinceEpoch,
         isTrue);
+  });
+  test('Date', () {
+    final DartamakerPluginDate b1 = Dartamaker()
+        .plugin(DartamakerTagNames.date, DartamakerConstants.pluginNullParam);
+    final String res = b1.apply();
+    expect(res.contains('T'), isFalse);
+    expect(res.contains(':'), isFalse);
+    expect(res.contains('-'), isTrue);
+  });
+  test('Latitude', () {
+    final DartamakerPluginLatitude b1 = Dartamaker().plugin(
+        DartamakerTagNames.latitude, DartamakerConstants.pluginNullParam);
+    final String res = b1.apply();
+    final double val = double.tryParse(res);
+    expect(val >= -90.0, isTrue);
+    expect(val <= 90.0, isTrue);
+  });
+  test('Longitude', () {
+    final DartamakerPluginLongitude b1 = Dartamaker().plugin(
+        DartamakerTagNames.longitude, DartamakerConstants.pluginNullParam);
+    final String res = b1.apply();
+    final double val = double.tryParse(res);
+    expect(val >= -180.0, isTrue);
+    expect(val <= 180.0, isTrue);
+  });
+  test('Letters', () {
+    final DartamakerPluginLetters b1 = Dartamaker().plugin(
+        DartamakerTagNames.letters, DartamakerConstants.pluginNullParam);
+    expect(b1.apply().length, 5);
+    final Map<String, String> p1 = <String, String>{
+      DartamakerConstants.numletters: '20'
+    };
+    final DartamakerPluginLetters b2 =
+        Dartamaker().plugin(DartamakerTagNames.letters, p1);
+    final String res = b2.apply();
+    expect(res.length, 20);
   });
 }

@@ -38,3 +38,7 @@ part 'src/plugins/dartamaker_plugin_emojii.dart';
 part 'src/plugins/dartamaker_plugin_float.dart';
 part 'src/plugins/dartamaker_plugin_integer.dart';
 part 'src/plugins/dartamaker_plugin_dateiso.dart';
+part 'src/plugins/dartamaker_plugin_date.dart';
+part 'src/plugins/dartamaker_plugin_latitude.dart';
+part 'src/plugins/dartamaker_plugin_longitude.dart';
+part 'src/plugins/dartamaker_plugin_letters.dart';

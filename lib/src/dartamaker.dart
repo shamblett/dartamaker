@@ -87,6 +87,19 @@ class Dartamaker {
         ret = DartamakerPluginDateiso(
             params[DartamakerConstants.min], params[DartamakerConstants.max]);
         break;
+      case DartamakerTagNames.date:
+        ret = DartamakerPluginDate(
+            params[DartamakerConstants.min], params[DartamakerConstants.max]);
+        break;
+      case DartamakerTagNames.latitude:
+        ret = DartamakerPluginLatitude();
+        break;
+      case DartamakerTagNames.longitude:
+        ret = DartamakerPluginLongitude();
+        break;
+      case DartamakerTagNames.letters:
+        ret = DartamakerPluginLetters(params[DartamakerConstants.numletters]);
+        break;
     }
 
     return ret;

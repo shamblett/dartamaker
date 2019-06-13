@@ -77,6 +77,9 @@ class DartamakerConstants {
   static const String max = 'max';
   static const String decimalplaces = 'decimalplaces';
 
+  /// Letters
+  static const String numletters = 'numletters';
+
   /// Plugin null parameter
   static Map<String, String> pluginNullParam = Map<String, String>();
 }

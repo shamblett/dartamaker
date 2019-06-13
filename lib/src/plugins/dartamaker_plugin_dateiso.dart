@@ -7,7 +7,7 @@
 
 part of dartamaker;
 
-/// ISO dates
+/// ISO dates and times
 class DartamakerPluginDateiso implements DartamakerPlugin {
   /// Default
   DartamakerPluginDateiso(String min, String max) {

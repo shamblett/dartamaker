@@ -69,6 +69,9 @@ class DartamakerConstants {
   /// Digits
   static const String numdigits = 'numdigits';
 
+  /// Emojii's
+  static const String numchars = 'numchars';
+
   /// Plugin null parameter
   static Map<String, String> pluginNullParam = Map<String, String>();
 }

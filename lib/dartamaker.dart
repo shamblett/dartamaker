@@ -33,3 +33,4 @@ part 'src/plugins/dartamaker_plugin_domainname.dart';
 part 'src/plugins/dartamaker_plugin_firstname.dart';
 part 'src/plugins/dartamaker_plugin_surname.dart';
 part 'src/plugins/dartamaker_plugin_email.dart';
+part 'src/plugins/dartamaker_plugin_emojii.dart';

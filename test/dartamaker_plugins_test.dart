@@ -165,4 +165,15 @@ void main() {
       expect(name.contains('@'), isTrue);
     }
   });
+  test('Emojii', () {
+    final DartamakerPluginEmojii b1 = Dartamaker()
+        .plugin(DartamakerTagNames.emojii, DartamakerConstants.pluginNullParam);
+    expect(b1.apply().isNotEmpty, isTrue);
+    final Map<String, String> p1 = <String, String>{
+      DartamakerConstants.numchars: '20'
+    };
+    final DartamakerPluginEmojii b2 =
+        Dartamaker().plugin(DartamakerTagNames.emojii, p1);
+    expect(b2.apply().isNotEmpty, isTrue);
+  });
 }

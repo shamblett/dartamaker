@@ -67,6 +67,9 @@ class Dartamaker {
       case DartamakerTagNames.email:
         ret = DartamakerPluginEmail();
         break;
+      case DartamakerTagNames.emojii:
+        ret = DartamakerPluginEmojii(params[DartamakerConstants.numchars]);
+        break;
     }
 
     return ret;

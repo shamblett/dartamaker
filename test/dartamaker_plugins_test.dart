@@ -149,4 +149,20 @@ void main() {
     final String a1 = name.apply();
     expect(a1, anyOf(names));
   });
+  test('Surnames', () {
+    final DartamakerPluginSurname name =
+        Dartamaker().plugin(DartamakerTagNames.surname, null);
+    final List<String> names = name.names;
+    final String a1 = name.apply();
+    expect(a1, anyOf(names));
+  });
+  test('Email', () {
+    final DartamakerPluginEmail email =
+        Dartamaker().plugin(DartamakerTagNames.email, null);
+    for (int i = 0; i <= 9; i++) {
+      final String name = email.apply();
+      expect(name.isNotEmpty, isTrue);
+      expect(name.contains('@'), isTrue);
+    }
+  });
 }

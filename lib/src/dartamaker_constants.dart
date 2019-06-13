@@ -72,6 +72,11 @@ class DartamakerConstants {
   /// Emojii's
   static const String numchars = 'numchars';
 
+  /// Float
+  static const String min = 'min';
+  static const String max = 'max';
+  static const String decimalplaces = 'decimalplaces';
+
   /// Plugin null parameter
   static Map<String, String> pluginNullParam = Map<String, String>();
 }

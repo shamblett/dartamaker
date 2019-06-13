@@ -70,6 +70,11 @@ class Dartamaker {
       case DartamakerTagNames.emojii:
         ret = DartamakerPluginEmojii(params[DartamakerConstants.numchars]);
         break;
+      case DartamakerTagNames.float:
+        ret = DartamakerPluginFloat(
+            params[DartamakerConstants.min],
+            params[DartamakerConstants.max],
+            params[DartamakerConstants.decimalplaces]);
     }
 
     return ret;

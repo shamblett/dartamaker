@@ -176,4 +176,24 @@ void main() {
         Dartamaker().plugin(DartamakerTagNames.emojii, p1);
     expect(b2.apply().isNotEmpty, isTrue);
   });
+  test('Float', () {
+    final DartamakerPluginFloat b1 = Dartamaker()
+        .plugin(DartamakerTagNames.float, DartamakerConstants.pluginNullParam);
+    String res = b1.apply();
+    double val = double.tryParse(res);
+    expect(val >= 0.0, isTrue);
+    expect(val <= 100.0, isTrue);
+    expect(res.split('.')[1].length, 4);
+
+    final DartamakerPluginFloat b2 = Dartamaker()
+        .plugin(DartamakerTagNames.float, <String,String>{DartamakerConstants.min: '1000.0',
+    DartamakerConstants.max: '2000.0',
+    DartamakerConstants.decimalplaces: '6'}
+    );
+    res = b2.apply();
+    val = double.tryParse(res);
+    expect(val >= 1000.0, isTrue);
+    expect(val <= 2000.0, isTrue);
+    expect(res.split('.')[1].length, 6);
+  });
 }

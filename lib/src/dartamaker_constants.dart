@@ -72,7 +72,7 @@ class DartamakerConstants {
   /// Emojii's
   static const String numchars = 'numchars';
 
-  /// Float, Integer
+  /// Float, Integer, Date
   static const String min = 'min';
   static const String max = 'max';
   static const String decimalplaces = 'decimalplaces';

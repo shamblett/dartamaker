@@ -6,6 +6,7 @@
  */
 import 'dart:async';
 import 'dart:convert';
+import 'dart:io';
 import 'dart:math';
 
 import 'package:dartamaker/dartamaker.dart';
@@ -217,9 +218,36 @@ void main() {
   });
   test('Currency', () {
     final DartamakerPluginCurrency currency =
-    Dartamaker().plugin(DartamakerTagNames.currency, null);
+        Dartamaker().plugin(DartamakerTagNames.currency, null);
     final List<String> currencies = currency.currencies;
     final String a1 = currency.apply();
     expect(a1, anyOf(currencies));
+  });
+  test('Date ISO', () {
+    DateTime now = DateTime.now();
+    final DartamakerPluginDateiso b1 = Dartamaker().plugin(
+        DartamakerTagNames.dateiso, DartamakerConstants.pluginNullParam);
+    sleep(Duration(milliseconds: 1000));
+    String res = b1.apply();
+    DateTime val = DateTime.tryParse(res);
+    expect(val.millisecondsSinceEpoch > now.millisecondsSinceEpoch, isTrue);
+
+    const String tmin = '2012-02-26 13:27:00';
+    const String tmax = '2012-02-28 13:27:00';
+    final DartamakerPluginDateiso b2 =
+        Dartamaker().plugin(DartamakerTagNames.dateiso, <String, String>{
+      DartamakerConstants.min: tmin,
+      DartamakerConstants.max: tmax
+    });
+    res = b2.apply();
+    val = DateTime.tryParse(res);
+    expect(
+        DateTime.tryParse(res).millisecondsSinceEpoch >=
+            DateTime.tryParse(tmin).millisecondsSinceEpoch,
+        isTrue);
+    expect(
+        DateTime.tryParse(res).millisecondsSinceEpoch <=
+            DateTime.tryParse(tmax).millisecondsSinceEpoch,
+        isTrue);
   });
 }

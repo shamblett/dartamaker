@@ -83,6 +83,10 @@ class Dartamaker {
         ret = DartamakerPluginInteger(
             params[DartamakerConstants.min], params[DartamakerConstants.max]);
         break;
+      case DartamakerTagNames.dateiso:
+        ret = DartamakerPluginDateiso(
+            params[DartamakerConstants.min], params[DartamakerConstants.max]);
+        break;
     }
 
     return ret;

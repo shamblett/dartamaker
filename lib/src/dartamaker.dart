@@ -75,6 +75,11 @@ class Dartamaker {
             params[DartamakerConstants.min],
             params[DartamakerConstants.max],
             params[DartamakerConstants.decimalplaces]);
+        break;
+      case DartamakerTagNames.integer:
+        ret = DartamakerPluginInteger(
+            params[DartamakerConstants.min], params[DartamakerConstants.max]);
+        break;
     }
 
     return ret;

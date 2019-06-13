@@ -185,15 +185,34 @@ void main() {
     expect(val <= 100.0, isTrue);
     expect(res.split('.')[1].length, 4);
 
-    final DartamakerPluginFloat b2 = Dartamaker()
-        .plugin(DartamakerTagNames.float, <String,String>{DartamakerConstants.min: '1000.0',
-    DartamakerConstants.max: '2000.0',
-    DartamakerConstants.decimalplaces: '6'}
-    );
+    final DartamakerPluginFloat b2 =
+        Dartamaker().plugin(DartamakerTagNames.float, <String, String>{
+      DartamakerConstants.min: '1000.0',
+      DartamakerConstants.max: '2000.0',
+      DartamakerConstants.decimalplaces: '6'
+    });
     res = b2.apply();
     val = double.tryParse(res);
     expect(val >= 1000.0, isTrue);
     expect(val <= 2000.0, isTrue);
     expect(res.split('.')[1].length, 6);
+  });
+  test('Integer', () {
+    final DartamakerPluginInteger b1 = Dartamaker().plugin(
+        DartamakerTagNames.integer, DartamakerConstants.pluginNullParam);
+    String res = b1.apply();
+    int val = int.tryParse(res);
+    expect(val >= 0, isTrue);
+    expect(val <= 100, isTrue);
+
+    final DartamakerPluginInteger b2 = Dartamaker().plugin(
+        DartamakerTagNames.integer, <String, String>{
+      DartamakerConstants.min: '1000',
+      DartamakerConstants.max: '2000'
+    });
+    res = b2.apply();
+    val = int.tryParse(res);
+    expect(val >= 1000, isTrue);
+    expect(val <= 2000, isTrue);
   });
 }

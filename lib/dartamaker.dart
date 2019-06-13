@@ -35,3 +35,4 @@ part 'src/plugins/dartamaker_plugin_surname.dart';
 part 'src/plugins/dartamaker_plugin_email.dart';
 part 'src/plugins/dartamaker_plugin_emojii.dart';
 part 'src/plugins/dartamaker_plugin_float.dart';
+part 'src/plugins/dartamaker_plugin_integer.dart';

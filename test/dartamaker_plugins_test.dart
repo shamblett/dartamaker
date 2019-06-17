@@ -383,4 +383,17 @@ void main() {
     expect(parts[3].length, 3);
     print(a1);
   });
+  test('Time', () {
+    final DartamakerPluginTime t =
+        Dartamaker().plugin(DartamakerTagNames.time, null);
+    final String a1 = t.apply();
+    final List<String> parts = a1.split(':');
+    expect(parts.length, 3);
+  });
+  test('Timestamp', () {
+    final DartamakerPluginTimestamp t =
+        Dartamaker().plugin(DartamakerTagNames.timestamp, null);
+    final String a1 = t.apply();
+    expect(a1.length, 15);
+  });
 }

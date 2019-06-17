@@ -131,6 +131,12 @@ class Dartamaker {
       case DartamakerTagNames.tel:
         ret = DartamakerPluginTel();
         break;
+      case DartamakerTagNames.time:
+        ret = DartamakerPluginTime();
+        break;
+      case DartamakerTagNames.timestamp:
+        ret = DartamakerPluginTimestamp();
+        break;
     }
 
     return ret;

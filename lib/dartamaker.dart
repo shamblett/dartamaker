@@ -51,3 +51,5 @@ part 'src/plugins/dartamaker_plugin_state.dart';
 part 'src/plugins/dartamaker_plugin_statecode.dart';
 part 'src/plugins/dartamaker_plugin_street.dart';
 part 'src/plugins/dartamaker_plugin_tel.dart';
+part 'src/plugins/dartamaker_plugin_time.dart';
+part 'src/plugins/dartamaker_plugin_timestamp.dart';

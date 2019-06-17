@@ -119,6 +119,12 @@ class Dartamaker {
         ret = DartamakerPluginPrice(
             params[DartamakerConstants.min], params[DartamakerConstants.max]);
         break;
+      case DartamakerTagNames.state:
+        ret = DartamakerPluginState();
+        break;
+      case DartamakerTagNames.statecode:
+        ret = DartamakerPluginStatecode();
+        break;
     }
 
     return ret;

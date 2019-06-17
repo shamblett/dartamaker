@@ -347,4 +347,18 @@ void main() {
     expect(int.tryParse(res) >= 500, isTrue);
     expect(int.tryParse(res) <= 1000, isTrue);
   });
+  test('States', () {
+    final DartamakerPluginState state =
+        Dartamaker().plugin(DartamakerTagNames.state, null);
+    final List<String> states = state.states;
+    final String a1 = state.apply();
+    expect(a1, anyOf(states));
+  });
+  test('State Codes', () {
+    final DartamakerPluginStatecode statecode =
+        Dartamaker().plugin(DartamakerTagNames.statecode, null);
+    final List<String> statecodes = statecode.statecodes;
+    final String a1 = statecode.apply();
+    expect(a1, anyOf(statecodes));
+  });
 }

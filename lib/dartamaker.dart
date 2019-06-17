@@ -47,3 +47,5 @@ part 'src/plugins/dartamaker_plugin_normal.dart';
 part 'src/plugins/dartamaker_plugin_oneof.dart';
 part 'src/plugins/dartamaker_plugin_postcode.dart';
 part 'src/plugins/dartamaker_plugin_price.dart';
+part 'src/plugins/dartamaker_plugin_state.dart';
+part 'src/plugins/dartamaker_plugin_statecode.dart';

@@ -30,8 +30,6 @@ enum DartamakerTagNames {
   firstname,
   float,
   integer,
-  kuuid,
-  kuuidr,
   last,
   latitude,
   letters,

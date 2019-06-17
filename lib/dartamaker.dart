@@ -59,3 +59,5 @@ part 'src/plugins/dartamaker_plugin_uuid.dart';
 part 'src/plugins/dartamaker_plugin_website.dart';
 part 'src/plugins/dartamaker_plugin_url.dart';
 part 'src/plugins/dartamaker_plugin_words.dart';
+part 'src/plugins/dartamaker_plugin_zip.dart';
+part 'src/plugins/dartamaker_plugin_dummy.dart';

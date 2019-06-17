@@ -155,6 +155,12 @@ class Dartamaker {
       case DartamakerTagNames.words:
         ret = DartamakerPluginWords(params[DartamakerConstants.count]);
         break;
+      case DartamakerTagNames.zip:
+        ret = DartamakerPluginZip();
+        break;
+      case DartamakerTagNames.last: // Dummy plugin
+        ret = DartamakerPluginDummy();
+        break;
     }
 
     return ret;

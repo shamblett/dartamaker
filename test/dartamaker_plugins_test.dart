@@ -445,4 +445,16 @@ void main() {
     a1 = words1.apply();
     expect(a1.split(' ').length, 20);
   });
+  test('Zip codes', () {
+    final DartamakerPluginZip zip =
+        Dartamaker().plugin(DartamakerTagNames.zip, null);
+    final String a1 = zip.apply();
+    expect(a1.length, 5);
+  });
+  test('Last', () {
+    final DartamakerPluginDummy dummy =
+        Dartamaker().plugin(DartamakerTagNames.last, null);
+    final String a1 = dummy.apply();
+    expect(a1, 'Dummy');
+  });
 }

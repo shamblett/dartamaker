@@ -332,4 +332,19 @@ void main() {
     expect(a1.split(' ')[0].length, anyOf(3, 4));
     expect(a1.split(' ')[1].length, 3);
   });
+  test('Price', () {
+    final DartamakerPluginPrice b1 = Dartamaker()
+        .plugin(DartamakerTagNames.price, DartamakerConstants.pluginNullParam);
+    String res = b1.apply();
+    expect(int.tryParse(res) >= 1, isTrue);
+    expect(int.tryParse(res) <= 100, isTrue);
+    final DartamakerPluginPrice b2 = Dartamaker().plugin(
+        DartamakerTagNames.price, <String, String>{
+      DartamakerConstants.max: '1000.0',
+      DartamakerConstants.min: '500.0'
+    });
+    res = b2.apply();
+    expect(int.tryParse(res) >= 500, isTrue);
+    expect(int.tryParse(res) <= 1000, isTrue);
+  });
 }

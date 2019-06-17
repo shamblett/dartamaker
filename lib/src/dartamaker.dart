@@ -115,6 +115,10 @@ class Dartamaker {
       case DartamakerTagNames.postcode:
         ret = DartamakerPluginPostcode();
         break;
+      case DartamakerTagNames.price:
+        ret = DartamakerPluginPrice(
+            params[DartamakerConstants.min], params[DartamakerConstants.max]);
+        break;
     }
 
     return ret;

@@ -31,5 +31,5 @@ class DartamakerPluginInteger implements DartamakerPlugin {
 
   @override
   String apply() =>
-      (_min + Random().nextDouble().floor() * (_max - _min)).toString();
+      (_min + (Random().nextInt(_max - _min))).toString();
 }

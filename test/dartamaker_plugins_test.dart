@@ -396,4 +396,30 @@ void main() {
     final String a1 = t.apply();
     expect(a1.length, 15);
   });
+  test('Titles', () {
+    final DartamakerPluginTitle title =
+        Dartamaker().plugin(DartamakerTagNames.title, null);
+    final List<String> titles = title.titles;
+    final String a1 = title.apply();
+    expect(a1, anyOf(titles));
+  });
+  test('Towns', () {
+    final DartamakerPluginTown town =
+        Dartamaker().plugin(DartamakerTagNames.town, null);
+    final List<String> towns = town.towns;
+    final String a1 = town.apply();
+    expect(a1, anyOf(towns));
+  });
+  test('Uuids', () {
+    final DartamakerPluginUuid b1 = Dartamaker()
+        .plugin(DartamakerTagNames.uuid, DartamakerConstants.pluginNullParam);
+    expect(b1.apply().length, 16);
+    final Map<String, String> p1 = <String, String>{
+      DartamakerConstants.length: '30'
+    };
+    final DartamakerPluginUuid b2 =
+        Dartamaker().plugin(DartamakerTagNames.uuid, p1);
+    final String res = b2.apply();
+    expect(res.length, 30);
+  });
 }

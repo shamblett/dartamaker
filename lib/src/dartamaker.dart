@@ -137,6 +137,15 @@ class Dartamaker {
       case DartamakerTagNames.timestamp:
         ret = DartamakerPluginTimestamp();
         break;
+      case DartamakerTagNames.title:
+        ret = DartamakerPluginTitle();
+        break;
+      case DartamakerTagNames.town:
+        ret = DartamakerPluginTown();
+        break;
+      case DartamakerTagNames.uuid:
+        ret = DartamakerPluginUuid(params[DartamakerConstants.length]);
+        break;
     }
 
     return ret;

@@ -53,3 +53,6 @@ part 'src/plugins/dartamaker_plugin_street.dart';
 part 'src/plugins/dartamaker_plugin_tel.dart';
 part 'src/plugins/dartamaker_plugin_time.dart';
 part 'src/plugins/dartamaker_plugin_timestamp.dart';
+part 'src/plugins/dartamaker_plugin_title.dart';
+part 'src/plugins/dartamaker_plugin_town.dart';
+part 'src/plugins/dartamaker_plugin_uuid.dart';

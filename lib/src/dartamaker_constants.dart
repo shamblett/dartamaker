@@ -85,6 +85,9 @@ class DartamakerConstants {
   /// Oneof
   static const String args = 'args';
 
+  /// Uuid
+  static const String length = 'length';
+
   /// Plugin null parameter
   static Map<String, String> pluginNullParam = Map<String, String>();
 }

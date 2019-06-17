@@ -49,3 +49,5 @@ part 'src/plugins/dartamaker_plugin_postcode.dart';
 part 'src/plugins/dartamaker_plugin_price.dart';
 part 'src/plugins/dartamaker_plugin_state.dart';
 part 'src/plugins/dartamaker_plugin_statecode.dart';
+part 'src/plugins/dartamaker_plugin_street.dart';
+part 'src/plugins/dartamaker_plugin_tel.dart';

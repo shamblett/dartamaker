@@ -125,6 +125,12 @@ class Dartamaker {
       case DartamakerTagNames.statecode:
         ret = DartamakerPluginStatecode();
         break;
+      case DartamakerTagNames.street:
+        ret = DartamakerPluginStreet();
+        break;
+      case DartamakerTagNames.tel:
+        ret = DartamakerPluginTel();
+        break;
     }
 
     return ret;

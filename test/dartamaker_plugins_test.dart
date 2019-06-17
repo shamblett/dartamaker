@@ -361,4 +361,26 @@ void main() {
     final String a1 = statecode.apply();
     expect(a1, anyOf(statecodes));
   });
+  test('Streets', () {
+    final DartamakerPluginStreet street =
+        Dartamaker().plugin(DartamakerTagNames.street, null);
+    final List<String> streets = street.streets;
+    final String a1 = street.apply();
+    expect(a1, anyOf(streets));
+  });
+  test('Telephone numbers', () {
+    final DartamakerPluginTel tel =
+        Dartamaker().plugin(DartamakerTagNames.tel, null);
+    final List<String> codes = tel.codes;
+    final String a1 = tel.apply();
+    final List<String> parts = a1.split('-');
+    expect(parts.length, 4);
+    expect(parts[0].startsWith('+'), isTrue);
+    expect(parts[0].length, anyOf(3, 4));
+    expect(parts[0].substring(1), anyOf(codes));
+    expect(parts[1].length, 4);
+    expect(parts[2].length, 3);
+    expect(parts[3].length, 3);
+    print(a1);
+  });
 }

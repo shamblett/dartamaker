@@ -39,7 +39,7 @@ class DartamakerPluginDigits implements DartamakerPlugin {
 
   @override
   String apply() {
-    StringBuffer str = StringBuffer();
+    final StringBuffer str = StringBuffer();
     for (int i = 0; i < _numdigits; i++) {
       str.write(_digits[Random().nextInt(_digits.length - 1)]);
     }

@@ -11,7 +11,7 @@ part of dartamaker;
 class DartamakerPluginDomainname implements DartamakerPlugin {
   @override
   String apply() {
-    StringBuffer t = StringBuffer();
+    final StringBuffer t = StringBuffer();
     if (Random().nextDouble() > 0.2) {
       t.write('com');
     } else {

@@ -88,6 +88,9 @@ class DartamakerConstants {
   /// Uuid
   static const String length = 'length';
 
+  /// Words
+  static const String count = 'count';
+
   /// Plugin null parameter
   static Map<String, String> pluginNullParam = Map<String, String>();
 }

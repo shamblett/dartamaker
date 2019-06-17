@@ -56,3 +56,6 @@ part 'src/plugins/dartamaker_plugin_timestamp.dart';
 part 'src/plugins/dartamaker_plugin_title.dart';
 part 'src/plugins/dartamaker_plugin_town.dart';
 part 'src/plugins/dartamaker_plugin_uuid.dart';
+part 'src/plugins/dartamaker_plugin_website.dart';
+part 'src/plugins/dartamaker_plugin_url.dart';
+part 'src/plugins/dartamaker_plugin_words.dart';

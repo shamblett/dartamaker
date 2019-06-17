@@ -146,6 +146,15 @@ class Dartamaker {
       case DartamakerTagNames.uuid:
         ret = DartamakerPluginUuid(params[DartamakerConstants.length]);
         break;
+      case DartamakerTagNames.website:
+        ret = DartamakerPluginWebsite();
+        break;
+      case DartamakerTagNames.url:
+        ret = DartamakerPluginUrl();
+        break;
+      case DartamakerTagNames.words:
+        ret = DartamakerPluginWords(params[DartamakerConstants.count]);
+        break;
     }
 
     return ret;

@@ -7,7 +7,7 @@
 
 part of dartamaker;
 
-/// Letters
+/// Uuid
 class DartamakerPluginUuid implements DartamakerPlugin {
   /// Default
   DartamakerPluginUuid(String length) {
@@ -19,7 +19,7 @@ class DartamakerPluginUuid implements DartamakerPlugin {
     }
   }
 
-  List<String> _anums = [
+  List<String> _anums = <String>[
     'A',
     'B',
     'C',

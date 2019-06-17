@@ -422,4 +422,27 @@ void main() {
     final String res = b2.apply();
     expect(res.length, 30);
   });
+  test('Websites', () {
+    final DartamakerPluginWebsite ws =
+        Dartamaker().plugin(DartamakerTagNames.website, null);
+    final String a1 = ws.apply();
+    expect(a1.startsWith('http'), isTrue);
+  });
+  test('Urls', () {
+    final DartamakerPluginUrl url =
+        Dartamaker().plugin(DartamakerTagNames.url, null);
+    final String a1 = url.apply();
+    expect(a1.startsWith('http'), isTrue);
+  });
+  test('Words', () {
+    final DartamakerPluginWords words = Dartamaker()
+        .plugin(DartamakerTagNames.words, DartamakerConstants.pluginNullParam);
+    String a1 = words.apply();
+    expect(a1.split(' ').length, 5);
+    final DartamakerPluginWords words1 = Dartamaker().plugin(
+        DartamakerTagNames.words,
+        <String, String>{DartamakerConstants.count: '20'});
+    a1 = words1.apply();
+    expect(a1.split(' ').length, 20);
+  });
 }

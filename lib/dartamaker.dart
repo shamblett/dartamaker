@@ -62,3 +62,8 @@ part 'src/plugins/dartamaker_plugin_words.dart';
 part 'src/plugins/dartamaker_plugin_zip.dart';
 part 'src/plugins/dartamaker_plugin_dummy.dart';
 part 'src/plugins/dartamaker_plugin_manager.dart';
+part 'src/formatters/dartamaker_formatter.dart';
+part 'src/formatters/dartamaker_formatter_none.dart';
+part 'src/formatters/dartamaker_formatter_json.dart';
+part 'src/formatters/dartamaker_formatter_csv.dart';
+part 'src/formatters/dartamaker_formatter_xml.dart';

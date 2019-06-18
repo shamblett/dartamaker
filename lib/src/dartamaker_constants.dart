@@ -57,6 +57,9 @@ enum DartamakerTagNames {
   zip
 }
 
+/// Formatter
+enum DartamakerFormatterTypes { none, csv, json, xml }
+
 /// Package wide constants
 class DartamakerConstants {
   /// Plugin parameters

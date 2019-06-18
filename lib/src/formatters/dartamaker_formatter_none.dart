@@ -11,7 +11,7 @@ part of dartamaker;
 class DartamakerFormatterNone implements DartamakerFormatter {
   /// Filter
   @override
-  String filter(dynamic obj) => obj.toString();
+  String filter(dynamic obj) => obj?.toString();
 
   /// Post commit operation
   @override

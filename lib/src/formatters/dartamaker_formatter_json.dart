@@ -11,12 +11,9 @@ part of dartamaker;
 class DartamakerFormatterJson implements DartamakerFormatter {
   /// Filter
   @override
-  String filter(dynamic obj) => json
-      .encode(obj)
-      .replaceAll(RegExp('/^"/'), '')
-      .replaceAll(RegExp('/"\$/'), '');
+  String filter(dynamic obj) => json.encode(obj).replaceAll('\\"', '');
 
   /// Post commit operation
   @override
-  String postCommit(String str) => str;
+  String postCommit(String str) => json.decode(json.encode(str));
 }

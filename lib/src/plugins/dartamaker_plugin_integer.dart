@@ -30,6 +30,5 @@ class DartamakerPluginInteger implements DartamakerPlugin {
   int _max = 100;
 
   @override
-  String apply() =>
-      (_min + (Random().nextInt(_max - _min))).toString();
+  String apply() => (_min + (Random().nextInt(_max - _min))).toString();
 }

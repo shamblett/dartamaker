@@ -61,3 +61,4 @@ part 'src/plugins/dartamaker_plugin_url.dart';
 part 'src/plugins/dartamaker_plugin_words.dart';
 part 'src/plugins/dartamaker_plugin_zip.dart';
 part 'src/plugins/dartamaker_plugin_dummy.dart';
+part 'src/plugins/dartamaker_plugin_manager.dart';

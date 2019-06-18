@@ -381,7 +381,6 @@ void main() {
     expect(parts[1].length, 4);
     expect(parts[2].length, 3);
     expect(parts[3].length, 3);
-    print(a1);
   });
   test('Time', () {
     final DartamakerPluginTime t =

@@ -27,7 +27,7 @@ class DartamakerPluginFloat implements DartamakerPlugin {
 
     if (decimalplaces != null) {
       final int val = int.tryParse(decimalplaces);
-      if (val != null && val > 0 ) {
+      if (val != null && val > 0) {
         _decimalplaces = val;
       }
     }

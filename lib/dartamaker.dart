@@ -67,3 +67,4 @@ part 'src/formatters/dartamaker_formatter_none.dart';
 part 'src/formatters/dartamaker_formatter_json.dart';
 part 'src/formatters/dartamaker_formatter_csv.dart';
 part 'src/formatters/dartamaker_formatter_xml.dart';
+part 'src/formatters/dartamaker_formatter_manager.dart';

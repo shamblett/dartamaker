@@ -24,4 +24,37 @@ class Dartamaker {
   /// Get a tag substitution for a tag
   String substitute(DartamakerTagNames tagName, Map<String, String> params) =>
       plugin(tagName, params).apply();
+
+  /// Find tags, locate occurrences of things surrounded in double curly {{brackets}}
+  List<Map<String, String>> findTags(String str) {
+    final List<Map<String, String>> tags = List<Map<String, String>>();
+    if (str == null) {
+      return tags;
+    }
+    final RegExp exp = RegExp('({{[^{}]+}})');
+    final Iterable<Match> matches = exp.allMatches(str);
+    // Iterate through each one
+    for (Match match in matches) {
+      String s = match.group(0);
+      // remove leading {{
+      // removing trailing }}
+      // split into words
+      // remove whitespace
+      final List<String> t = s
+          .replaceAll(RegExp('^{{'), '')
+          .replaceAll(RegExp('}}\$'), '')
+          .split(RegExp('(\s+)'))
+          .map((String e) => e.trim())
+          .where((String e) => e.isNotEmpty)
+          .toList();
+      final String params = t.length == 2 ? t[1] : '';
+      tags.add(<String, String>{
+        DartamakerConstants.original: s,
+        DartamakerConstants.tag: t[0],
+        DartamakerConstants.params: params
+      });
+    }
+
+    return tags;
+  }
 }

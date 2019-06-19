@@ -94,4 +94,9 @@ class DartamakerConstants {
 
   /// Plugin null parameter
   static Map<String, String> pluginNullParam = Map<String, String>();
+
+  /// Tag descriptor
+  static const String original = 'original';
+  static const String tag = 'tag';
+  static const String params = 'params';
 }

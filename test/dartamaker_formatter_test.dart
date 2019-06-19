@@ -34,10 +34,9 @@ void main() {
     final Map<String, String> json3 = <String, String>{'str1': '"hello again"'};
     expect(json.filter(json3), '{"str1":"hello again"}');
   });
-  test('CSV', ()
-  {
+  test('CSV', () {
     final DartamakerFormatterCSV csv =
-    Dartamaker().formatter(DartamakerFormatterTypes.csv);
+        Dartamaker().formatter(DartamakerFormatterTypes.csv);
     expect(csv.filter(null), '');
     expect(csv.filter(5), '');
     const String t1 = '"Hello"';
@@ -46,10 +45,23 @@ void main() {
     expect(csv.filter(t2), '"Hello, again"');
     expect(csv.postCommit(t2), t2);
   });
-  test('Xml', ()
-  {
+  test('Xml', () {
     final DartamakerFormatterXml xml =
-    Dartamaker().formatter(DartamakerFormatterTypes.xml);
+        Dartamaker().formatter(DartamakerFormatterTypes.xml);
     expect(xml.filter(null), '');
+    const String t1 = 'hello & again & again';
+    expect(xml.filter(t1), 'hello &amp; again &amp; again');
+    const String t2 = 'hello < again < again';
+    expect(xml.filter(t2), 'hello &lt; again &lt; again');
+    const String t3 = 'hello > again > again';
+    expect(xml.filter(t3), 'hello &gt; again &gt; again');
+    const String t4 = 'hello " again " again';
+    expect(xml.filter(t4), 'hello &quot; again &quot; again');
+    const String t5 = "hello ' again ' again";
+    expect(xml.filter(t5), 'hello &apos; again &apos; again');
+    const String t6 = 'hello & < again >';
+    expect(xml.filter(t6), 'hello &amp; &lt; again &gt;');
+    const String t7 = 'hello \n again \r';
+    expect(xml.postCommit(t7), 'hello  again ');
   });
 }

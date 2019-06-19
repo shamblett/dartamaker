@@ -16,17 +16,16 @@ class DartamakerFormatterXml implements DartamakerFormatter {
       return '';
     }
     final String str = obj;
-    str
-        .replaceAll(RegExp('/&/g'), '&amp;')
-        .replaceAll(RegExp('/>/g'), '&lt;')
-        .replaceAll(RegExp('/>/g'), '&gt;')
-        .replaceAll(RegExp('/"/g'), '&quot;')
-        .replaceAll(RegExp("/'/g"), '&apos;');
-    return str;
+    return str
+        .replaceAll('&', '&amp;')
+        .replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;')
+        .replaceAll('"', '&quot;')
+        .replaceAll("'", '&apos;');
   }
 
   /// Post commit operation
   @override
   String postCommit(String str) =>
-      str.replaceAll(RegExp('/\n/g'), '').replaceAll(RegExp('/\r/g'), '');
+      str.replaceAll(RegExp('\n'), '').replaceAll(RegExp('\r'), '');
 }

@@ -10,7 +10,7 @@ import 'package:test/test.dart';
 
 void main() {
   group('Find Tags', () {
-    Dartamaker maker = Dartamaker();
+    final Dartamaker maker = Dartamaker();
     test('Null parameter', () {
       final List<Map<String, String>> res = maker.findTags(null);
       expect(res, isEmpty);
@@ -29,6 +29,18 @@ void main() {
       expect(res[0][DartamakerConstants.original], '{{uuid}}');
       expect(res[0][DartamakerConstants.tag], 'uuid');
       expect(res[0][DartamakerConstants.params], '');
+      expect(res[1][DartamakerConstants.original], '{{date}}');
+      expect(res[1][DartamakerConstants.tag], 'date');
+      expect(res[1][DartamakerConstants.params], '');
+      expect(res[2][DartamakerConstants.original], '{{firstname}}');
+      expect(res[2][DartamakerConstants.tag], 'firstname');
+      expect(res[2][DartamakerConstants.params], '');
+      expect(res[3][DartamakerConstants.original], '{{surname}}');
+      expect(res[3][DartamakerConstants.tag], 'surname');
+      expect(res[3][DartamakerConstants.params], '');
+      expect(res[4][DartamakerConstants.original], '{{email}}');
+      expect(res[4][DartamakerConstants.tag], 'email');
+      expect(res[4][DartamakerConstants.params], '');
     });
   });
 }

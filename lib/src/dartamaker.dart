@@ -35,7 +35,7 @@ class Dartamaker {
     final Iterable<Match> matches = exp.allMatches(str);
     // Iterate through each one
     for (Match match in matches) {
-      String s = match.group(0);
+      final String s = match.group(0);
       // remove leading {{
       // removing trailing }}
       // split into words
@@ -43,7 +43,7 @@ class Dartamaker {
       final List<String> t = s
           .replaceAll(RegExp('^{{'), '')
           .replaceAll(RegExp('}}\$'), '')
-          .split(RegExp('(\s+)'))
+          .split(RegExp(r'(\s+)'))
           .map((String e) => e.trim())
           .where((String e) => e.isNotEmpty)
           .toList();

@@ -12,7 +12,7 @@ class DartamakerFormatterXml implements DartamakerFormatter {
   /// Filter
   @override
   String filter(dynamic obj) {
-    if (!obj is String) {
+    if (obj == null || !(obj is String)) {
       return '';
     }
     final String str = obj;

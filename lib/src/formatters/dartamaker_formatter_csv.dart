@@ -12,12 +12,12 @@ class DartamakerFormatterCSV implements DartamakerFormatter {
   /// Filter
   @override
   String filter(dynamic obj) {
-    if (!obj is String) {
+    if (obj == null || !(obj is String)) {
       return '';
     }
     String str = obj;
-    str = str.replaceAll(RegExp('/"/g'), '""');
-    if (RegExp('/,/g').hasMatch(str)) {
+    str = str.replaceAll(RegExp('"'), '""');
+    if (RegExp(',').hasMatch(str)) {
       str = '"$str"';
     }
     return str;

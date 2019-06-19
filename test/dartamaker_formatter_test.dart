@@ -8,17 +8,6 @@
 import 'package:dartamaker/dartamaker.dart';
 import 'package:test/test.dart';
 
-/// Test classes
-Map<String, dynamic> json1 = <String, dynamic>{
-  'name': 'Billy',
-  'number': 6,
-  'float': 45.0
-};
-
-Map<String, String> json2 = <String, String>{'str1': '"hello"'};
-
-Map<String, String> json3 = <String, String>{'str1': '"hello again"'};
-
 void main() {
   test('None', () {
     final DartamakerFormatterNone none =
@@ -34,8 +23,22 @@ void main() {
         Dartamaker().formatter(DartamakerFormatterTypes.json);
     expect(json.filter(null), 'null');
     expect(json.filter(<int>[1, 2, 3]), '[1,2,3]');
+    final Map<String, dynamic> json1 = <String, dynamic>{
+      'name': 'Billy',
+      'number': 6,
+      'float': 45.0
+    };
     expect(json.filter(json1), '{"name":"Billy","number":6,"float":45.0}');
+    final Map<String, String> json2 = <String, String>{'str1': '"hello"'};
     expect(json.filter(json2), '{"str1":"hello"}');
+    final Map<String, String> json3 = <String, String>{'str1': '"hello again"'};
     expect(json.filter(json3), '{"str1":"hello again"}');
+  });
+  test('CSV', ()
+  {
+    final DartamakerFormatterCSV csv =
+    Dartamaker().formatter(DartamakerFormatterTypes.csv);
+    expect(csv.filter(null), '');
+    expect(csv.filter(5), '');
   });
 }

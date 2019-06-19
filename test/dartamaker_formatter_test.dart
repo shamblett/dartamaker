@@ -46,4 +46,10 @@ void main() {
     expect(csv.filter(t2), '"Hello, again"');
     expect(csv.postCommit(t2), t2);
   });
+  test('Xml', ()
+  {
+    final DartamakerFormatterXml xml =
+    Dartamaker().formatter(DartamakerFormatterTypes.xml);
+    expect(xml.filter(null), '');
+  });
 }

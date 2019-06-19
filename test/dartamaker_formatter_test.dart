@@ -40,5 +40,10 @@ void main() {
     Dartamaker().formatter(DartamakerFormatterTypes.csv);
     expect(csv.filter(null), '');
     expect(csv.filter(5), '');
+    const String t1 = '"Hello"';
+    expect(csv.filter(t1), '""Hello""');
+    const String t2 = 'Hello, again';
+    expect(csv.filter(t2), '"Hello, again"');
+    expect(csv.postCommit(t2), t2);
   });
 }

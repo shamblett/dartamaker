@@ -63,12 +63,12 @@ JSON data is generated in a similar way. This time our template represents a sin
   },
   "telephone": "{{tel}}",
   "pets": ["{{cat}}","{{dog}}"],
-  "score": {{float 1 10 1}},
+  "score": {{float 1,10,1}},
   "email": "{{email}}",
   "url": "{{website}}",
   "description": "{{words 20}}",
   "verified": {{boolean 0.75}},
-  "salary": {{float 10000 70000 0}}
+  "salary": {{float 10000,70000,0}}
 }
 ```
 
@@ -371,7 +371,7 @@ e.g.
 
 ```
 {{float}} ---> 13.8592
-{{float 1000 2000 2}} ---> 1750.06
+{{float 1000,2000,2}} ---> 1750.06
 ```
 
 ### {{integer}}
@@ -387,39 +387,7 @@ e.g.
 
 ```
 {{integer}} ---> 99
-{{integer 1000 2000}} ---> 1523
-```
-
-### {{kuuid}}
-
-Time-sortable, unique identifier. see [here](https://www.npmjs.com/package/kuuid)
-
-Parameters: 
-
-- min (optional) - minimum date
-- max (optional) - maximum date
-
-e.g.
-
-```
-{{kuuid}} ---> 001g8LWk0Svk222Bd0Et0GeaBl1P1gkP
-{{kuuid 2010-01-01 2019-01-01}} ---> 001eWhUE2HLix22HqmL5436NDm1p02X6
-```
-
-### {{kuuidr}}
-
-Time-sortable, unique identifier, but in reverse order. see [here](https://www.npmjs.com/package/kuuid)
-
-Parameters: 
-
-- min (optional) - minimum date
-- max (optional) - maximum date
-
-e.g.
-
-```
-{{kuuidr}} ---> zzzwSGtT2o36oK17mC4R26dkHI1f1Xm0
-{{kuuid 2010-01-01 2019-01-01}} ---> zzyTAKwG1uzH1N4Cl4xi1vZIE22oxrrT
+{{integer 1000,2000}} ---> 1523
 ```
 
 ### {{last}}
@@ -513,7 +481,7 @@ e.g.
 
 ```
 {{normal}} ---> 50.1097
-{{normal 20000 1000 2}} ---> 20370.88
+{{normal 20000,1000,2}} ---> 20370.88
 ```
 
 ### {{postcode}}
@@ -630,7 +598,7 @@ e.g.
 ```
 {{timestamp}} ---> 351543517819
 {{timestamp 946684800000}} --> 1163308913102  // timestamp after 2000-01-01
-{{timestamp 946684800000 978307200000}} --> 959753617250  // timestamp in year 2000
+{{timestamp 946684800000,978307200000}} --> 959753617250  // timestamp in year 2000
 ```
 
 ### {{title}}

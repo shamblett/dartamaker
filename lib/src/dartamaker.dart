@@ -43,7 +43,7 @@ class Dartamaker {
       final List<String> t = s
           .replaceAll(RegExp('^{{'), '')
           .replaceAll(RegExp('}}\$'), '')
-          .split(RegExp(r'(\s+)'))
+          .split(RegExp('(\\s+)'))
           .map((String e) => e.trim())
           .where((String e) => e.isNotEmpty)
           .toList();
@@ -54,7 +54,6 @@ class Dartamaker {
         DartamakerConstants.params: params
       });
     }
-
     return tags;
   }
 }

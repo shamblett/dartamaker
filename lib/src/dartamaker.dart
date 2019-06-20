@@ -11,6 +11,7 @@ part of dartamaker;
 class Dartamaker {
   DartamakerPluginManager _pluginManager = DartamakerPluginManager();
   DartamakerFormatterManager _formatterManager = DartamakerFormatterManager();
+  DartamakerCache _cache = DartamakerCache();
 
   /// Get a plugin by tag name and supplied mapped parameters
   DartamakerPlugin plugin(
@@ -66,11 +67,23 @@ class Dartamaker {
   /// return the new string.
   String swap(String template, List<Map<String, String>> tags,
       DartamakerFormatter formatter) {
-    final String str = template;
+    String str = template;
     // Iterate through the tags
     for (Map<String, String> tag in tags) {
-      DartamakerPlugin plugin = _pluginManager.byTagName(
+      final DartamakerPlugin plugin = _pluginManager.byTagName(
           tag[DartamakerConstants.tag], tag[DartamakerConstants.params]);
+
+      // Calculate the replacement
+      final String replacement = formatter.filter(plugin.apply());
+
+      // Cache the last-generated value for each tag
+      _cache.update(tag[DartamakerConstants.tag], replacement);
+
+      // Switch the tag in the template for the replacement
+      str = str.replaceAll(tag[DartamakerConstants.original], replacement);
     }
+
+    // Apply any post formatting specified by the formatter
+    return formatter.postCommit(str);
   }
 }

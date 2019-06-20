@@ -183,7 +183,7 @@ class DartamakerPluginManager {
     if (params.isEmpty) {
       return DartamakerConstants.pluginNullParam;
     }
-    Map<String, String> ret = Map<String, String>();
+    final Map<String, String> ret = Map<String, String>();
     final List<String> paramArray = params.split(' ');
     switch (name) {
       case DartamakerTagNames.boolean:

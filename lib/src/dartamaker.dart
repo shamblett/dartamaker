@@ -12,10 +12,14 @@ class Dartamaker {
   DartamakerPluginManager _pluginManager = DartamakerPluginManager();
   DartamakerFormatterManager _formatterManager = DartamakerFormatterManager();
 
-  /// Get a plugin by tag name
+  /// Get a plugin by tag name and supplied mapped parameters
   DartamakerPlugin plugin(
           DartamakerTagNames tagName, Map<String, String> params) =>
       _pluginManager.plugin(tagName, params);
+
+  /// Get a plugin by its string tag name and string parameters
+  DartamakerPlugin byTagName(String tagName, String params) =>
+      _pluginManager.byTagName(tagName, params);
 
   /// Get a formatter by type name
   DartamakerFormatter formatter(DartamakerFormatterTypes type) =>

@@ -170,7 +170,7 @@ class DartamakerPluginManager {
   DartamakerPlugin byTagName(String tagName, String params) {
     DartamakerPlugin plugin;
     for (DartamakerTagNames name in DartamakerTagNames.values) {
-      if (tagName == name.toString()) {
+      if (tagName == name.toString().split('.')[1]) {
         final Map<String, String> p = _getParamList(name, params);
         plugin = this.plugin(name, p);
       }
@@ -183,71 +183,71 @@ class DartamakerPluginManager {
     if (params.isEmpty) {
       return DartamakerConstants.pluginNullParam;
     }
-    Map<String, String> ret;
+    Map<String, String> ret = Map<String, String>();
     final List<String> paramArray = params.split(' ');
     switch (name) {
       case DartamakerTagNames.boolean:
-        ret[DartamakerConstants.probability] = params[0];
+        ret[DartamakerConstants.probability] = paramArray[0];
         break;
       case DartamakerTagNames.digits:
-        ret[DartamakerConstants.numdigits] = params[0];
+        ret[DartamakerConstants.numdigits] = paramArray[0];
         break;
       case DartamakerTagNames.emojii:
-        ret[DartamakerConstants.numchars] = params[0];
+        ret[DartamakerConstants.numchars] = paramArray[0];
         break;
       case DartamakerTagNames.float:
-        ret[DartamakerConstants.min] = params[0];
-        params.length >= 2
-            ? ret[DartamakerConstants.max] = params[1]
+        ret[DartamakerConstants.min] = paramArray[0];
+        paramArray.length >= 2
+            ? ret[DartamakerConstants.max] = paramArray[1]
             : ret[DartamakerConstants.max] = null;
-        params.length == 3
-            ? ret[DartamakerConstants.decimalplaces] = params[2]
+        paramArray.length == 3
+            ? ret[DartamakerConstants.decimalplaces] = paramArray[2]
             : ret[DartamakerConstants.decimalplaces] = null;
         break;
       case DartamakerTagNames.integer:
-        ret[DartamakerConstants.min] = params[0];
-        params.length == 2
-            ? ret[DartamakerConstants.max] = params[1]
+        ret[DartamakerConstants.min] = paramArray[0];
+        paramArray.length == 2
+            ? ret[DartamakerConstants.max] = paramArray[1]
             : ret[DartamakerConstants.max] = null;
         break;
       case DartamakerTagNames.dateiso:
-        ret[DartamakerConstants.min] = params[0];
-        params.length == 2
-            ? ret[DartamakerConstants.max] = params[1]
+        ret[DartamakerConstants.min] = paramArray[0];
+        paramArray.length == 2
+            ? ret[DartamakerConstants.max] = paramArray[1]
             : ret[DartamakerConstants.max] = null;
         break;
       case DartamakerTagNames.date:
-        ret[DartamakerConstants.min] = params[0];
-        params.length == 2
-            ? ret[DartamakerConstants.max] = params[1]
+        ret[DartamakerConstants.min] = paramArray[0];
+        paramArray.length == 2
+            ? ret[DartamakerConstants.max] = paramArray[1]
             : ret[DartamakerConstants.max] = null;
         break;
       case DartamakerTagNames.letters:
-        ret[DartamakerConstants.numletters] = params[0];
+        ret[DartamakerConstants.numletters] = paramArray[0];
         break;
       case DartamakerTagNames.normal:
-        ret[DartamakerConstants.min] = params[0];
-        params.length >= 2
-            ? ret[DartamakerConstants.stddev] = params[1]
+        ret[DartamakerConstants.min] = paramArray[0];
+        paramArray.length >= 2
+            ? ret[DartamakerConstants.stddev] = paramArray[1]
             : ret[DartamakerConstants.stddev] = null;
-        params.length == 3
-            ? ret[DartamakerConstants.decimalplaces] = params[2]
+        paramArray.length == 3
+            ? ret[DartamakerConstants.decimalplaces] = paramArray[2]
             : ret[DartamakerConstants.decimalplaces] = null;
         break;
       case DartamakerTagNames.oneof:
-        ret[DartamakerConstants.args] = params[0];
+        ret[DartamakerConstants.args] = paramArray[0];
         break;
       case DartamakerTagNames.price:
-        ret[DartamakerConstants.min] = params[0];
-        params.length == 2
-            ? ret[DartamakerConstants.max] = params[1]
+        ret[DartamakerConstants.min] = paramArray[0];
+        paramArray.length == 2
+            ? ret[DartamakerConstants.max] = paramArray[1]
             : ret[DartamakerConstants.max] = null;
         break;
       case DartamakerTagNames.uuid:
-        ret[DartamakerConstants.length] = params[0];
+        ret[DartamakerConstants.length] = paramArray[0];
         break;
       case DartamakerTagNames.words:
-        ret[DartamakerConstants.count] = params[0];
+        ret[DartamakerConstants.count] = paramArray[0];
         break;
       default:
         break;

@@ -11,8 +11,8 @@ part of dartamaker;
 class DartamakerCache {
   Map<DartamakerTagNames, String> _cache = Map<DartamakerTagNames, String>();
 
-  /// Get a plugin cached value
-  String value(DartamakerTagNames tagName) {
+  /// Get a plugin cached value by tag name
+  String valueByTagName(DartamakerTagNames tagName) {
     String ret;
     if (_cache.containsKey(tagName)) {
       ret = _cache[tagName];
@@ -20,14 +20,31 @@ class DartamakerCache {
     return ret;
   }
 
-  /// Update a value
-  void update(String tagName, String value) {
+  /// Get a plugin cached value by string tag name
+  String valueByStringTagName(String tagName) {
+    String ret;
+    for (DartamakerTagNames name in DartamakerTagNames.values) {
+      if (name.toString().split('.')[1] == tagName) {
+        if (_cache.containsKey(name)) {
+          ret = _cache[name];
+        }
+      }
+    }
+    return ret;
+  }
+
+  /// Update a value by string tag name
+  void updateByStringTagName(String tagName, String value) {
     for (DartamakerTagNames name in DartamakerTagNames.values) {
       if (name.toString().split('.')[1] == tagName) {
         _cache[name] = value;
       }
     }
   }
+
+  /// Update a value by tag name
+  void updateByTagName(DartamakerTagNames tagName, String value) =>
+      _cache[tagName] = value;
 
   /// To String
   @override

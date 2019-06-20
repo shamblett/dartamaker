@@ -13,7 +13,8 @@ class DartamakerPluginManager {
 
   /// Get a plugin by tag name
   DartamakerPlugin plugin(
-      DartamakerTagNames tagName, Map<String, String> params) {
+      DartamakerTagNames tagName, Map<String, String> params,
+      [DartamakerCache cache]) {
     DartamakerPlugin ret;
     switch (tagName) {
       case DartamakerTagNames.airport:
@@ -158,8 +159,8 @@ class DartamakerPluginManager {
       case DartamakerTagNames.zip:
         ret = DartamakerPluginZip();
         break;
-      case DartamakerTagNames.last: // Dummy plugin
-        ret = DartamakerPluginDummy();
+      case DartamakerTagNames.last:
+        ret = DartamakerPluginLast(cache?.valueByStringTagName(params[DartamakerConstants.name]));
         break;
     }
 
@@ -167,12 +168,12 @@ class DartamakerPluginManager {
   }
 
   /// Get a plugin by its string tag name
-  DartamakerPlugin byTagName(String tagName, String params) {
+  DartamakerPlugin byStringTagName(String tagName, String params, DartamakerCache cache) {
     DartamakerPlugin plugin;
     for (DartamakerTagNames name in DartamakerTagNames.values) {
       if (tagName == name.toString().split('.')[1]) {
         final Map<String, String> p = _getParamList(name, params);
-        plugin = this.plugin(name, p);
+        plugin = this.plugin(name, p, cache);
       }
     }
     return plugin;
@@ -248,6 +249,9 @@ class DartamakerPluginManager {
         break;
       case DartamakerTagNames.words:
         ret[DartamakerConstants.count] = paramArray[0];
+        break;
+      case DartamakerTagNames.last:
+        ret[DartamakerConstants.name] = paramArray[0];
         break;
       default:
         break;

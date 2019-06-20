@@ -16,11 +16,11 @@ class Dartamaker {
   /// Get a plugin by tag name and supplied mapped parameters
   DartamakerPlugin plugin(
           DartamakerTagNames tagName, Map<String, String> params) =>
-      _pluginManager.plugin(tagName, params);
+      _pluginManager.plugin(tagName, params, _cache);
 
   /// Get a plugin by its string tag name and string parameters
   DartamakerPlugin byTagName(String tagName, String params) =>
-      _pluginManager.byTagName(tagName, params);
+      _pluginManager.byStringTagName(tagName, params, _cache);
 
   /// Get a formatter by type name
   DartamakerFormatter formatter(DartamakerFormatterTypes type) =>
@@ -70,17 +70,19 @@ class Dartamaker {
     String str = template;
     // Iterate through the tags
     for (Map<String, String> tag in tags) {
-      final DartamakerPlugin plugin = _pluginManager.byTagName(
-          tag[DartamakerConstants.tag], tag[DartamakerConstants.params]);
+      final DartamakerPlugin plugin = _pluginManager.byStringTagName(
+          tag[DartamakerConstants.tag], tag[DartamakerConstants.params], _cache);
 
       // Calculate the replacement
       final String replacement = formatter.filter(plugin.apply());
 
-      // Cache the last-generated value for each tag
-      _cache.update(tag[DartamakerConstants.tag], replacement);
+      if (replacement != null) {
+        // Cache the last-generated value for each tag
+        _cache.updateByStringTagName(tag[DartamakerConstants.tag], replacement);
 
-      // Switch the tag in the template for the replacement
-      str = str.replaceAll(tag[DartamakerConstants.original], replacement);
+        // Switch the tag in the template for the replacement
+        str = str.replaceAll(tag[DartamakerConstants.original], replacement);
+      }
     }
 
     // Apply any post formatting specified by the formatter

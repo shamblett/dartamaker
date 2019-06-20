@@ -43,6 +43,7 @@ part 'src/plugins/dartamaker_plugin_date.dart';
 part 'src/plugins/dartamaker_plugin_latitude.dart';
 part 'src/plugins/dartamaker_plugin_longitude.dart';
 part 'src/plugins/dartamaker_plugin_letters.dart';
+part 'src/plugins/dartamaker_plugin_last.dart';
 part 'src/plugins/dartamaker_plugin_name.dart';
 part 'src/plugins/dartamaker_plugin_normal.dart';
 part 'src/plugins/dartamaker_plugin_oneof.dart';

@@ -92,6 +92,9 @@ class DartamakerConstants {
   /// Words
   static const String count = 'count';
 
+  /// Last
+  static const String name = 'name';
+
   /// Plugin null parameter
   static Map<String, String> pluginNullParam = Map<String, String>();
 

@@ -56,4 +56,17 @@ class Dartamaker {
     }
     return tags;
   }
+
+  /// Using the supplied template and list of tag objects found within it
+  /// and a the supplied formatter object, make all the substitutions and
+  /// return the new string.
+  String swap(String template, List<Map<String, String>> tags,
+      DartamakerFormatter formatter) {
+    final String str = template;
+    // Iterate through the tags
+    for (Map<String, String> tag in tags) {
+      DartamakerPlugin plugin = _pluginManager.byTagName(
+          tag[DartamakerConstants.tag], tag[DartamakerConstants.params]);
+    }
+  }
 }

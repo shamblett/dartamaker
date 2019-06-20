@@ -165,4 +165,93 @@ class DartamakerPluginManager {
 
     return ret;
   }
+
+  /// Get a plugin by its string tag name
+  DartamakerPlugin byTagName(String tagName, String params) {
+    DartamakerPlugin plugin;
+    for (DartamakerTagNames name in DartamakerTagNames.values) {
+      if (tagName == name.toString()) {
+        final Map<String, String> p = _getParamList(name, params);
+        plugin = this.plugin(name, p);
+      }
+    }
+    return plugin;
+  }
+
+  /// Get a parameter list for a tag from its string representation
+  Map<String, String> _getParamList(DartamakerTagNames name, String params) {
+    if (params.isEmpty) {
+      return DartamakerConstants.pluginNullParam;
+    }
+    Map<String, String> ret;
+    final List<String> paramArray = params.split(' ');
+    switch (name) {
+      case DartamakerTagNames.boolean:
+        ret[DartamakerConstants.probability] = params[0];
+        break;
+      case DartamakerTagNames.digits:
+        ret[DartamakerConstants.numdigits] = params[0];
+        break;
+      case DartamakerTagNames.emojii:
+        ret[DartamakerConstants.numchars] = params[0];
+        break;
+      case DartamakerTagNames.float:
+        ret[DartamakerConstants.min] = params[0];
+        params.length >= 2
+            ? ret[DartamakerConstants.max] = params[1]
+            : ret[DartamakerConstants.max] = null;
+        params.length == 3
+            ? ret[DartamakerConstants.decimalplaces] = params[2]
+            : ret[DartamakerConstants.decimalplaces] = null;
+        break;
+      case DartamakerTagNames.integer:
+        ret[DartamakerConstants.min] = params[0];
+        params.length == 2
+            ? ret[DartamakerConstants.max] = params[1]
+            : ret[DartamakerConstants.max] = null;
+        break;
+      case DartamakerTagNames.dateiso:
+        ret[DartamakerConstants.min] = params[0];
+        params.length == 2
+            ? ret[DartamakerConstants.max] = params[1]
+            : ret[DartamakerConstants.max] = null;
+        break;
+      case DartamakerTagNames.date:
+        ret[DartamakerConstants.min] = params[0];
+        params.length == 2
+            ? ret[DartamakerConstants.max] = params[1]
+            : ret[DartamakerConstants.max] = null;
+        break;
+      case DartamakerTagNames.letters:
+        ret[DartamakerConstants.numletters] = params[0];
+        break;
+      case DartamakerTagNames.normal:
+        ret[DartamakerConstants.min] = params[0];
+        params.length >= 2
+            ? ret[DartamakerConstants.stddev] = params[1]
+            : ret[DartamakerConstants.stddev] = null;
+        params.length == 3
+            ? ret[DartamakerConstants.decimalplaces] = params[2]
+            : ret[DartamakerConstants.decimalplaces] = null;
+        break;
+      case DartamakerTagNames.oneof:
+        ret[DartamakerConstants.args] = params[0];
+        break;
+      case DartamakerTagNames.price:
+        ret[DartamakerConstants.min] = params[0];
+        params.length == 2
+            ? ret[DartamakerConstants.max] = params[1]
+            : ret[DartamakerConstants.max] = null;
+        break;
+      case DartamakerTagNames.uuid:
+        ret[DartamakerConstants.length] = params[0];
+        break;
+      case DartamakerTagNames.words:
+        ret[DartamakerConstants.count] = params[0];
+        break;
+      default:
+        break;
+    }
+    return ret;
+  }
 }

@@ -8,9 +8,6 @@
 part of dartamaker;
 // ignore_for_file: public_member_api_docs
 
-/// Formatter
-enum DartamakerFormatterTypes { none, csv, json, xml }
-
 /// Package wide constants
 class DartamakerConstants {
   /// Plugin parameters

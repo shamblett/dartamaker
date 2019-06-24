@@ -122,94 +122,101 @@ void main() {
     final DartamakerFormatter formatter = DartamakerFormatterNone();
 
     test('Single Uuid', () {
-      final Map<String, String> params = {
+      final Map<String, String> params = <String, String>{
         DartamakerConstants.original: '{{uuid}}',
         DartamakerConstants.tag: 'uuid',
         DartamakerConstants.params: ''
       };
       const String template = 'Here is the {{uuid}} for you';
-      final String res = maker.swap(template, [params], formatter);
+      final String res =
+          maker.swap(template, <Map<String, String>>[params], formatter);
       expect(res.contains('{{'), isFalse);
       expect(res.contains('}}'), isFalse);
       expect(res.length, template.length + 8);
     });
     test('Double Uuid', () {
-      final Map<String, String> params = {
+      final Map<String, String> params = <String, String>{
         DartamakerConstants.original: '{{uuid}}',
         DartamakerConstants.tag: 'uuid',
         DartamakerConstants.params: ''
       };
       const String template = 'Here is the {{uuid}} for you and again {{uuid}}';
-      final String res = maker.swap(template, [params], formatter);
+      final String res =
+          maker.swap(template, <Map<String, String>>[params], formatter);
       expect(res.contains('{{'), isFalse);
       expect(res.contains('}}'), isFalse);
       expect(res.length, template.length + 16);
     });
     test('Single Word', () {
-      final Map<String, String> params = {
+      final Map<String, String> params = <String, String>{
         DartamakerConstants.original: '{{words}}',
         DartamakerConstants.tag: 'words',
         DartamakerConstants.params: ''
       };
       const String template = 'Here are the {{words}} for you';
-      final String res = maker.swap(template, [params], formatter);
+      final String res =
+          maker.swap(template, <Map<String, String>>[params], formatter);
       expect(res.contains('{{'), isFalse);
       expect(res.contains('}}'), isFalse);
       expect(res.length > template.length, isTrue);
     });
     test('Double Word with parameters', () {
-      final Map<String, String> params = {
+      final Map<String, String> params = <String, String>{
         DartamakerConstants.original: '{{words}}',
         DartamakerConstants.tag: 'words',
         DartamakerConstants.params: '10'
       };
       const String template =
           'Here is the {{words}} for you and again {{words}}';
-      final String res = maker.swap(template, [params], formatter);
+      final String res =
+          maker.swap(template, <Map<String, String>>[params], formatter);
       expect(res.contains('{{'), isFalse);
       expect(res.contains('}}'), isFalse);
       expect(res.length > template.length, isTrue);
     });
     test('Mixed', () {
-      final Map<String, String> params = {
+      final Map<String, String> params = <String, String>{
         DartamakerConstants.original: '{{words}}',
         DartamakerConstants.tag: 'words',
         DartamakerConstants.params: '2'
       };
-      final Map<String, String> params1 = {
+      final Map<String, String> params1 = <String, String>{
         DartamakerConstants.original: '{{uuid}}',
         DartamakerConstants.tag: 'uuid',
         DartamakerConstants.params: ''
       };
       const String template =
           'Here are 2 words "{{words}}" for you and a uuid "{{uuid}}"';
-      final String res = maker.swap(template, [params, params1], formatter);
+      final String res = maker.swap(
+          template, <Map<String, String>>[params, params1], formatter);
       expect(res.contains('{{'), isFalse);
       expect(res.contains('}}'), isFalse);
       expect(res.length > template.length, isTrue);
     });
     test('Last', () {
       String template = 'Here is the first uuid -{{uuid}}';
-      final Map<String, String> params1 = {
+      final Map<String, String> params1 = <String, String>{
         DartamakerConstants.original: '{{uuid}}',
         DartamakerConstants.tag: 'uuid',
         DartamakerConstants.params: ''
       };
-      maker.swap(template, [params1], formatter);
+      maker.swap(template, <Map<String, String>>[params1], formatter);
       template = 'Here is the second uuid -{{uuid}}';
-      final Map<String, String> params2 = {
+      final Map<String, String> params2 = <String, String>{
         DartamakerConstants.original: '{{uuid}}',
         DartamakerConstants.tag: 'uuid',
         DartamakerConstants.params: ''
       };
-      final String res1 = maker.swap(template, [params2], formatter);
+      final String res1 =
+          maker.swap(template, <Map<String, String>>[params2], formatter);
       template = 'Here is the last uuid -{{last uuid}}';
-      final Map<String, String> params = {
+      final Map<String, String> params = <String, String>{
         DartamakerConstants.original: '{{last uuid}}',
         DartamakerConstants.tag: 'last',
         DartamakerConstants.params: 'uuid'
       };
-      final String res2 = maker.swap(template, [params], formatter);
+      final String res2 =
+          maker.swap(template, <Map<String, String>>[params], formatter);
       expect(res2.contains('{{'), isFalse);
       expect(res2.contains('}}'), isFalse);
       expect(res2.length > template.length, isTrue);

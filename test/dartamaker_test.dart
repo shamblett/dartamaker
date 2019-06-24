@@ -117,7 +117,6 @@ void main() {
     });
   });
 
-
   group('Swap', () {
     final Dartamaker maker = Dartamaker();
     final DartamakerFormatter formatter = DartamakerFormatterNone();
@@ -164,7 +163,8 @@ void main() {
         DartamakerConstants.tag: 'words',
         DartamakerConstants.params: '10'
       };
-      const String template = 'Here is the {{words}} for you and again {{words}}';
+      const String template =
+          'Here is the {{words}} for you and again {{words}}';
       final String res = maker.swap(template, [params], formatter);
       expect(res.contains('{{'), isFalse);
       expect(res.contains('}}'), isFalse);
@@ -181,25 +181,39 @@ void main() {
         DartamakerConstants.tag: 'uuid',
         DartamakerConstants.params: ''
       };
-      const String template = 'Here are 2 words "{{words}}" for you and a uuid "{{uuid}}"';
+      const String template =
+          'Here are 2 words "{{words}}" for you and a uuid "{{uuid}}"';
       final String res = maker.swap(template, [params, params1], formatter);
       expect(res.contains('{{'), isFalse);
       expect(res.contains('}}'), isFalse);
       expect(res.length > template.length, isTrue);
     });
-    test('Last', ()
-    {
-      const String template = 'Here is the last uuid "{{last uuid}}"';
+    test('Last', () {
+      String template = 'Here is the first uuid -{{uuid}}';
+      final Map<String, String> params1 = {
+        DartamakerConstants.original: '{{uuid}}',
+        DartamakerConstants.tag: 'uuid',
+        DartamakerConstants.params: ''
+      };
+      maker.swap(template, [params1], formatter);
+      template = 'Here is the second uuid -{{uuid}}';
+      final Map<String, String> params2 = {
+        DartamakerConstants.original: '{{uuid}}',
+        DartamakerConstants.tag: 'uuid',
+        DartamakerConstants.params: ''
+      };
+      final String res1 = maker.swap(template, [params2], formatter);
+      template = 'Here is the last uuid -{{last uuid}}';
       final Map<String, String> params = {
-        DartamakerConstants.original: '{{last}}',
+        DartamakerConstants.original: '{{last uuid}}',
         DartamakerConstants.tag: 'last',
         DartamakerConstants.params: 'uuid'
       };
-      final String res = maker.swap(template, [params], formatter);
-      print(res);
-      expect(res.contains('{{'), isFalse);
-      expect(res.contains('}}'), isFalse);
-      expect(res.length > template.length, isTrue);
+      final String res2 = maker.swap(template, [params], formatter);
+      expect(res2.contains('{{'), isFalse);
+      expect(res2.contains('}}'), isFalse);
+      expect(res2.length > template.length, isTrue);
+      expect(res2.split('-')[1], res1.split('-')[1]);
     });
   });
 }

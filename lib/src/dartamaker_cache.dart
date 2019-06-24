@@ -46,6 +46,9 @@ class DartamakerCache {
   void updateByTagName(DartamakerTagNames tagName, String value) =>
       _cache[tagName] = value;
 
+  /// Clear
+  void clear() => _cache.clear();
+
   /// To String
   @override
   String toString() => _cache.toString();

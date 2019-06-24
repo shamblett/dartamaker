@@ -71,7 +71,9 @@ class Dartamaker {
     // Iterate through the tags
     for (Map<String, String> tag in tags) {
       final DartamakerPlugin plugin = _pluginManager.byStringTagName(
-          tag[DartamakerConstants.tag], tag[DartamakerConstants.params], _cache);
+          tag[DartamakerConstants.tag],
+          tag[DartamakerConstants.params],
+          _cache);
 
       // Calculate the replacement
       final String replacement = formatter.filter(plugin.apply());
@@ -87,5 +89,26 @@ class Dartamaker {
 
     // Apply any post formatting specified by the formatter
     return formatter.postCommit(str);
+  }
+
+  /// Generate some data based on the template, the format and the
+  /// number of iterations
+  List<String> generate(
+      String str, DartamakerFormatter formatter, int iterations) {
+    final List<String> res = List<String>();
+
+    /// Locate tags in the template
+    final List<Map<String, String>> tags = findTags(str);
+
+    /// Iterate
+    int count = 1;
+    do {
+      _cache.clear();
+      final String tmp = swap(str, tags, formatter);
+      res.add(tmp);
+      count++;
+    } while (count < iterations);
+
+    return res;
   }
 }

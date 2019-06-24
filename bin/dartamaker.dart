@@ -9,7 +9,7 @@ import 'package:dartamaker/dartamaker.dart';
 import 'package:args/args.dart';
 
 int main(List<String> args) {
-  Dartamaker datagen = Dartamaker();
+  final Dartamaker datagen = Dartamaker();
 
   int iterations = 1;
   DartamakerFormatter formatter = DartamakerFormatterNone();
@@ -45,7 +45,25 @@ int main(List<String> args) {
     abbr: 'l',
     help: 'List available tags',
   );
+  parser.addOption(
+    'help',
+    abbr: 'h',
+  );
 
   parser.parse(args);
+  final Map<String, Option> options = parser.options;
+
+  // Help
+  if (options.containsKey('help')) {
+    print(parser.usage);
+    return 0;
+  }
+
+  // Tag list
+  if (options.containsKey('list')) {
+    print(datagen.allTagNames());
+    return 0;
+  }
+
   return 0;
 }

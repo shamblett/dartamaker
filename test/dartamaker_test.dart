@@ -223,4 +223,24 @@ void main() {
       expect(res2.split('-')[1], res1.split('-')[1]);
     });
   });
+
+  group('Generate', () {
+    final Dartamaker maker = Dartamaker();
+    final DartamakerFormatter formatter = DartamakerFormatterNone();
+    const String template =
+        'Some words {{words 3}}, a timestamp {{timestamp}} and a name {{name}}';
+    test('Null iteration', () {
+      final List<String> res = maker.generate(template, formatter, 0);
+      expect(res.length, 1);
+      expect(res[0], template);
+    });
+    test('Single iteration', () {
+      final List<String> res = maker.generate(template, formatter, 1);
+      expect(res.length, 1);
+    });
+    test('Multiple iteration', () {
+      final List<String> res = maker.generate(template, formatter, 10);
+      expect(res.length, 10);
+    });
+  });
 }

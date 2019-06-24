@@ -111,7 +111,7 @@ class Dartamaker {
       final String tmp = swap(str, tags, formatter);
       res.add(tmp);
       count++;
-    } while (count < iterations);
+    } while (count <= iterations);
 
     return res;
   }

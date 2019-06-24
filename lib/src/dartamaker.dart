@@ -95,6 +95,10 @@ class Dartamaker {
   /// number of iterations
   List<String> generate(
       String str, DartamakerFormatter formatter, int iterations) {
+    if (iterations <= 0) {
+      return <String>[str];
+    }
+
     final List<String> res = List<String>();
 
     /// Locate tags in the template

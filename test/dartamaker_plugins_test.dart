@@ -392,7 +392,7 @@ void main() {
       final DartamakerPluginTimestamp t =
           Dartamaker().plugin(DartamakerTagNames.timestamp, null);
       final String a1 = t.apply();
-      expect(a1.length, anyOf(14,15));
+      expect(a1.length, anyOf(14, 15));
     });
     test('Titles', () {
       final DartamakerPluginTitle title =
@@ -475,7 +475,7 @@ void main() {
     });
     test('Integer - 2 param', () {
       final DartamakerPluginInteger integer =
-      Dartamaker().byTagName('integer', '1000 2000');
+          Dartamaker().byTagName('integer', '1000 2000');
       expect(integer, isA<DartamakerPluginInteger>());
       final String a1 = integer.apply();
       expect(a1.length, 4);
@@ -484,7 +484,7 @@ void main() {
     });
     test('Integer - 1 param', () {
       final DartamakerPluginInteger integer =
-      Dartamaker().byTagName('integer', '10');
+          Dartamaker().byTagName('integer', '10');
       expect(integer, isA<DartamakerPluginInteger>());
       final String a1 = integer.apply();
       expect(a1.length, anyOf(2, 3));

@@ -160,7 +160,8 @@ class DartamakerPluginManager {
         ret = DartamakerPluginZip();
         break;
       case DartamakerTagNames.last:
-        ret = DartamakerPluginLast(cache?.valueByStringTagName(params[DartamakerConstants.name]));
+        ret = DartamakerPluginLast(
+            cache?.valueByStringTagName(params[DartamakerConstants.name]));
         break;
     }
 
@@ -168,15 +169,11 @@ class DartamakerPluginManager {
   }
 
   /// Get a plugin by its string tag name
-  DartamakerPlugin byStringTagName(String tagName, String params, DartamakerCache cache) {
-    DartamakerPlugin plugin;
-    for (DartamakerTagNames name in DartamakerTagNames.values) {
-      if (tagName == name.toString().split('.')[1]) {
-        final Map<String, String> p = _getParamList(name, params);
-        plugin = this.plugin(name, p, cache);
-      }
-    }
-    return plugin;
+  DartamakerPlugin byStringTagName(
+      String tagName, String params, DartamakerCache cache) {
+    final DartamakerTagNames name = DartamakerTagname.fromString(tagName);
+    final Map<String, String> p = _getParamList(name, params);
+    return plugin(name, p, cache);
   }
 
   /// Get a parameter list for a tag from its string representation

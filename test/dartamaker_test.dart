@@ -243,4 +243,13 @@ void main() {
       expect(res.length, 10);
     });
   });
+
+  group('Misc', () {
+    final Dartamaker maker = Dartamaker();
+    test('All tags', () {
+      final List<String> tags = maker.allTagNames();
+      expect(tags.length, DartamakerTagNames.values.length);
+      tags.forEach(print);
+    });
+  });
 }

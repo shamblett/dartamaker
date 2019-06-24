@@ -115,4 +115,13 @@ class Dartamaker {
 
     return res;
   }
+
+  /// List all the tag names
+  List<String> allTagNames() {
+    final List<String> ret = List<String>();
+    for (DartamakerTagNames tagName in DartamakerTagNames.values) {
+      ret.add('${DartamakerTagname.asString(tagName)}\n');
+    }
+    return ret;
+  }
 }

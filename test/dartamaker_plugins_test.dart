@@ -392,7 +392,7 @@ void main() {
       final DartamakerPluginTimestamp t =
           Dartamaker().plugin(DartamakerTagNames.timestamp, null);
       final String a1 = t.apply();
-      expect(a1.length, 15);
+      expect(a1.length, anyOf(14,15));
     });
     test('Titles', () {
       final DartamakerPluginTitle title =
@@ -448,12 +448,6 @@ void main() {
           Dartamaker().plugin(DartamakerTagNames.zip, null);
       final String a1 = zip.apply();
       expect(a1.length, 5);
-    });
-    test('Last', () {
-      final DartamakerPluginDummy dummy =
-          Dartamaker().plugin(DartamakerTagNames.last, null);
-      final String a1 = dummy.apply();
-      expect(a1, 'Dummy');
     });
   });
 

@@ -20,7 +20,7 @@ int main(List<String> args) {
 
   // Initialize the argument parser
   final ArgParser parser = ArgParser();
-  final List<String> formatOptions = <String>['json', 'csv', 'xml', 'none'];
+  final List<String> formatOptions = DartamakerFormattertype.asStringList();
   parser.addOption('format',
       abbr: 'f',
       defaultsTo: 'none',
@@ -69,7 +69,7 @@ int main(List<String> args) {
     return 0;
   }
 
-  // Get the template as a string if we have one
+  // Get the template as a string or use the arguments
   if (templatePath != null) {
     final File tmp = File(templatePath);
     try {
@@ -78,11 +78,18 @@ int main(List<String> args) {
       print('Unable to read template file, $e.message');
       return -1;
     }
+  } else {
+    if (results.rest.isNotEmpty) {
+      input = results.rest.join(' ');
+    } else {
+      print('No input - exiting');
+      return 0;
+    }
   }
 
   // Generate the data and output to stdout
   final List<String> output = datagen.generate(input, formatter, iterations);
-  print(output);
+  print(output.join('\n'));
 
   return 0;
 }

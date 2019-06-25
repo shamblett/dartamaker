@@ -28,4 +28,13 @@ class DartamakerFormattertype {
   /// As string
   static String asString(DartamakerFormatterTypes type) =>
       type.toString().split('.')[1];
+
+  /// As string list
+  static List<String> asStringList() {
+    final List<String> ret = List<String>();
+    for (DartamakerFormatterTypes type in DartamakerFormatterTypes.values) {
+      ret.add(type.toString().split('.')[1]);
+    }
+    return ret;
+  }
 }

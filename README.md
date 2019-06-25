@@ -4,18 +4,18 @@ A command-line Dart script and library that generates JSON or CSV data in bulk. 
 then the chances are you'll need to populate a database (whether SQL or NoSQL) with some reasonably realistic data
 to test and benchmark with.
 
-This is a port of the Node.js dartamaker tool, see the AUTHORS file for further details.
+This is a port of the Node.js [datamaker](https://github.com/glynnbird/datamaker) tool, see the AUTHORS file for further details.
 
 The *dartamaker* tool allows sample data to be created by supplying:
 
 - a template of how the data is to look. The data can contain multiple placeholders where sample data will be inserted e.g. `{{firstname}},{{lastname}},{{date}}`.
-- the format of the output data: `none`, `json` or `csv`. This effects how the generated string data is processed prior to delivery.
+- the format of the output data: `none`, `json` `xml` or `csv`. This effects how the generated string data is processed prior to delivery.
 - the number of records to be created.
 
 Quick example:
 
-```sh
-$ echo "{{uuid}},{{date}},{{firstname}} {{surname}},{{email}}" | dartamaker --format csv --iterations 5
+```
+$ dartamaker --format csv --iterations 5 "{{uuid}},{{date}},{{firstname}} {{surname}},{{email}}" 
 10U9SHHE2463IH9E,1970-10-12,Marylee Dodge,meagan-harwell@betaine.com
 379QYC80U5KYQP4D,1994-11-09,Melany Fuqua,jennette.labonte@yahoo.com
 DERC4Y2BQ6HCI0HI,1983-08-11,Cathleen Leal,earlenemattson@gmail.com
@@ -23,6 +23,11 @@ DERC4Y2BQ6HCI0HI,1983-08-11,Cathleen Leal,earlenemattson@gmail.com
 JDYSVPTAEXKEF9D8,1982-10-29,Dionne Vann,martin.renfro@hemicrane.com
 ```
 
+You can activate dartamaker for command line use by executing the following command :-
+
+```
+pub global activate dartamaker
+```
 
 ## Command-line parameters reference
 
@@ -30,6 +35,8 @@ JDYSVPTAEXKEF9D8,1982-10-29,Dionne Vann,martin.renfro@hemicrane.com
 - `--format`/`-f` - the target file format (`none`, `csv`, `json` or `xml`). Default `none` e.g. `--format json`
 - `--iterations`/`-i` - the number of records to create. Default `1` e.g. `--iterations 5000`
 - `--list`/`-l` - list the available tags 
+
+The command line parameters must come before any input to process.
 
 ## Generating CSV files
 
@@ -51,7 +58,7 @@ $ dartamaker -t ./template.txt -f csv -i 500
 
 JSON data is generated in a similar way. This time our template represents a single JSON document:
 
-```js
+```
 {
   "_id": "{{uuid}}",
   "name": "{{firstname}} {{surname}}",
@@ -76,7 +83,7 @@ Save the template as `template.json`.
 
 Run the `dartamaker` as before but with `json` as the format parameter:
 
-```sh
+```
 $ dartamaker -t ./template.json -f json -i 500 
 {"_id":"G3BX8LUGFHAGFX7A","name":"Chelsea Ballou","dob":"2003-10-10","address":{"street":"0055 Houghton","town":"Tynemouth","postode":"HU0 4GF"},"telephone":"+509-9934-828-292","pets":["Murphy","Nala"],"score":9.5,"email":"nelson_jones@spousy.com","url":"http://propriospinal.com","description":"outmate solarometer Zapara tyro keratinize galactolytic divestiture swardy petaled tearlessness adjutorious epigynum jotation tavernly suggestum Eriophyes straint Tsuma malignation autoscience","verified":true,"salary":32082}
 ...
@@ -117,9 +124,9 @@ The Mustache-style tags you may use are listed below. Some tags allow extra para
 The code for the tags can be found in the `plugins` folder of the source code.
 
 - A-E - [airport](#airport) [autoinc](#autoinc) [boolean](#boolean) [cat](#cat) [city](#city) [company](#company) [country](#country) [creditcard](#creditcard) [currency](#currency) [date](#date) [date_iso](#date_iso) [digits](#digits) [dog](#dog) [domainname](#domainname) [email](#email) [emojii](#emojii)
-- F-O - [firstname](#firstname) [float](#float) [integer](#integer) [kuuid](#kuuid) [kuuidr](#kuuidr) [last](#last) [latitude](#latitude) [letters](#letters) [longitude](#longitude) [oneof](#oneof) [name](#name) [normal](#normal)
+- F-O - [firstname](#firstname) [float](#float) [integer](#integer)  [last](#last) [latitude](#latitude) [letters](#letters) [longitude](#longitude) [oneof](#oneof) [name](#name) [normal](#normal)
 - P-T - [postcode](#postcode) [price](#state) [state](#statecode) [statecode](#statecode) [street](#street) [surname](#surname) [tel](#tel) [time](#time) [timestamp](#timestamp) [title](#title) [tld](#tld) [town](#town)
-- U-Z - [url](#url) [uuid](#uuid) [website](#website) [word](#) [words](#words) [zip](#zip)
+- U-Z - [url](#url) [uuid](#uuid) [website](#website) [word](#word) [words](#words) [zip](#zip)
 
 ### {{airport}}
 
@@ -714,9 +721,9 @@ e.g.
 
 ## Formatting
 
-The `--formst`/`-f` parameter defines
+The `--format`/`-f` parameter defines
 
-- how the text in each substition is pre-processed before output e.g. in `json` mode double quotes are escaped correctly.
+- how the text in each substitution is pre-processed before output e.g. in `json` mode double quotes are escaped correctly.
 - how each line of output is processed prior to output e.g. in `json` mode the completed template is parsed to check it is valid JSON before being output on a a single line followed by a `\n` character
 
 The code for the formatters can be found in the `formatters` folder of the source code.
@@ -727,8 +734,8 @@ The data generated by this tool is biased towards UK and US data sets. The names
 
 Note that generating an address with `{{street}},{{city}},{{state}},{{statecode}}{{zip}}` will generate that appears at a glance to be a reasonble address, but is patently nonsense:
 
-```sh
-$ echo "{{street}},{{city}},{{state}},{{statecode}}{{zip}}" | dartamaker
+```
+$ dartamaker "{{street}},{{city}},{{state}},{{statecode}}{{zip}}"
 6682 Crowcroft Circle,Nashua,New York,UT00769
 ```
 

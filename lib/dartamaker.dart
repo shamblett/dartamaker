@@ -8,7 +8,6 @@
 library dartamaker;
 
 import 'dart:convert';
-import 'dart:io';
 import 'dart:math';
 
 /// The dartamaker package exported interface

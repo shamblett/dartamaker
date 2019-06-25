@@ -15,6 +15,7 @@ int main(List<String> args) {
   DartamakerFormatter formatter = DartamakerFormatterNone();
   String templatePath = '';
 
+  // Initialize the argument parser
   final ArgParser parser = ArgParser();
   parser.addOption('format',
       abbr: 'f',
@@ -40,27 +41,28 @@ int main(List<String> args) {
     help: 'The path of the template file',
     callback: (String param) => templatePath = param,
   );
-  parser.addOption(
+  parser.addFlag(
     'list',
     abbr: 'l',
     help: 'List available tags',
+    negatable: false
   );
-  parser.addOption(
+  parser.addFlag(
     'help',
     abbr: 'h',
+    negatable: false
   );
 
-  parser.parse(args);
-  final Map<String, Option> options = parser.options;
+  final ArgResults results = parser.parse(args);
 
   // Help
-  if (options.containsKey('help')) {
+  if (results['help']) {
     print(parser.usage);
     return 0;
   }
 
   // Tag list
-  if (options.containsKey('list')) {
+  if (results['list']) {
     print(datagen.allTagNames());
     return 0;
   }

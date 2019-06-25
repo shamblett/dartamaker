@@ -247,9 +247,8 @@ void main() {
   group('Misc', () {
     final Dartamaker maker = Dartamaker();
     test('All tags', () {
-      final List<String> tags = maker.allTagNames();
-      expect(tags.length, DartamakerTagNames.values.length);
-      tags.forEach(print);
+      final String tags = maker.allTagNames();
+      print(tags);
     });
   });
 }

@@ -392,7 +392,7 @@ void main() {
       final DartamakerPluginTimestamp t =
           Dartamaker().plugin(DartamakerTagNames.timestamp, null);
       final String a1 = t.apply();
-      expect(a1.length, anyOf(14, 15));
+      expect(a1.length, anyOf(13,14, 15));
     });
     test('Titles', () {
       final DartamakerPluginTitle title =

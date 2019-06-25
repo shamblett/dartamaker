@@ -1,4 +1,5 @@
 # dartamaker
+[![Build Status](https://travis-ci.org/shamblett/dartamaker.svg?branch=master)](https://travis-ci.org/shamblett/dartamaker)
 
 A command-line Dart script and library that generates JSON or CSV data in bulk. If you are building an IT system, 
 then the chances are you'll need to populate a database (whether SQL or NoSQL) with some reasonably realistic data

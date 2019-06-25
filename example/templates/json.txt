@@ -1,0 +1,18 @@
+{
+  "_id": "{{uuid}}",
+  "name": "{{firstname}} {{surname}}",
+  "dob": "{{date 2014-01-01}}",
+  "address": {
+    "street": "{{street}}",
+    "town": "{{town}}",
+    "postcode": "{{postcode}}"
+  },
+  "telephone": "{{tel}}",
+  "pets": ["{{cat}}","{{dog}}"],
+  "score": {{float 1,10,1}},
+  "email": "{{email}}",
+  "url": "{{website}}",
+  "description": "{{words 20}}",
+  "verified": {{boolean 0.75}},
+  "salary": {{float 10000,70000,0}}
+}

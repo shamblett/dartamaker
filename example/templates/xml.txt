@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<company>
+  <name>{{company}}</name>
+  <address>
+    <street>{{street}}</street>
+    <city>{{city}}</city>
+    <state>{{state}}</state>
+    <zip>{{statecode}}{{zip}}</zip>
+  </address>
+  <ceo>{{firstname}} {{surname}}</ceo>
+  <dateCreated>{{date}}</dateCreated>
+</company>

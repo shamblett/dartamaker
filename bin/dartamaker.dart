@@ -5,6 +5,7 @@
  * Copyright :  S.Hamblett
  */
 
+import 'dart:io';
 import 'package:dartamaker/dartamaker.dart';
 import 'package:args/args.dart';
 
@@ -13,16 +14,18 @@ int main(List<String> args) {
 
   int iterations = 1;
   DartamakerFormatter formatter = DartamakerFormatterNone();
-  String templatePath = '';
+  String templatePath;
+  ArgResults results;
+  String input;
 
   // Initialize the argument parser
   final ArgParser parser = ArgParser();
+  final List<String> formatOptions = <String>['json', 'csv', 'xml', 'none'];
   parser.addOption('format',
       abbr: 'f',
       defaultsTo: 'none',
       help: 'Format of the output data',
-      allowed: <String>['json', 'csv', 'xml', 'none'],
-      callback: (String param) {
+      allowed: formatOptions, callback: (String param) {
     formatter = datagen.formatter(DartamakerFormattertype.fromString(param));
   });
   parser.addOption('iterations',
@@ -33,6 +36,8 @@ int main(List<String> args) {
     final int tmp = int.tryParse(param);
     if (tmp != null && tmp >= 1) {
       iterations = tmp;
+    } else {
+      print('Invalid iteration value entered, defaulting');
     }
   });
   parser.addOption(
@@ -41,19 +46,16 @@ int main(List<String> args) {
     help: 'The path of the template file',
     callback: (String param) => templatePath = param,
   );
-  parser.addFlag(
-    'list',
-    abbr: 'l',
-    help: 'List available tags',
-    negatable: false
-  );
-  parser.addFlag(
-    'help',
-    abbr: 'h',
-    negatable: false
-  );
+  parser.addFlag('list',
+      abbr: 'l', help: 'List available tags', negatable: false);
+  parser.addFlag('help', abbr: 'h', negatable: false);
 
-  final ArgResults results = parser.parse(args);
+  try {
+    results = parser.parse(args);
+  } on FormatException catch (e) {
+    print('${e.message}');
+    return -1;
+  }
 
   // Help
   if (results['help']) {
@@ -66,6 +68,21 @@ int main(List<String> args) {
     print(datagen.allTagNames());
     return 0;
   }
+
+  // Get the template as a string if we have one
+  if (templatePath != null) {
+    final File tmp = File(templatePath);
+    try {
+      input = tmp.readAsStringSync().trim();
+    } on Exception catch (e) {
+      print('Unable to read template file, $e.message');
+      return -1;
+    }
+  }
+
+  // Generate the data and output to stdout
+  final List<String> output = datagen.generate(input, formatter, iterations);
+  print(output);
 
   return 0;
 }

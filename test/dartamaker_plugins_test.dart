@@ -112,7 +112,7 @@ void main() {
         final String number = card.apply();
         expect(number.length, 16);
         bool ok = false;
-        for (String prefix in card.numbers) {
+        for (final String prefix in card.numbers) {
           if (number.startsWith(prefix)) {
             ok = true;
           }
@@ -392,7 +392,7 @@ void main() {
       final DartamakerPluginTimestamp t =
           Dartamaker().plugin(DartamakerTagNames.timestamp, null);
       final String a1 = t.apply();
-      expect(a1.length, anyOf(13,14, 15));
+      expect(a1.length, anyOf(13, 14, 15));
     });
     test('Titles', () {
       final DartamakerPluginTitle title =

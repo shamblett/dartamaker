@@ -9,8 +9,12 @@ part of dartamaker;
 
 /// Email
 class DartamakerPluginEmail implements DartamakerPlugin {
-  List<String> _options = <String>['.', '', '_', '-'];
-  List<String> _domains = <String>['gmail.com', 'hotmail.com', 'yahoo.com'];
+  final List<String> _options = <String>['.', '', '_', '-'];
+  final List<String> _domains = <String>[
+    'gmail.com',
+    'hotmail.com',
+    'yahoo.com'
+  ];
 
   /// Options
   List<String> get options => _options;
@@ -24,6 +28,8 @@ class DartamakerPluginEmail implements DartamakerPlugin {
       domain = DartamakerPluginDomainname().apply();
     }
 
-    return '${DartamakerPluginFirstname().apply().toLowerCase()}${_options[Random().nextInt(_options.length - 1)]}${DartamakerPluginSurname().apply().toLowerCase()}@$domain';
+    return '${DartamakerPluginFirstname().apply().toLowerCase()}'
+        '${_options[Random().nextInt(_options.length - 1)]}'
+        '${DartamakerPluginSurname().apply().toLowerCase()}@$domain';
   }
 }

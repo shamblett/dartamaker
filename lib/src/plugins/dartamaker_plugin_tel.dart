@@ -127,6 +127,7 @@ class DartamakerPluginTel implements DartamakerPlugin {
   List<String> get codes => _codes;
 
   @override
-  String apply() =>
-      "+${_codes[Random().nextInt(_codes.length - 1)]}-${DartamakerPluginDigits('4').apply()}-${DartamakerPluginDigits('3').apply()}-${DartamakerPluginDigits('3').apply()}";
+  String apply() => '+${_codes[Random().nextInt(_codes.length - 1)]}-'
+      // ignore: lines_longer_than_80_chars
+      '${DartamakerPluginDigits('4').apply()}-${DartamakerPluginDigits('3').apply()}-${DartamakerPluginDigits('3').apply()}';
 }

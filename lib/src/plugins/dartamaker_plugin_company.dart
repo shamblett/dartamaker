@@ -42,7 +42,7 @@ class DartamakerPluginCompany implements DartamakerPlugin {
     'Pte. Ltd'
   ];
 
-  DartamakerPluginWord _word = DartamakerPluginWord();
+  final DartamakerPluginWord _word = DartamakerPluginWord();
 
   @override
   String apply() {
@@ -50,6 +50,7 @@ class DartamakerPluginCompany implements DartamakerPlugin {
     final int r2 = Random().nextInt(_suffix.length - 1);
     String w = _word.apply();
     w = w.substring(0, 1).toUpperCase() + w.substring(1);
+    // ignore: lines_longer_than_80_chars
     return "$w ${_middle[r1]} ${_suffix[r2].replaceAll(RegExp('/ {2}/g'), ' ')}";
   }
 }

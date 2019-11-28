@@ -9,9 +9,10 @@ part of dartamaker;
 
 /// The main dartamaker class
 class Dartamaker {
-  DartamakerPluginManager _pluginManager = DartamakerPluginManager();
-  DartamakerFormatterManager _formatterManager = DartamakerFormatterManager();
-  DartamakerCache _cache = DartamakerCache();
+  final DartamakerPluginManager _pluginManager = DartamakerPluginManager();
+  final DartamakerFormatterManager _formatterManager =
+      DartamakerFormatterManager();
+  final DartamakerCache _cache = DartamakerCache();
 
   /// Get a plugin by tag name and supplied mapped parameters
   DartamakerPlugin plugin(
@@ -30,16 +31,17 @@ class Dartamaker {
   String substitute(DartamakerTagNames tagName, Map<String, String> params) =>
       plugin(tagName, params).apply();
 
-  /// Find tags, locate occurrences of things surrounded in double curly {{brackets}}
+  /// Find tags, locate occurrences of things surrounded in
+  /// double curly {{brackets}}
   List<Map<String, String>> findTags(String str) {
-    final List<Map<String, String>> tags = List<Map<String, String>>();
+    final List<Map<String, String>> tags = <Map<String, String>>[];
     if (str == null) {
       return tags;
     }
     final RegExp exp = RegExp('({{[^{}]+}})');
     final Iterable<Match> matches = exp.allMatches(str);
     // Iterate through each one
-    for (Match match in matches) {
+    for (final Match match in matches) {
       final String s = match.group(0);
       // remove leading {{
       // removing trailing }}
@@ -69,7 +71,7 @@ class Dartamaker {
       DartamakerFormatter formatter) {
     String str = template;
     // Iterate through the tags
-    for (Map<String, String> tag in tags) {
+    for (final Map<String, String> tag in tags) {
       final DartamakerPlugin plugin = _pluginManager.byStringTagName(
           tag[DartamakerConstants.tag],
           tag[DartamakerConstants.params],
@@ -99,7 +101,7 @@ class Dartamaker {
       return <String>[str];
     }
 
-    final List<String> res = List<String>();
+    final List<String> res = <String>[];
 
     /// Locate tags in the template
     final List<Map<String, String>> tags = findTags(str);
@@ -118,8 +120,8 @@ class Dartamaker {
 
   /// List all the tag names
   String allTagNames() {
-    final List<String> ret = List<String>();
-    for (DartamakerTagNames tagName in DartamakerTagNames.values) {
+    final List<String> ret = <String>[];
+    for (final DartamakerTagNames tagName in DartamakerTagNames.values) {
       ret.add('${DartamakerTagname.asString(tagName)}\n');
     }
     return ret.join('');

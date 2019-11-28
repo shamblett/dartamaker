@@ -12,7 +12,7 @@ class DartamakerPluginLast implements DartamakerPlugin {
   /// Default
   DartamakerPluginLast(this._value);
 
-  String _value;
+  final String _value;
 
   @override
   String apply() => _value;

@@ -139,6 +139,9 @@ class DartamakerPluginPostcode implements DartamakerPlugin {
   @override
   String apply() {
     final int numDigits = Random().nextDouble() > 0.5 ? 1 : 2;
-    return "${_postcodes[Random().nextInt(_postcodes.length - 1)]}${DartamakerPluginDigits(numDigits.toString()).apply()} ${DartamakerPluginDigits('1').apply()}${DartamakerPluginLetters('2').apply()}";
+    return '${_postcodes[Random().nextInt(_postcodes.length - 1)]}'
+        '${DartamakerPluginDigits(numDigits.toString()).apply()} '
+        '${DartamakerPluginDigits('1').apply()}'
+        '${DartamakerPluginLetters('2').apply()}';
   }
 }

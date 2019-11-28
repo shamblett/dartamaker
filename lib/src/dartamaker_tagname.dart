@@ -62,7 +62,7 @@ class DartamakerTagname {
   /// From string
   static DartamakerTagNames fromString(String tagName) {
     DartamakerTagNames ret;
-    for (DartamakerTagNames tag in DartamakerTagNames.values) {
+    for (final DartamakerTagNames tag in DartamakerTagNames.values) {
       if (tagName == tag.toString().split('.')[1]) {
         ret = tag;
         break;

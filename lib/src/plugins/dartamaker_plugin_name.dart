@@ -10,6 +10,6 @@ part of dartamaker;
 /// Names
 class DartamakerPluginName implements DartamakerPlugin {
   @override
-  String apply() =>
-      '${DartamakerPluginFirstname().apply()} ${DartamakerPluginSurname().apply()}';
+  String apply() => '${DartamakerPluginFirstname().apply()}'
+      ' ${DartamakerPluginSurname().apply()}';
 }

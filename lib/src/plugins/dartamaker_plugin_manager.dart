@@ -9,7 +9,7 @@ part of dartamaker;
 
 /// Plugin manager
 class DartamakerPluginManager {
-  DartamakerPluginAutoinc _autoinc = DartamakerPluginAutoinc();
+  final DartamakerPluginAutoinc _autoinc = DartamakerPluginAutoinc();
 
   /// Get a plugin by tag name
   DartamakerPlugin plugin(
@@ -181,7 +181,7 @@ class DartamakerPluginManager {
     if (params.isEmpty) {
       return DartamakerConstants.pluginNullParam;
     }
-    final Map<String, String> ret = Map<String, String>();
+    final Map<String, String> ret = <String, String>{};
     final List<String> paramArray = params.split(' ');
     switch (name) {
       case DartamakerTagNames.boolean:

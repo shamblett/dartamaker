@@ -33,8 +33,8 @@ class DartamakerPluginFloat implements DartamakerPlugin {
     }
   }
 
-  double _min = 1.0;
-  double _max = 100.0;
+  double _min = 1;
+  double _max = 100;
   int _decimalplaces = 4;
 
   @override

@@ -19,7 +19,7 @@ class DartamakerPluginLetters implements DartamakerPlugin {
     }
   }
 
-  List<String> _letters = <String>[
+  final List<String> _letters = <String>[
     'A',
     'B',
     'C',

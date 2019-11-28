@@ -9,7 +9,7 @@ part of dartamaker;
 
 /// Website
 class DartamakerPluginWebsite implements DartamakerPlugin {
-  List<String> _roots = <String>[
+  final List<String> _roots = <String>[
     'http://',
     'https://',
     'http://www.',
@@ -20,6 +20,6 @@ class DartamakerPluginWebsite implements DartamakerPlugin {
   List<String> get roots => _roots;
 
   @override
-  String apply() =>
-      '${_roots[Random().nextInt(_roots.length - 1)]}${DartamakerPluginDomainname().apply()}';
+  String apply() => '${_roots[Random().nextInt(_roots.length - 1)]}'
+      '${DartamakerPluginDomainname().apply()}';
 }

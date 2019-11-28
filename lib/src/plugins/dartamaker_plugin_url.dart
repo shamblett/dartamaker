@@ -9,7 +9,7 @@ part of dartamaker;
 
 /// Url
 class DartamakerPluginUrl implements DartamakerPlugin {
-  List<String> _endings = <String>['.html', '.php', '.aspx', ''];
+  final List<String> _endings = <String>['.html', '.php', '.aspx', ''];
 
   /// Endings
   List<String> get endings => _endings;
@@ -21,9 +21,11 @@ class DartamakerPluginUrl implements DartamakerPlugin {
         '${DartamakerPluginWebsite().apply()}/${DartamakerPluginWord().apply()}${_endings[r]}';
     if (Random().nextDouble() > 0.9) {
       d +=
+          // ignore: lines_longer_than_80_chars
           '?${DartamakerPluginWord().apply()}=${DartamakerPluginUuid(null).apply()}';
       if (Random().nextDouble() > 0.5) {
         d +=
+            // ignore: lines_longer_than_80_chars
             '&${DartamakerPluginWord().apply()}=${DartamakerPluginUuid(null).apply()}';
       }
     } else if (Random().nextDouble() < 0.9) {

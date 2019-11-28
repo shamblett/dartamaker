@@ -19,7 +19,7 @@ class DartamakerPluginUuid implements DartamakerPlugin {
     }
   }
 
-  List<String> _anums = <String>[
+  final List<String> _anums = <String>[
     'A',
     'B',
     'C',

@@ -16,7 +16,8 @@ class DartamakerFormattertype {
   /// From string
   static DartamakerFormatterTypes fromString(String formatterType) {
     DartamakerFormatterTypes ret;
-    for (DartamakerFormatterTypes type in DartamakerFormatterTypes.values) {
+    for (final DartamakerFormatterTypes type
+        in DartamakerFormatterTypes.values) {
       if (formatterType == type.toString().split('.')[1]) {
         ret = type;
         break;
@@ -31,8 +32,9 @@ class DartamakerFormattertype {
 
   /// As string list
   static List<String> asStringList() {
-    final List<String> ret = List<String>();
-    for (DartamakerFormatterTypes type in DartamakerFormatterTypes.values) {
+    final List<String> ret = <String>[];
+    for (final DartamakerFormatterTypes type
+        in DartamakerFormatterTypes.values) {
       ret.add(type.toString().split('.')[1]);
     }
     return ret;

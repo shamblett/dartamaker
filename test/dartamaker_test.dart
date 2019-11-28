@@ -58,8 +58,8 @@ void main() {
       expect(res[2][DartamakerConstants.params], '10000,70000,0');
     });
     test('Valid tags mixed', () {
-      const String tags =
-          '{{words 20}} {{boolean 0.75}}, {{date}} {{email}} {{float 100,1000,2}}';
+      const String tags = '{{words 20}} {{boolean 0.75}}, {{date}} '
+          '{{email}} {{float 100,1000,2}}';
       final List<Map<String, String>> res = maker.findTags(tags);
       expect(res.length, 5);
       expect(res[0][DartamakerConstants.original], '{{words 20}}');
@@ -80,8 +80,8 @@ void main() {
     });
 
     test('Valid tags mixed with words', () {
-      const String tags =
-          '{{words 20}} hello {{boolean 0.75}}, again {{date}} {{email}} its me {{float 100,1000,2}}';
+      const String tags = '{{words 20}} hello {{boolean 0.75}}, again {{date}} '
+          '{{email}} its me {{float 100,1000,2}}';
       final List<Map<String, String>> res = maker.findTags(tags);
       expect(res.length, 5);
       expect(res[0][DartamakerConstants.original], '{{words 20}}');
@@ -101,8 +101,8 @@ void main() {
       expect(res[4][DartamakerConstants.params], '100,1000,2');
     });
     test('Invalid tags', () {
-      const String tags =
-          '{{words 20} {{boolean 0.75}}, {date}} {{email}} {{float 100,1000,2}}';
+      const String tags = '{{words 20} {{boolean 0.75}}, {date}} '
+          '{{email}} {{float 100,1000,2}}';
       final List<Map<String, String>> res = maker.findTags(tags);
       expect(res.length, 3);
       expect(res[0][DartamakerConstants.original], '{{boolean 0.75}}');

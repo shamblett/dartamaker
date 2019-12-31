@@ -8,6 +8,10 @@
 import 'package:dartamaker/dartamaker.dart';
 import 'package:test/test.dart';
 
+// ignore_for_file: unnecessary_final
+// ignore_for_file: omit_local_variable_types
+// ignore_for_file: avoid_print
+
 void main() {
   group('Find Tags', () {
     final Dartamaker maker = Dartamaker();

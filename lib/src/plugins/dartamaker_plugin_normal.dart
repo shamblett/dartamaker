@@ -7,6 +7,9 @@
 
 part of dartamaker;
 
+// ignore_for_file: unnecessary_final
+// ignore_for_file: omit_local_variable_types
+
 /// Normal
 class DartamakerPluginNormal implements DartamakerPlugin {
   /// Default

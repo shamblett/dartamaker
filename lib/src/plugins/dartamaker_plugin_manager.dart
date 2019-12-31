@@ -7,6 +7,9 @@
 
 part of dartamaker;
 
+// ignore_for_file: unnecessary_final
+// ignore_for_file: omit_local_variable_types
+
 /// Plugin manager
 class DartamakerPluginManager {
   final DartamakerPluginAutoinc _autoinc = DartamakerPluginAutoinc();

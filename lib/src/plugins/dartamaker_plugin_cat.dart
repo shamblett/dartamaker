@@ -9,6 +9,7 @@ part of dartamaker;
 
 /// Cat names
 class DartamakerPluginCat implements DartamakerPlugin {
+  // ignore: unnecessary_final
   final List<String> _cats = <String>[
     'Tigger',
     'Chloe',

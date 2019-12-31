@@ -7,12 +7,14 @@
 
 part of dartamaker;
 
+// ignore_for_file: avoid_annotating_with_dynamic
+
 /// CSV formatter
 class DartamakerFormatterCSV implements DartamakerFormatter {
   /// Filter
   @override
   String filter(dynamic obj) {
-    if (obj == null || !(obj is String)) {
+    if (obj == null || (obj is! String)) {
       return '';
     }
     String str = obj;

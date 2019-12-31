@@ -7,6 +7,8 @@
 
 part of dartamaker;
 
+// ignore_for_file: avoid_annotating_with_dynamic
+
 /// JSON formatter
 class DartamakerFormatterJson implements DartamakerFormatter {
   /// Filter

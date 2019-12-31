@@ -7,6 +7,9 @@
 
 part of dartamaker;
 
+// ignore_for_file: unnecessary_final
+// ignore_for_file: omit_local_variable_types
+
 /// Cat names
 class DartamakerPluginCompany implements DartamakerPlugin {
   final List<String> _middle = <String>[

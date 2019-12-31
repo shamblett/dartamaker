@@ -10,6 +10,9 @@ import 'dart:math';
 import 'package:dartamaker/dartamaker.dart';
 import 'package:test/test.dart';
 
+// ignore_for_file: unnecessary_final
+// ignore_for_file: omit_local_variable_types
+
 void main() {
   group('Plugins', () {
     test('Airports', () {

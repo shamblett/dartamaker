@@ -7,14 +7,17 @@
 
 part of dartamaker;
 
+// ignore_for_file: avoid_annotating_with_dynamic
+
 /// JSON formatter
 class DartamakerFormatterXml implements DartamakerFormatter {
   /// Filter
   @override
   String filter(dynamic obj) {
-    if (obj == null || !(obj is String)) {
+    if (obj == null || (obj is! String)) {
       return '';
     }
+    // ignore: unnecessary_final
     final String str = obj;
     return str
         .replaceAll('&', '&amp;')

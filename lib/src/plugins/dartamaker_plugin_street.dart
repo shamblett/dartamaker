@@ -7,7 +7,10 @@
 
 part of dartamaker;
 
-/// Strret names
+// ignore_for_file: unnecessary_final
+// ignore_for_file: omit_local_variable_types
+
+/// Street names
 class DartamakerPluginStreet implements DartamakerPlugin {
   final List<String> _streets = <String>[
     'Odette',

@@ -7,9 +7,6 @@
 
 part of dartamaker;
 
-// ignore_for_file: unnecessary_final
-// ignore_for_file: omit_local_variable_types
-
 /// Credit card numbers
 class DartamakerPluginCreditcard implements DartamakerPlugin {
   final List<String> _numbers = <String>[
@@ -33,8 +30,8 @@ class DartamakerPluginCreditcard implements DartamakerPlugin {
 
   @override
   String apply() {
-    final String prefix = _numbers[Random().nextInt(_numbers.length - 1)];
-    final int n = 16 - prefix.length;
+    final prefix = _numbers[Random().nextInt(_numbers.length - 1)];
+    final n = 16 - prefix.length;
     return prefix + DartamakerPluginDigits(n.toString()).apply();
   }
 }

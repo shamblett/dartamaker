@@ -7,22 +7,19 @@
 
 part of dartamaker;
 
-// ignore_for_file: unnecessary_final
-// ignore_for_file: omit_local_variable_types
-
 /// Price
 class DartamakerPluginPrice implements DartamakerPlugin {
   /// Default
   DartamakerPluginPrice(String min, String max) {
     if (min != null) {
-      final double val = double.tryParse(min);
+      final val = double.tryParse(min);
       if (val != null && val > 0.0) {
         _min = val;
       }
     }
 
     if (max != null) {
-      final double val = double.tryParse(max);
+      final val = double.tryParse(max);
       if (val != null && val > 0.0) {
         _max = val;
       }
@@ -34,9 +31,9 @@ class DartamakerPluginPrice implements DartamakerPlugin {
 
   @override
   String apply() {
-    final String min = (_min.round() * 100).toString();
-    final String max = (_max.round() * 100).toString();
-    final String res = DartamakerPluginInteger(min, max).apply();
+    final min = (_min.round() * 100).toString();
+    final max = (_max.round() * 100).toString();
+    final res = DartamakerPluginInteger(min, max).apply();
     return (int.tryParse(res) / 100).round().toString();
   }
 }

@@ -7,15 +7,12 @@
 
 part of dartamaker;
 
-// ignore_for_file: unnecessary_final
-// ignore_for_file: omit_local_variable_types
-
 /// Letters
 class DartamakerPluginLetters implements DartamakerPlugin {
   /// Default
   DartamakerPluginLetters(String numletters) {
     if (numletters != null) {
-      final int val = int.tryParse(numletters);
+      final val = int.tryParse(numletters);
       if (val != null && val > 0) {
         _numletters = val;
       }
@@ -58,8 +55,8 @@ class DartamakerPluginLetters implements DartamakerPlugin {
 
   @override
   String apply() {
-    final StringBuffer str = StringBuffer();
-    for (int i = 0; i < _numletters; i++) {
+    final str = StringBuffer();
+    for (var i = 0; i < _numletters; i++) {
       str.write(_letters[Random().nextInt(_letters.length - 1)]);
     }
     return str.toString();

@@ -10,16 +10,13 @@ import 'dart:math';
 import 'package:dartamaker/dartamaker.dart';
 import 'package:test/test.dart';
 
-// ignore_for_file: unnecessary_final
-// ignore_for_file: omit_local_variable_types
-
 void main() {
   group('Plugins', () {
     test('Airports', () {
       final DartamakerPluginAirport airport =
           Dartamaker().plugin(DartamakerTagNames.airport, null);
-      final List<String> airports = airport.airports;
-      final String a1 = airport.apply();
+      final airports = airport.airports;
+      final a1 = airport.apply();
       expect(a1, anyOf(airports));
     });
     test('Auto Increment', () {
@@ -34,19 +31,15 @@ void main() {
       final DartamakerPluginBoolean b1 = Dartamaker().plugin(
           DartamakerTagNames.boolean, DartamakerConstants.pluginNullParam);
       expect(b1.apply(), anyOf('true', 'false'));
-      final Map<String, String> p1 = <String, String>{
-        DartamakerConstants.probability: '1.0'
-      };
+      final p1 = <String, String>{DartamakerConstants.probability: '1.0'};
       final DartamakerPluginBoolean b2 =
           Dartamaker().plugin(DartamakerTagNames.boolean, p1);
       expect(b2.apply(), 'true');
-      final Map<String, String> p2 = <String, String>{
-        DartamakerConstants.probability: '0.0'
-      };
+      final p2 = <String, String>{DartamakerConstants.probability: '0.0'};
       final DartamakerPluginBoolean b3 =
           Dartamaker().plugin(DartamakerTagNames.boolean, p2);
       expect(b3.apply(), 'false');
-      final Map<String, String> p3 = <String, String>{
+      final p3 = <String, String>{
         DartamakerConstants.probability: Random().nextDouble().toString()
       };
       final DartamakerPluginBoolean b4 =
@@ -56,29 +49,29 @@ void main() {
     test('Cats', () {
       final DartamakerPluginCat cat =
           Dartamaker().plugin(DartamakerTagNames.cat, null);
-      final List<String> cats = cat.cats;
-      final String a1 = cat.apply();
+      final cats = cat.cats;
+      final a1 = cat.apply();
       expect(a1, anyOf(cats));
     });
     test('Cities', () {
       final DartamakerPluginCity city =
           Dartamaker().plugin(DartamakerTagNames.city, null);
-      final List<String> cities = city.cities;
-      final String a1 = city.apply();
+      final cities = city.cities;
+      final a1 = city.apply();
       expect(a1, anyOf(cities));
     });
     test('Words', () {
       final DartamakerPluginWord word =
           Dartamaker().plugin(DartamakerTagNames.word, null);
-      final List<String> words = word.words;
-      final String a1 = word.apply();
+      final words = word.words;
+      final a1 = word.apply();
       expect(a1, anyOf(words));
     });
     test('Company', () {
       final DartamakerPluginCompany company =
           Dartamaker().plugin(DartamakerTagNames.company, null);
-      for (int i = 0; i <= 9; i++) {
-        final String name = company.apply();
+      for (var i = 0; i <= 9; i++) {
+        final name = company.apply();
         expect(name.isNotEmpty, isTrue);
         expect(name.substring(0, 1), name.substring(0, 1).toUpperCase());
       }
@@ -86,24 +79,22 @@ void main() {
     test('Countries', () {
       final DartamakerPluginCountry country =
           Dartamaker().plugin(DartamakerTagNames.country, null);
-      final List<String> countries = country.countries;
-      final String a1 = country.apply();
+      final countries = country.countries;
+      final a1 = country.apply();
       expect(a1, anyOf(countries));
     });
     test('Counties', () {
       final DartamakerPluginCounty county =
           Dartamaker().plugin(DartamakerTagNames.county, null);
-      final List<String> counties = county.counties;
-      final String a1 = county.apply();
+      final counties = county.counties;
+      final a1 = county.apply();
       expect(a1, anyOf(counties));
     });
     test('Digits', () {
       final DartamakerPluginDigits b1 = Dartamaker().plugin(
           DartamakerTagNames.digits, DartamakerConstants.pluginNullParam);
       expect(b1.apply().length, 5);
-      final Map<String, String> p1 = <String, String>{
-        DartamakerConstants.numdigits: '20'
-      };
+      final p1 = <String, String>{DartamakerConstants.numdigits: '20'};
       final DartamakerPluginDigits b2 =
           Dartamaker().plugin(DartamakerTagNames.digits, p1);
       expect(b2.apply().length, 20);
@@ -111,11 +102,11 @@ void main() {
     test('Credit card', () {
       final DartamakerPluginCreditcard card =
           Dartamaker().plugin(DartamakerTagNames.creditcard, null);
-      for (int i = 0; i <= 9; i++) {
-        final String number = card.apply();
+      for (var i = 0; i <= 9; i++) {
+        final number = card.apply();
         expect(number.length, 16);
-        bool ok = false;
-        for (final String prefix in card.numbers) {
+        var ok = false;
+        for (final prefix in card.numbers) {
           if (number.startsWith(prefix)) {
             ok = true;
           }
@@ -126,44 +117,44 @@ void main() {
     test('Dogs', () {
       final DartamakerPluginDog dog =
           Dartamaker().plugin(DartamakerTagNames.dog, null);
-      final List<String> dogs = dog.dogs;
-      final String a1 = dog.apply();
+      final dogs = dog.dogs;
+      final a1 = dog.apply();
       expect(a1, anyOf(dogs));
     });
     test('TLDs', () {
       final DartamakerPluginTLD tld =
           Dartamaker().plugin(DartamakerTagNames.tld, null);
-      final List<String> tlds = tld.tlds;
-      final String a1 = tld.apply();
+      final tlds = tld.tlds;
+      final a1 = tld.apply();
       expect(a1, anyOf(tlds));
     });
     test('Domain Name', () {
       final DartamakerPluginDomainname dn =
           Dartamaker().plugin(DartamakerTagNames.domainname, null);
-      for (int i = 0; i <= 9; i++) {
-        final String name = dn.apply();
+      for (var i = 0; i <= 9; i++) {
+        final name = dn.apply();
         expect(name.isNotEmpty, isTrue);
       }
     });
     test('First Names', () {
       final DartamakerPluginFirstname name =
           Dartamaker().plugin(DartamakerTagNames.firstname, null);
-      final List<String> names = name.names;
-      final String a1 = name.apply();
+      final names = name.names;
+      final a1 = name.apply();
       expect(a1, anyOf(names));
     });
     test('Surnames', () {
       final DartamakerPluginSurname name =
           Dartamaker().plugin(DartamakerTagNames.surname, null);
-      final List<String> names = name.names;
-      final String a1 = name.apply();
+      final names = name.names;
+      final a1 = name.apply();
       expect(a1, anyOf(names));
     });
     test('Email', () {
       final DartamakerPluginEmail email =
           Dartamaker().plugin(DartamakerTagNames.email, null);
-      for (int i = 0; i <= 9; i++) {
-        final String name = email.apply();
+      for (var i = 0; i <= 9; i++) {
+        final name = email.apply();
         expect(name.isNotEmpty, isTrue);
         expect(name.contains('@'), isTrue);
       }
@@ -172,9 +163,7 @@ void main() {
       final DartamakerPluginEmojii b1 = Dartamaker().plugin(
           DartamakerTagNames.emojii, DartamakerConstants.pluginNullParam);
       expect(b1.apply().isNotEmpty, isTrue);
-      final Map<String, String> p1 = <String, String>{
-        DartamakerConstants.numchars: '20'
-      };
+      final p1 = <String, String>{DartamakerConstants.numchars: '20'};
       final DartamakerPluginEmojii b2 =
           Dartamaker().plugin(DartamakerTagNames.emojii, p1);
       expect(b2.apply().isNotEmpty, isTrue);
@@ -182,8 +171,8 @@ void main() {
     test('Float', () {
       final DartamakerPluginFloat b1 = Dartamaker().plugin(
           DartamakerTagNames.float, DartamakerConstants.pluginNullParam);
-      String res = b1.apply();
-      double val = double.tryParse(res);
+      var res = b1.apply();
+      var val = double.tryParse(res);
       expect(val >= 0.0, isTrue);
       expect(val <= 100.0, isTrue);
       expect(res.split('.')[1].length, 4);
@@ -203,8 +192,8 @@ void main() {
     test('Integer', () {
       final DartamakerPluginInteger b1 = Dartamaker().plugin(
           DartamakerTagNames.integer, DartamakerConstants.pluginNullParam);
-      String res = b1.apply();
-      int val = int.tryParse(res);
+      var res = b1.apply();
+      var val = int.tryParse(res);
       expect(val >= 0, isTrue);
       expect(val <= 100, isTrue);
 
@@ -221,21 +210,21 @@ void main() {
     test('Currency', () {
       final DartamakerPluginCurrency currency =
           Dartamaker().plugin(DartamakerTagNames.currency, null);
-      final List<String> currencies = currency.currencies;
-      final String a1 = currency.apply();
+      final currencies = currency.currencies;
+      final a1 = currency.apply();
       expect(a1, anyOf(currencies));
     });
     test('Date ISO', () async {
-      final DateTime now = DateTime.now();
+      final now = DateTime.now();
       await Future<void>.delayed(const Duration(seconds: 1), () {});
       final DartamakerPluginDateiso b1 = Dartamaker().plugin(
           DartamakerTagNames.dateiso, DartamakerConstants.pluginNullParam);
-      String res = b1.apply();
-      DateTime val = DateTime.tryParse(res);
+      var res = b1.apply();
+      var val = DateTime.tryParse(res);
       expect(val.millisecondsSinceEpoch > now.millisecondsSinceEpoch, isTrue);
 
-      const String tmin = '2012-02-26 13:27:00';
-      const String tmax = '2012-02-28 13:27:00';
+      const tmin = '2012-02-26 13:27:00';
+      const tmax = '2012-02-28 13:27:00';
       final DartamakerPluginDateiso b2 = Dartamaker().plugin(
           DartamakerTagNames.dateiso, <String, String>{
         DartamakerConstants.min: tmin,
@@ -255,7 +244,7 @@ void main() {
     test('Date', () {
       final DartamakerPluginDate b1 = Dartamaker()
           .plugin(DartamakerTagNames.date, DartamakerConstants.pluginNullParam);
-      final String res = b1.apply();
+      final res = b1.apply();
       expect(res.contains('T'), isFalse);
       expect(res.contains(':'), isFalse);
       expect(res.contains('-'), isTrue);
@@ -263,16 +252,16 @@ void main() {
     test('Latitude', () {
       final DartamakerPluginLatitude b1 = Dartamaker().plugin(
           DartamakerTagNames.latitude, DartamakerConstants.pluginNullParam);
-      final String res = b1.apply();
-      final double val = double.tryParse(res);
+      final res = b1.apply();
+      final val = double.tryParse(res);
       expect(val >= -90.0, isTrue);
       expect(val <= 90.0, isTrue);
     });
     test('Longitude', () {
       final DartamakerPluginLongitude b1 = Dartamaker().plugin(
           DartamakerTagNames.longitude, DartamakerConstants.pluginNullParam);
-      final String res = b1.apply();
-      final double val = double.tryParse(res);
+      final res = b1.apply();
+      final val = double.tryParse(res);
       expect(val >= -180.0, isTrue);
       expect(val <= 180.0, isTrue);
     });
@@ -280,27 +269,25 @@ void main() {
       final DartamakerPluginLetters b1 = Dartamaker().plugin(
           DartamakerTagNames.letters, DartamakerConstants.pluginNullParam);
       expect(b1.apply().length, 5);
-      final Map<String, String> p1 = <String, String>{
-        DartamakerConstants.numletters: '20'
-      };
+      final p1 = <String, String>{DartamakerConstants.numletters: '20'};
       final DartamakerPluginLetters b2 =
           Dartamaker().plugin(DartamakerTagNames.letters, p1);
-      final String res = b2.apply();
+      final res = b2.apply();
       expect(res.length, 20);
     });
     test('Names', () {
       final DartamakerPluginName name =
           Dartamaker().plugin(DartamakerTagNames.name, null);
-      final List<String> firstnames = DartamakerPluginFirstname().names;
-      final List<String> surnames = DartamakerPluginSurname().names;
-      final String a1 = name.apply();
+      final firstnames = DartamakerPluginFirstname().names;
+      final surnames = DartamakerPluginSurname().names;
+      final a1 = name.apply();
       expect(a1.split(' ')[0], anyOf(firstnames));
       expect(a1.split(' ')[1], anyOf(surnames));
     });
     test('Normal', () {
       final DartamakerPluginNormal b1 = Dartamaker().plugin(
           DartamakerTagNames.normal, DartamakerConstants.pluginNullParam);
-      String res = b1.apply();
+      var res = b1.apply();
       expect(res.isNotEmpty, isTrue);
       expect(res.split('.')[1].length, 4);
 
@@ -317,19 +304,19 @@ void main() {
     test('One of', () {
       final DartamakerPluginOneof name = Dartamaker().plugin(
           DartamakerTagNames.oneof, DartamakerConstants.pluginNullParam);
-      final String a1 = name.apply();
+      final a1 = name.apply();
       expect(a1, 'NoneSet');
-      const String names = 'Gryffindor Hufflepuff Ravenclaw Slytherin';
+      const names = 'Gryffindor Hufflepuff Ravenclaw Slytherin';
       final DartamakerPluginOneof b2 = Dartamaker().plugin(
           DartamakerTagNames.oneof,
           <String, String>{DartamakerConstants.args: names});
-      final String a2 = b2.apply();
+      final a2 = b2.apply();
       expect(names.contains(a2), isTrue);
     });
     test('Postcode', () {
       final DartamakerPluginPostcode code =
           Dartamaker().plugin(DartamakerTagNames.postcode, null);
-      final String a1 = code.apply();
+      final a1 = code.apply();
       expect(a1.isNotEmpty, isTrue);
       expect(a1.split(' ')[0].length, anyOf(3, 4));
       expect(a1.split(' ')[1].length, 3);
@@ -337,7 +324,7 @@ void main() {
     test('Price', () {
       final DartamakerPluginPrice b1 = Dartamaker().plugin(
           DartamakerTagNames.price, DartamakerConstants.pluginNullParam);
-      String res = b1.apply();
+      var res = b1.apply();
       expect(int.tryParse(res) >= 1, isTrue);
       expect(int.tryParse(res) <= 100, isTrue);
       final DartamakerPluginPrice b2 = Dartamaker().plugin(
@@ -352,30 +339,30 @@ void main() {
     test('States', () {
       final DartamakerPluginState state =
           Dartamaker().plugin(DartamakerTagNames.state, null);
-      final List<String> states = state.states;
-      final String a1 = state.apply();
+      final states = state.states;
+      final a1 = state.apply();
       expect(a1, anyOf(states));
     });
     test('State Codes', () {
       final DartamakerPluginStatecode statecode =
           Dartamaker().plugin(DartamakerTagNames.statecode, null);
-      final List<String> statecodes = statecode.statecodes;
-      final String a1 = statecode.apply();
+      final statecodes = statecode.statecodes;
+      final a1 = statecode.apply();
       expect(a1, anyOf(statecodes));
     });
     test('Streets', () {
       final DartamakerPluginStreet street =
           Dartamaker().plugin(DartamakerTagNames.street, null);
-      final List<String> streets = street.streets;
-      final String a1 = street.apply();
+      final streets = street.streets;
+      final a1 = street.apply();
       expect(a1, anyOf(streets));
     });
     test('Telephone numbers', () {
       final DartamakerPluginTel tel =
           Dartamaker().plugin(DartamakerTagNames.tel, null);
-      final List<String> codes = tel.codes;
-      final String a1 = tel.apply();
-      final List<String> parts = a1.split('-');
+      final codes = tel.codes;
+      final a1 = tel.apply();
+      final parts = a1.split('-');
       expect(parts.length, 4);
       expect(parts[0].startsWith('+'), isTrue);
       expect(parts[0].length, anyOf(3, 4));
@@ -387,58 +374,56 @@ void main() {
     test('Time', () {
       final DartamakerPluginTime t =
           Dartamaker().plugin(DartamakerTagNames.time, null);
-      final String a1 = t.apply();
-      final List<String> parts = a1.split(':');
+      final a1 = t.apply();
+      final parts = a1.split(':');
       expect(parts.length, 3);
     });
     test('Timestamp', () {
       final DartamakerPluginTimestamp t =
           Dartamaker().plugin(DartamakerTagNames.timestamp, null);
-      final String a1 = t.apply();
+      final a1 = t.apply();
       expect(a1.length, anyOf(13, 14, 15));
     });
     test('Titles', () {
       final DartamakerPluginTitle title =
           Dartamaker().plugin(DartamakerTagNames.title, null);
-      final List<String> titles = title.titles;
-      final String a1 = title.apply();
+      final titles = title.titles;
+      final a1 = title.apply();
       expect(a1, anyOf(titles));
     });
     test('Towns', () {
       final DartamakerPluginTown town =
           Dartamaker().plugin(DartamakerTagNames.town, null);
-      final List<String> towns = town.towns;
-      final String a1 = town.apply();
+      final towns = town.towns;
+      final a1 = town.apply();
       expect(a1, anyOf(towns));
     });
     test('Uuids', () {
       final DartamakerPluginUuid b1 = Dartamaker()
           .plugin(DartamakerTagNames.uuid, DartamakerConstants.pluginNullParam);
       expect(b1.apply().length, 16);
-      final Map<String, String> p1 = <String, String>{
-        DartamakerConstants.length: '30'
-      };
+      final p1 = <String, String>{DartamakerConstants.length: '30'};
       final DartamakerPluginUuid b2 =
           Dartamaker().plugin(DartamakerTagNames.uuid, p1);
-      final String res = b2.apply();
+      final res = b2.apply();
       expect(res.length, 30);
     });
     test('Websites', () {
       final DartamakerPluginWebsite ws =
           Dartamaker().plugin(DartamakerTagNames.website, null);
-      final String a1 = ws.apply();
+      final a1 = ws.apply();
       expect(a1.startsWith('http'), isTrue);
     });
     test('Urls', () {
       final DartamakerPluginUrl url =
           Dartamaker().plugin(DartamakerTagNames.url, null);
-      final String a1 = url.apply();
+      final a1 = url.apply();
       expect(a1.startsWith('http'), isTrue);
     });
     test('Words', () {
       final DartamakerPluginWords words = Dartamaker().plugin(
           DartamakerTagNames.words, DartamakerConstants.pluginNullParam);
-      String a1 = words.apply();
+      var a1 = words.apply();
       expect(a1.split(' ').length, 5);
       final DartamakerPluginWords words1 = Dartamaker().plugin(
           DartamakerTagNames.words,
@@ -449,7 +434,7 @@ void main() {
     test('Zip codes', () {
       final DartamakerPluginZip zip =
           Dartamaker().plugin(DartamakerTagNames.zip, null);
-      final String a1 = zip.apply();
+      final a1 = zip.apply();
       expect(a1.length, 5);
     });
   });
@@ -459,28 +444,28 @@ void main() {
       final DartamakerPluginLetters letters =
           Dartamaker().byTagName('letters', '');
       expect(letters, isA<DartamakerPluginLetters>());
-      final String a1 = letters.apply();
+      final a1 = letters.apply();
       expect(a1.length, 5);
     });
     test('Letters - 1 param', () {
       final DartamakerPluginLetters letters =
           Dartamaker().byTagName('letters', '10');
       expect(letters, isA<DartamakerPluginLetters>());
-      final String a1 = letters.apply();
+      final a1 = letters.apply();
       expect(a1.length, 10);
     });
     test('Integer - default', () {
       final DartamakerPluginInteger integer =
           Dartamaker().byTagName('integer', '');
       expect(integer, isA<DartamakerPluginInteger>());
-      final String a3 = integer.apply();
+      final a3 = integer.apply();
       expect(a3.length, anyOf(1, 2, 3));
     });
     test('Integer - 2 param', () {
       final DartamakerPluginInteger integer =
           Dartamaker().byTagName('integer', '1000 2000');
       expect(integer, isA<DartamakerPluginInteger>());
-      final String a1 = integer.apply();
+      final a1 = integer.apply();
       expect(a1.length, 4);
       expect(int.tryParse(a1) >= 1000, isTrue);
       expect(int.tryParse(a1) <= 2000, isTrue);
@@ -489,7 +474,7 @@ void main() {
       final DartamakerPluginInteger integer =
           Dartamaker().byTagName('integer', '10');
       expect(integer, isA<DartamakerPluginInteger>());
-      final String a1 = integer.apply();
+      final a1 = integer.apply();
       expect(a1.length, anyOf(2, 3));
       expect(int.tryParse(a1) >= 10, isTrue);
       expect(int.tryParse(a1) <= 100, isTrue);
@@ -497,7 +482,7 @@ void main() {
     test('Float - default', () {
       final DartamakerPluginFloat float = Dartamaker().byTagName('float', '');
       expect(float, isA<DartamakerPluginFloat>());
-      final String a1 = float.apply();
+      final a1 = float.apply();
       expect(double.tryParse(a1) >= 1.0, isTrue);
       expect(double.tryParse(a1) <= 100.0, isTrue);
       expect(a1.split('.')[1].length, 4);
@@ -506,7 +491,7 @@ void main() {
       final DartamakerPluginFloat float =
           Dartamaker().byTagName('float', '1000.0 2000.0 6');
       expect(float, isA<DartamakerPluginFloat>());
-      final String a1 = float.apply();
+      final a1 = float.apply();
       expect(double.tryParse(a1) >= 1000.0, isTrue);
       expect(double.tryParse(a1) <= 2000.0, isTrue);
       expect(a1.split('.')[1].length, 6);
@@ -515,7 +500,7 @@ void main() {
       final DartamakerPluginFloat float =
           Dartamaker().byTagName('float', '1000.0 2000.0');
       expect(float, isA<DartamakerPluginFloat>());
-      final String a1 = float.apply();
+      final a1 = float.apply();
       expect(double.tryParse(a1) >= 1000.0, isTrue);
       expect(double.tryParse(a1) <= 2000.0, isTrue);
       expect(a1.split('.')[1].length, 4);
@@ -524,7 +509,7 @@ void main() {
       final DartamakerPluginFloat float =
           Dartamaker().byTagName('float', '10.0');
       expect(float, isA<DartamakerPluginFloat>());
-      final String a1 = float.apply();
+      final a1 = float.apply();
       expect(double.tryParse(a1) >= 10.0, isTrue);
       expect(double.tryParse(a1) <= 100.0, isTrue);
       expect(a1.split('.')[1].length, 4);
@@ -533,7 +518,7 @@ void main() {
       final DartamakerPluginStreet street =
           Dartamaker().byTagName('street', '');
       expect(street, isA<DartamakerPluginStreet>());
-      final String a1 = street.apply();
+      final a1 = street.apply();
       expect(a1, anyOf(street.streets));
     });
   });

@@ -7,15 +7,12 @@
 
 part of dartamaker;
 
-// ignore_for_file: unnecessary_final
-// ignore_for_file: omit_local_variable_types
-
 /// Uuid
 class DartamakerPluginUuid implements DartamakerPlugin {
   /// Default
   DartamakerPluginUuid(String length) {
     if (length != null) {
-      final int val = int.tryParse(length);
+      final val = int.tryParse(length);
       if (val != null && val > 0) {
         _length = val;
       }
@@ -68,8 +65,8 @@ class DartamakerPluginUuid implements DartamakerPlugin {
 
   @override
   String apply() {
-    final StringBuffer str = StringBuffer();
-    for (int i = 0; i < _length; i++) {
+    final str = StringBuffer();
+    for (var i = 0; i < _length; i++) {
       str.write(_anums[Random().nextInt(_anums.length - 1)]);
     }
     return str.toString();

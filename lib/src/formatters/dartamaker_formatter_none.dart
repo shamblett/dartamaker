@@ -7,8 +7,6 @@
 
 part of dartamaker;
 
-// ignore_for_file: avoid_annotating_with_dynamic
-
 /// None(Null) formatter
 class DartamakerFormatterNone implements DartamakerFormatter {
   /// Filter

@@ -9,7 +9,6 @@ part of dartamaker;
 
 /// City names
 class DartamakerPluginCity implements DartamakerPlugin {
-  // ignore: unnecessary_final
   final List<String> _cities = <String>[
     'Aberdeen',
     'Abilene',

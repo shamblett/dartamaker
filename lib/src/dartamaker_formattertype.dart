@@ -6,12 +6,6 @@
  */
 
 part of dartamaker;
-// ignore_for_file: public_member_api_docs
-// ignore_for_file: omit_local_variable_types
-// ignore_for_file: unnecessary_final
-// ignore_for_file: cascade_invocations
-// ignore_for_file: avoid_print
-// ignore_for_file: avoid_types_on_closure_parameters
 
 /// Formatter
 enum DartamakerFormatterTypes { none, csv, json, xml }
@@ -21,8 +15,7 @@ class DartamakerFormattertype {
   /// From string
   static DartamakerFormatterTypes fromString(String formatterType) {
     DartamakerFormatterTypes ret;
-    for (final DartamakerFormatterTypes type
-        in DartamakerFormatterTypes.values) {
+    for (final type in DartamakerFormatterTypes.values) {
       if (formatterType == type.toString().split('.')[1]) {
         ret = type;
         break;
@@ -37,9 +30,8 @@ class DartamakerFormattertype {
 
   /// As string list
   static List<String> asStringList() {
-    final List<String> ret = <String>[];
-    for (final DartamakerFormatterTypes type
-        in DartamakerFormatterTypes.values) {
+    final ret = <String>[];
+    for (final type in DartamakerFormatterTypes.values) {
       ret.add(type.toString().split('.')[1]);
     }
     return ret;

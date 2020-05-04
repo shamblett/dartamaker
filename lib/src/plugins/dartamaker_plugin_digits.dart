@@ -7,15 +7,12 @@
 
 part of dartamaker;
 
-// ignore_for_file: unnecessary_final
-// ignore_for_file: omit_local_variable_types
-
 /// String of digits
 class DartamakerPluginDigits implements DartamakerPlugin {
   /// Default
   DartamakerPluginDigits(String numdigits) {
     if (numdigits != null) {
-      final int val = int.tryParse(numdigits);
+      final val = int.tryParse(numdigits);
       if (val != null && val > 0) {
         _numdigits = val;
       }
@@ -42,8 +39,8 @@ class DartamakerPluginDigits implements DartamakerPlugin {
 
   @override
   String apply() {
-    final StringBuffer str = StringBuffer();
-    for (int i = 0; i < _numdigits; i++) {
+    final str = StringBuffer();
+    for (var i = 0; i < _numdigits; i++) {
       str.write(_digits[Random().nextInt(_digits.length - 1)]);
     }
 

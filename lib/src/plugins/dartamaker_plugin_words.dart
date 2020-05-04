@@ -7,15 +7,12 @@
 
 part of dartamaker;
 
-// ignore_for_file: unnecessary_final
-// ignore_for_file: omit_local_variable_types
-
 /// Words
 class DartamakerPluginWords implements DartamakerPlugin {
   /// Default
   DartamakerPluginWords(String count) {
     if (count != null) {
-      final int val = int.tryParse(count);
+      final val = int.tryParse(count);
       if (val != null && val > 0) {
         _count = val;
       }
@@ -26,8 +23,8 @@ class DartamakerPluginWords implements DartamakerPlugin {
 
   @override
   String apply() {
-    final List<String> words = List<String>(_count);
-    for (int i = 0; i < _count; i++) {
+    final words = List<String>(_count);
+    for (var i = 0; i < _count; i++) {
       words[i] = DartamakerPluginWord().apply();
     }
     return words.join(' ');

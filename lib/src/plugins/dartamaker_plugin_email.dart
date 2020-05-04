@@ -7,9 +7,6 @@
 
 part of dartamaker;
 
-// ignore_for_file: unnecessary_final
-// ignore_for_file: omit_local_variable_types
-
 /// Email
 class DartamakerPluginEmail implements DartamakerPlugin {
   final List<String> _options = <String>['.', '', '_', '-'];

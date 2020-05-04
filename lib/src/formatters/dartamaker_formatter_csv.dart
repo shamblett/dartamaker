@@ -7,8 +7,6 @@
 
 part of dartamaker;
 
-// ignore_for_file: avoid_annotating_with_dynamic
-
 /// CSV formatter
 class DartamakerFormatterCSV implements DartamakerFormatter {
   /// Filter

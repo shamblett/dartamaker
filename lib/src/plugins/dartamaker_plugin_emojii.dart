@@ -7,15 +7,12 @@
 
 part of dartamaker;
 
-// ignore_for_file: unnecessary_final
-// ignore_for_file: omit_local_variable_types
-
 /// Emojii's
 class DartamakerPluginEmojii implements DartamakerPlugin {
   /// Default
   DartamakerPluginEmojii(String numchars) {
     if (numchars != null) {
-      final int val = int.tryParse(numchars);
+      final val = int.tryParse(numchars);
       if (val != null && val > 0) {
         _numchars = val;
       }
@@ -1313,8 +1310,8 @@ class DartamakerPluginEmojii implements DartamakerPlugin {
 
   @override
   String apply() {
-    final StringBuffer str = StringBuffer();
-    for (int i = 0; i < _numchars; i++) {
+    final str = StringBuffer();
+    for (var i = 0; i < _numchars; i++) {
       str.write(_emojiis[Random().nextInt(_emojiis.length - 1)]);
     }
     return str.toString();

@@ -7,9 +7,6 @@
 
 part of dartamaker;
 
-// ignore_for_file: unnecessary_final
-// ignore_for_file: omit_local_variable_types
-
 /// Postcodes
 class DartamakerPluginPostcode implements DartamakerPlugin {
   final List<String> _postcodes = <String>[
@@ -141,7 +138,7 @@ class DartamakerPluginPostcode implements DartamakerPlugin {
 
   @override
   String apply() {
-    final int numDigits = Random().nextDouble() > 0.5 ? 1 : 2;
+    final numDigits = Random().nextDouble() > 0.5 ? 1 : 2;
     return '${_postcodes[Random().nextInt(_postcodes.length - 1)]}'
         '${DartamakerPluginDigits(numDigits.toString()).apply()} '
         '${DartamakerPluginDigits('1').apply()}'

@@ -7,14 +7,11 @@
 
 part of dartamaker;
 
-// ignore_for_file: unnecessary_final
-// ignore_for_file: omit_local_variable_types
-
 /// Domain name
 class DartamakerPluginDomainname implements DartamakerPlugin {
   @override
   String apply() {
-    final StringBuffer t = StringBuffer();
+    final t = StringBuffer();
     if (Random().nextDouble() > 0.2) {
       t.write('com');
     } else {

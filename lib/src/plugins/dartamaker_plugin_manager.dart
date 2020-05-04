@@ -7,9 +7,6 @@
 
 part of dartamaker;
 
-// ignore_for_file: unnecessary_final
-// ignore_for_file: omit_local_variable_types
-
 /// Plugin manager
 class DartamakerPluginManager {
   final DartamakerPluginAutoinc _autoinc = DartamakerPluginAutoinc();
@@ -174,8 +171,8 @@ class DartamakerPluginManager {
   /// Get a plugin by its string tag name
   DartamakerPlugin byStringTagName(
       String tagName, String params, DartamakerCache cache) {
-    final DartamakerTagNames name = DartamakerTagname.fromString(tagName);
-    final Map<String, String> p = _getParamList(name, params);
+    final name = DartamakerTagname.fromString(tagName);
+    final p = _getParamList(name, params);
     return plugin(name, p, cache);
   }
 
@@ -184,8 +181,8 @@ class DartamakerPluginManager {
     if (params.isEmpty) {
       return DartamakerConstants.pluginNullParam;
     }
-    final Map<String, String> ret = <String, String>{};
-    final List<String> paramArray = params.split(' ');
+    final ret = <String, String>{};
+    final paramArray = params.split(' ');
     switch (name) {
       case DartamakerTagNames.boolean:
         ret[DartamakerConstants.probability] = paramArray[0];

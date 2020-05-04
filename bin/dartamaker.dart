@@ -9,24 +9,18 @@ import 'dart:io';
 import 'package:dartamaker/dartamaker.dart';
 import 'package:args/args.dart';
 
-// ignore_for_file: omit_local_variable_types
-// ignore_for_file: unnecessary_final
-// ignore_for_file: cascade_invocations
-// ignore_for_file: avoid_print
-// ignore_for_file: avoid_types_on_closure_parameters
-
 int main(List<String> args) {
-  final Dartamaker datagen = Dartamaker();
+  final datagen = Dartamaker();
 
-  int iterations = 1;
+  var iterations = 1;
   DartamakerFormatter formatter = DartamakerFormatterNone();
   String templatePath;
   ArgResults results;
   String input;
 
   // Initialize the argument parser
-  final ArgParser parser = ArgParser();
-  final List<String> formatOptions = DartamakerFormattertype.asStringList();
+  final parser = ArgParser();
+  final formatOptions = DartamakerFormattertype.asStringList();
   parser.addOption('format',
       abbr: 'f',
       defaultsTo: 'none',
@@ -39,7 +33,7 @@ int main(List<String> args) {
       defaultsTo: '1',
       help: 'Number of records to generate, must be greater than 0',
       callback: (String param) {
-    final int tmp = int.tryParse(param);
+    final tmp = int.tryParse(param);
     if (tmp != null && tmp >= 1) {
       iterations = tmp;
     } else {
@@ -77,7 +71,7 @@ int main(List<String> args) {
 
   // Get the template as a string or use the arguments
   if (templatePath != null) {
-    final File tmp = File(templatePath);
+    final tmp = File(templatePath);
     try {
       input = tmp.readAsStringSync().trim();
     } on Exception catch (e) {
@@ -94,7 +88,7 @@ int main(List<String> args) {
   }
 
   // Generate the data and output to stdout
-  final List<String> output = datagen.generate(input, formatter, iterations);
+  final output = datagen.generate(input, formatter, iterations);
   print(output.join('\n'));
 
   return 0;

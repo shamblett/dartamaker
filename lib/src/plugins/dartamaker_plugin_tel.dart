@@ -7,9 +7,6 @@
 
 part of dartamaker;
 
-// ignore_for_file: unnecessary_final
-// ignore_for_file: omit_local_variable_types
-
 /// Telephone numbers
 class DartamakerPluginTel implements DartamakerPlugin {
   final List<String> _codes = <String>[
@@ -131,6 +128,5 @@ class DartamakerPluginTel implements DartamakerPlugin {
 
   @override
   String apply() => '+${_codes[Random().nextInt(_codes.length - 1)]}-'
-      // ignore: lines_longer_than_80_chars
       '${DartamakerPluginDigits('4').apply()}-${DartamakerPluginDigits('3').apply()}-${DartamakerPluginDigits('3').apply()}';
 }

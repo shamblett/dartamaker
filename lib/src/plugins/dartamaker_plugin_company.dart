@@ -7,9 +7,6 @@
 
 part of dartamaker;
 
-// ignore_for_file: unnecessary_final
-// ignore_for_file: omit_local_variable_types
-
 /// Cat names
 class DartamakerPluginCompany implements DartamakerPlugin {
   final List<String> _middle = <String>[
@@ -49,11 +46,10 @@ class DartamakerPluginCompany implements DartamakerPlugin {
 
   @override
   String apply() {
-    final int r1 = Random().nextInt(_middle.length - 1);
-    final int r2 = Random().nextInt(_suffix.length - 1);
-    String w = _word.apply();
+    final r1 = Random().nextInt(_middle.length - 1);
+    final r2 = Random().nextInt(_suffix.length - 1);
+    var w = _word.apply();
     w = w.substring(0, 1).toUpperCase() + w.substring(1);
-    // ignore: lines_longer_than_80_chars
     return "$w ${_middle[r1]} ${_suffix[r2].replaceAll(RegExp('/ {2}/g'), ' ')}";
   }
 }

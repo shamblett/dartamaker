@@ -7,29 +7,26 @@
 
 part of dartamaker;
 
-// ignore_for_file: unnecessary_final
-// ignore_for_file: omit_local_variable_types
-
 /// Float
 class DartamakerPluginFloat implements DartamakerPlugin {
   /// Default
   DartamakerPluginFloat(String min, String max, String decimalplaces) {
     if (min != null) {
-      final double val = double.tryParse(min);
+      final val = double.tryParse(min);
       if (val != null && val > 0.0) {
         _min = val;
       }
     }
 
     if (max != null) {
-      final double val = double.tryParse(max);
+      final val = double.tryParse(max);
       if (val != null && val > 0.0) {
         _max = val;
       }
     }
 
     if (decimalplaces != null) {
-      final int val = int.tryParse(decimalplaces);
+      final val = int.tryParse(decimalplaces);
       if (val != null && val > 0) {
         _decimalplaces = val;
       }

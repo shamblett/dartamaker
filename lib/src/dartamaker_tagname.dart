@@ -6,12 +6,6 @@
  */
 
 part of dartamaker;
-// ignore_for_file: public_member_api_docs
-// ignore_for_file: omit_local_variable_types
-// ignore_for_file: unnecessary_final
-// ignore_for_file: cascade_invocations
-// ignore_for_file: avoid_print
-// ignore_for_file: avoid_types_on_closure_parameters
 
 /// Tag names
 enum DartamakerTagNames {
@@ -67,7 +61,7 @@ class DartamakerTagname {
   /// From string
   static DartamakerTagNames fromString(String tagName) {
     DartamakerTagNames ret;
-    for (final DartamakerTagNames tag in DartamakerTagNames.values) {
+    for (final tag in DartamakerTagNames.values) {
       if (tagName == tag.toString().split('.')[1]) {
         ret = tag;
         break;

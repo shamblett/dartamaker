@@ -9,7 +9,8 @@ part of dartamaker;
 
 /// Tag cache
 class DartamakerCache {
-  final Map<DartamakerTagNames?, String> _cache = <DartamakerTagNames?, String>{};
+  final Map<DartamakerTagNames?, String> _cache =
+      <DartamakerTagNames?, String>{};
 
   /// Get a plugin cached value by tag name
   String? valueByTagName(DartamakerTagNames tagName) => _cache[tagName];

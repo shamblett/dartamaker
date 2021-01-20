@@ -23,7 +23,7 @@ class DartamakerPluginWords implements DartamakerPlugin {
 
   @override
   String apply() {
-    final words = List<String?>(_count);
+    final words = List<String?>.filled(_count, '');
     for (var i = 0; i < _count; i++) {
       words[i] = DartamakerPluginWord().apply();
     }

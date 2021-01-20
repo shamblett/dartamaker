@@ -15,7 +15,7 @@ class DartamakerFormatterXml implements DartamakerFormatter {
     if (obj == null || (obj is! String)) {
       return '';
     }
-    final String str = obj;
+    final str = obj;
     return str
         .replaceAll('&', '&amp;')
         .replaceAll('<', '&lt;')

@@ -18,6 +18,7 @@ part 'src/dartamaker_cache.dart';
 part 'src/dartamaker_tagname.dart';
 part 'src/dartamaker_formattertype.dart';
 part 'src/plugins/dartamaker_plugin.dart';
+part 'src/plugins/dartamaker_plugin_null.dart';
 part 'src/plugins/dartamaker_plugin_airport.dart';
 part 'src/plugins/dartamaker_plugin_autoinc.dart';
 part 'src/plugins/dartamaker_plugin_boolean.dart';

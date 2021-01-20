@@ -25,6 +25,9 @@ class DartamakerFormatterManager {
       case DartamakerFormatterTypes.xml:
         formatter = DartamakerFormatterXml();
         break;
+      case null:
+        formatter = DartamakerFormatterNone();
+        break;
     }
 
     return formatter;

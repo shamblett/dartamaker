@@ -52,8 +52,8 @@ class Dartamaker {
           .replaceAll(RegExp('}}\$'), '')
           .split(RegExp('(\\s+)'))
           .map((String e) => e.trim())
-          .where(((String e) => e.isNotEmpty) as bool Function(bool))
-          .toList() as List<String>;
+          .where(((String e) => e.isNotEmpty))
+          .toList();
       final params = t.length == 2 ? t[1] : '';
       tags.add(<String, String>{
         DartamakerConstants.original: s,

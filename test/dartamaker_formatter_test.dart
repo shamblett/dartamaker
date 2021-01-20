@@ -10,8 +10,8 @@ import 'package:test/test.dart';
 
 void main() {
   test('None', () {
-    final DartamakerFormatterNone none =
-        Dartamaker().formatter(DartamakerFormatterTypes.none) as DartamakerFormatterNone;
+    final none = Dartamaker().formatter(DartamakerFormatterTypes.none)
+        as DartamakerFormatterNone;
     expect(none.filter(null), isNull);
     const str = 'theString';
     expect(none.filter(5), '5');
@@ -19,8 +19,8 @@ void main() {
     expect(none.postCommit(str), str);
   });
   test('Json', () {
-    final DartamakerFormatterJson json =
-        Dartamaker().formatter(DartamakerFormatterTypes.json) as DartamakerFormatterJson;
+    final json = Dartamaker().formatter(DartamakerFormatterTypes.json)
+        as DartamakerFormatterJson;
     expect(json.filter(null), 'null');
     expect(json.filter(<int>[1, 2, 3]), '[1,2,3]');
     final json1 = <String, dynamic>{
@@ -35,8 +35,8 @@ void main() {
     expect(json.filter(json3), '{"str1":"hello again"}');
   });
   test('CSV', () {
-    final DartamakerFormatterCSV csv =
-        Dartamaker().formatter(DartamakerFormatterTypes.csv) as DartamakerFormatterCSV;
+    final csv = Dartamaker().formatter(DartamakerFormatterTypes.csv)
+        as DartamakerFormatterCSV;
     expect(csv.filter(null), '');
     expect(csv.filter(5), '');
     const t1 = '"Hello"';
@@ -46,8 +46,8 @@ void main() {
     expect(csv.postCommit(t2), t2);
   });
   test('Xml', () {
-    final DartamakerFormatterXml xml =
-        Dartamaker().formatter(DartamakerFormatterTypes.xml) as DartamakerFormatterXml;
+    final xml = Dartamaker().formatter(DartamakerFormatterTypes.xml)
+        as DartamakerFormatterXml;
     expect(xml.filter(null), '');
     const t1 = 'hello & again & again';
     expect(xml.filter(t1), 'hello &amp; again &amp; again');

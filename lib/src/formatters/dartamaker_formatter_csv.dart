@@ -15,7 +15,7 @@ class DartamakerFormatterCSV implements DartamakerFormatter {
     if (obj == null || (obj is! String)) {
       return '';
     }
-    String str = obj;
+    var str = obj;
     str = str.replaceAll(RegExp('"'), '""');
     if (RegExp(',').hasMatch(str)) {
       str = '"$str"';

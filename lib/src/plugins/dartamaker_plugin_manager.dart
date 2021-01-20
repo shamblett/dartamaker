@@ -163,6 +163,9 @@ class DartamakerPluginManager {
         ret = DartamakerPluginLast(
             cache?.valueByStringTagName(params![DartamakerConstants.name]));
         break;
+      case null:
+        ret = DartamakerPluginNull();
+        break;
     }
 
     return ret;

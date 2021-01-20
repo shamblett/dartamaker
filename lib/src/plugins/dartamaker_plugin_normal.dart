@@ -10,7 +10,7 @@ part of dartamaker;
 /// Normal
 class DartamakerPluginNormal implements DartamakerPlugin {
   /// Default
-  DartamakerPluginNormal(String mean, String stddev, String decimalplaces) {
+  DartamakerPluginNormal(String? mean, String? stddev, String? decimalplaces) {
     if (mean != null) {
       final val = int.tryParse(mean);
       if (val != null && val > 0) {

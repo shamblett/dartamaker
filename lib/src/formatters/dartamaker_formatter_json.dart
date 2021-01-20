@@ -15,5 +15,5 @@ class DartamakerFormatterJson implements DartamakerFormatter {
 
   /// Post commit operation
   @override
-  String postCommit(String str) => json.decode(json.encode(str));
+  String? postCommit(String str) => json.decode(json.encode(str));
 }

@@ -10,7 +10,7 @@ part of dartamaker;
 /// Oneof
 class DartamakerPluginOneof implements DartamakerPlugin {
   /// Default
-  DartamakerPluginOneof(String args) {
+  DartamakerPluginOneof(String? args) {
     if (args != null) {
       _args = args.split(' ');
     }

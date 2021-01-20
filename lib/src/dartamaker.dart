@@ -15,25 +15,25 @@ class Dartamaker {
   final DartamakerCache _cache = DartamakerCache();
 
   /// Get a plugin by tag name and supplied mapped parameters
-  DartamakerPlugin plugin(
-          DartamakerTagNames tagName, Map<String, String> params) =>
+  DartamakerPlugin? plugin(
+          DartamakerTagNames tagName, Map<String, String>? params) =>
       _pluginManager.plugin(tagName, params, _cache);
 
   /// Get a plugin by its string tag name and string parameters
-  DartamakerPlugin byTagName(String tagName, String params) =>
+  DartamakerPlugin? byTagName(String tagName, String params) =>
       _pluginManager.byStringTagName(tagName, params, _cache);
 
   /// Get a formatter by type name
-  DartamakerFormatter formatter(DartamakerFormatterTypes type) =>
+  DartamakerFormatter? formatter(DartamakerFormatterTypes? type) =>
       _formatterManager.formatter(type);
 
   /// Get a tag substitution for a tag
-  String substitute(DartamakerTagNames tagName, Map<String, String> params) =>
-      plugin(tagName, params).apply();
+  String? substitute(DartamakerTagNames tagName, Map<String, String> params) =>
+      plugin(tagName, params)!.apply();
 
   /// Find tags, locate occurrences of things surrounded in
   /// double curly {{brackets}}
-  List<Map<String, String>> findTags(String str) {
+  List<Map<String, String>> findTags(String? str) {
     final tags = <Map<String, String>>[];
     if (str == null) {
       return tags;
@@ -42,7 +42,7 @@ class Dartamaker {
     final Iterable<Match> matches = exp.allMatches(str);
     // Iterate through each one
     for (final match in matches) {
-      final s = match.group(0);
+      final s = match.group(0)!;
       // remove leading {{
       // removing trailing }}
       // split into words
@@ -52,8 +52,8 @@ class Dartamaker {
           .replaceAll(RegExp('}}\$'), '')
           .split(RegExp('(\\s+)'))
           .map((String e) => e.trim())
-          .where((String e) => e.isNotEmpty)
-          .toList();
+          .where(((String e) => e.isNotEmpty) as bool Function(bool))
+          .toList() as List<String>;
       final params = t.length == 2 ? t[1] : '';
       tags.add(<String, String>{
         DartamakerConstants.original: s,
@@ -67,15 +67,15 @@ class Dartamaker {
   /// Using the supplied template and list of tag objects found within it
   /// and a the supplied formatter object, make all the substitutions and
   /// return the new string.
-  String swap(String template, List<Map<String, String>> tags,
+  String? swap(String template, List<Map<String, String>> tags,
       DartamakerFormatter formatter) {
     var str = template;
     // Iterate through the tags
     for (final tag in tags) {
       final plugin = _pluginManager.byStringTagName(
           tag[DartamakerConstants.tag],
-          tag[DartamakerConstants.params],
-          _cache);
+          tag[DartamakerConstants.params]!,
+          _cache)!;
 
       // Calculate the replacement
       final replacement = formatter.filter(plugin.apply());
@@ -85,7 +85,7 @@ class Dartamaker {
         _cache.updateByStringTagName(tag[DartamakerConstants.tag], replacement);
 
         // Switch the tag in the template for the replacement
-        str = str.replaceAll(tag[DartamakerConstants.original], replacement);
+        str = str.replaceAll(tag[DartamakerConstants.original]!, replacement);
       }
     }
 
@@ -95,13 +95,13 @@ class Dartamaker {
 
   /// Generate some data based on the template, the format and the
   /// number of iterations
-  List<String> generate(
-      String str, DartamakerFormatter formatter, int iterations) {
+  List<String?> generate(
+      String str, DartamakerFormatter? formatter, int iterations) {
     if (iterations <= 0) {
       return <String>[str];
     }
 
-    final res = <String>[];
+    final res = <String?>[];
 
     /// Locate tags in the template
     final tags = findTags(str);
@@ -110,7 +110,7 @@ class Dartamaker {
     var count = 1;
     do {
       _cache.clear();
-      final tmp = swap(str, tags, formatter);
+      final tmp = swap(str, tags, formatter!);
       res.add(tmp);
       count++;
     } while (count <= iterations);

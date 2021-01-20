@@ -10,7 +10,7 @@ part of dartamaker;
 /// ISO dates and times
 class DartamakerPluginDateiso implements DartamakerPlugin {
   /// Default
-  DartamakerPluginDateiso(String min, String max) {
+  DartamakerPluginDateiso(String? min, String? max) {
     if (min != null) {
       final val = DateTime.tryParse(min);
       if (val != null) {

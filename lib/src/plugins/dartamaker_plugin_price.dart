@@ -10,7 +10,7 @@ part of dartamaker;
 /// Price
 class DartamakerPluginPrice implements DartamakerPlugin {
   /// Default
-  DartamakerPluginPrice(String min, String max) {
+  DartamakerPluginPrice(String? min, String? max) {
     if (min != null) {
       final val = double.tryParse(min);
       if (val != null && val > 0.0) {
@@ -34,6 +34,6 @@ class DartamakerPluginPrice implements DartamakerPlugin {
     final min = (_min.round() * 100).toString();
     final max = (_max.round() * 100).toString();
     final res = DartamakerPluginInteger(min, max).apply();
-    return (int.tryParse(res) / 100).round().toString();
+    return (int.tryParse(res)! / 100).round().toString();
   }
 }

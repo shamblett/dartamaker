@@ -10,8 +10,8 @@ part of dartamaker;
 /// Formatter manager
 class DartamakerFormatterManager {
   /// Get a formatter by tag name
-  DartamakerFormatter formatter(DartamakerFormatterTypes type) {
-    DartamakerFormatter formatter;
+  DartamakerFormatter? formatter(DartamakerFormatterTypes? type) {
+    DartamakerFormatter? formatter;
     switch (type) {
       case DartamakerFormatterTypes.csv:
         formatter = DartamakerFormatterCSV();

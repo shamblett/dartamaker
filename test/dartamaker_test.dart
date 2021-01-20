@@ -127,7 +127,7 @@ void main() {
       };
       const template = 'Here is the {{uuid}} for you';
       final res =
-          maker.swap(template, <Map<String, String>>[params], formatter);
+          maker.swap(template, <Map<String, String>>[params], formatter)!;
       expect(res.contains('{{'), isFalse);
       expect(res.contains('}}'), isFalse);
       expect(res.length, template.length + 8);
@@ -140,7 +140,7 @@ void main() {
       };
       const template = 'Here is the {{uuid}} for you and again {{uuid}}';
       final res =
-          maker.swap(template, <Map<String, String>>[params], formatter);
+          maker.swap(template, <Map<String, String>>[params], formatter)!;
       expect(res.contains('{{'), isFalse);
       expect(res.contains('}}'), isFalse);
       expect(res.length, template.length + 16);
@@ -153,7 +153,7 @@ void main() {
       };
       const template = 'Here are the {{words}} for you';
       final res =
-          maker.swap(template, <Map<String, String>>[params], formatter);
+          maker.swap(template, <Map<String, String>>[params], formatter)!;
       expect(res.contains('{{'), isFalse);
       expect(res.contains('}}'), isFalse);
       expect(res.length > template.length, isTrue);
@@ -166,7 +166,7 @@ void main() {
       };
       const template = 'Here is the {{words}} for you and again {{words}}';
       final res =
-          maker.swap(template, <Map<String, String>>[params], formatter);
+          maker.swap(template, <Map<String, String>>[params], formatter)!;
       expect(res.contains('{{'), isFalse);
       expect(res.contains('}}'), isFalse);
       expect(res.length > template.length, isTrue);
@@ -185,7 +185,7 @@ void main() {
       const template =
           'Here are 2 words "{{words}}" for you and a uuid "{{uuid}}"';
       final res = maker.swap(
-          template, <Map<String, String>>[params, params1], formatter);
+          template, <Map<String, String>>[params, params1], formatter)!;
       expect(res.contains('{{'), isFalse);
       expect(res.contains('}}'), isFalse);
       expect(res.length > template.length, isTrue);
@@ -205,7 +205,7 @@ void main() {
         DartamakerConstants.params: ''
       };
       final res1 =
-          maker.swap(template, <Map<String, String>>[params2], formatter);
+          maker.swap(template, <Map<String, String>>[params2], formatter)!;
       template = 'Here is the last uuid -{{last uuid}}';
       final params = <String, String>{
         DartamakerConstants.original: '{{last uuid}}',
@@ -213,7 +213,7 @@ void main() {
         DartamakerConstants.params: 'uuid'
       };
       final res2 =
-          maker.swap(template, <Map<String, String>>[params], formatter);
+          maker.swap(template, <Map<String, String>>[params], formatter)!;
       expect(res2.contains('{{'), isFalse);
       expect(res2.contains('}}'), isFalse);
       expect(res2.length > template.length, isTrue);

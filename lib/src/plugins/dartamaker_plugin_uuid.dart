@@ -10,7 +10,7 @@ part of dartamaker;
 /// Uuid
 class DartamakerPluginUuid implements DartamakerPlugin {
   /// Default
-  DartamakerPluginUuid(String length) {
+  DartamakerPluginUuid(String? length) {
     if (length != null) {
       final val = int.tryParse(length);
       if (val != null && val > 0) {

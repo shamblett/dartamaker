@@ -10,7 +10,7 @@ part of dartamaker;
 /// Integer
 class DartamakerPluginInteger implements DartamakerPlugin {
   /// Default
-  DartamakerPluginInteger(String min, String max) {
+  DartamakerPluginInteger(String? min, String? max) {
     if (min != null) {
       final val = int.tryParse(min);
       if (val != null && val > 0) {

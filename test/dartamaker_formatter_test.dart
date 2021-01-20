@@ -11,7 +11,7 @@ import 'package:test/test.dart';
 void main() {
   test('None', () {
     final DartamakerFormatterNone none =
-        Dartamaker().formatter(DartamakerFormatterTypes.none);
+        Dartamaker().formatter(DartamakerFormatterTypes.none) as DartamakerFormatterNone;
     expect(none.filter(null), isNull);
     const str = 'theString';
     expect(none.filter(5), '5');
@@ -20,7 +20,7 @@ void main() {
   });
   test('Json', () {
     final DartamakerFormatterJson json =
-        Dartamaker().formatter(DartamakerFormatterTypes.json);
+        Dartamaker().formatter(DartamakerFormatterTypes.json) as DartamakerFormatterJson;
     expect(json.filter(null), 'null');
     expect(json.filter(<int>[1, 2, 3]), '[1,2,3]');
     final json1 = <String, dynamic>{
@@ -36,7 +36,7 @@ void main() {
   });
   test('CSV', () {
     final DartamakerFormatterCSV csv =
-        Dartamaker().formatter(DartamakerFormatterTypes.csv);
+        Dartamaker().formatter(DartamakerFormatterTypes.csv) as DartamakerFormatterCSV;
     expect(csv.filter(null), '');
     expect(csv.filter(5), '');
     const t1 = '"Hello"';
@@ -47,7 +47,7 @@ void main() {
   });
   test('Xml', () {
     final DartamakerFormatterXml xml =
-        Dartamaker().formatter(DartamakerFormatterTypes.xml);
+        Dartamaker().formatter(DartamakerFormatterTypes.xml) as DartamakerFormatterXml;
     expect(xml.filter(null), '');
     const t1 = 'hello & again & again';
     expect(xml.filter(t1), 'hello &amp; again &amp; again');

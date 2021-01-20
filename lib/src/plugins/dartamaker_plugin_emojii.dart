@@ -10,7 +10,7 @@ part of dartamaker;
 /// Emojii's
 class DartamakerPluginEmojii implements DartamakerPlugin {
   /// Default
-  DartamakerPluginEmojii(String numchars) {
+  DartamakerPluginEmojii(String? numchars) {
     if (numchars != null) {
       final val = int.tryParse(numchars);
       if (val != null && val > 0) {

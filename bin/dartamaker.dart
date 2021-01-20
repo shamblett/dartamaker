@@ -13,8 +13,8 @@ int main(List<String> args) {
   final datagen = Dartamaker();
 
   var iterations = 1;
-  DartamakerFormatter formatter = DartamakerFormatterNone();
-  String templatePath;
+  DartamakerFormatter? formatter = DartamakerFormatterNone();
+  String? templatePath;
   ArgResults results;
   String input;
 
@@ -71,7 +71,7 @@ int main(List<String> args) {
 
   // Get the template as a string or use the arguments
   if (templatePath != null) {
-    final tmp = File(templatePath);
+    final tmp = File(templatePath!);
     try {
       input = tmp.readAsStringSync().trim();
     } on Exception catch (e) {

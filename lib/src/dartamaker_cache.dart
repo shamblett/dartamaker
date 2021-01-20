@@ -9,19 +9,19 @@ part of dartamaker;
 
 /// Tag cache
 class DartamakerCache {
-  final Map<DartamakerTagNames, String> _cache = <DartamakerTagNames, String>{};
+  final Map<DartamakerTagNames?, String> _cache = <DartamakerTagNames?, String>{};
 
   /// Get a plugin cached value by tag name
-  String valueByTagName(DartamakerTagNames tagName) => _cache[tagName];
+  String? valueByTagName(DartamakerTagNames tagName) => _cache[tagName];
 
   /// Get a plugin cached value by string tag name
-  String valueByStringTagName(String tagName) {
+  String? valueByStringTagName(String? tagName) {
     final name = DartamakerTagname.fromString(tagName);
     return _cache[name];
   }
 
   /// Update a value by string tag name
-  void updateByStringTagName(String tagName, String value) {
+  void updateByStringTagName(String? tagName, String value) {
     final name = DartamakerTagname.fromString(tagName);
     _cache[name] = value;
   }

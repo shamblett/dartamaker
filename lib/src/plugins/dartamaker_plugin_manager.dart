@@ -12,10 +12,10 @@ class DartamakerPluginManager {
   final DartamakerPluginAutoinc _autoinc = DartamakerPluginAutoinc();
 
   /// Get a plugin by tag name
-  DartamakerPlugin plugin(
-      DartamakerTagNames tagName, Map<String, String> params,
-      [DartamakerCache cache]) {
-    DartamakerPlugin ret;
+  DartamakerPlugin? plugin(
+      DartamakerTagNames? tagName, Map<String, String?>? params,
+      [DartamakerCache? cache]) {
+    DartamakerPlugin? ret;
     switch (tagName) {
       case DartamakerTagNames.airport:
         ret = DartamakerPluginAirport();
@@ -24,7 +24,7 @@ class DartamakerPluginManager {
         ret = _autoinc;
         break;
       case DartamakerTagNames.boolean:
-        ret = DartamakerPluginBoolean(params[DartamakerConstants.probability]);
+        ret = DartamakerPluginBoolean(params![DartamakerConstants.probability]);
         break;
       case DartamakerTagNames.cat:
         ret = DartamakerPluginCat();
@@ -48,7 +48,7 @@ class DartamakerPluginManager {
         ret = DartamakerPluginCounty();
         break;
       case DartamakerTagNames.digits:
-        ret = DartamakerPluginDigits(params[DartamakerConstants.numdigits]);
+        ret = DartamakerPluginDigits(params![DartamakerConstants.numdigits]);
         break;
       case DartamakerTagNames.creditcard:
         ret = DartamakerPluginCreditcard();
@@ -72,25 +72,25 @@ class DartamakerPluginManager {
         ret = DartamakerPluginEmail();
         break;
       case DartamakerTagNames.emojii:
-        ret = DartamakerPluginEmojii(params[DartamakerConstants.numchars]);
+        ret = DartamakerPluginEmojii(params![DartamakerConstants.numchars]);
         break;
       case DartamakerTagNames.float:
         ret = DartamakerPluginFloat(
-            params[DartamakerConstants.min],
+            params![DartamakerConstants.min],
             params[DartamakerConstants.max],
             params[DartamakerConstants.decimalplaces]);
         break;
       case DartamakerTagNames.integer:
         ret = DartamakerPluginInteger(
-            params[DartamakerConstants.min], params[DartamakerConstants.max]);
+            params![DartamakerConstants.min], params[DartamakerConstants.max]);
         break;
       case DartamakerTagNames.dateiso:
         ret = DartamakerPluginDateiso(
-            params[DartamakerConstants.min], params[DartamakerConstants.max]);
+            params![DartamakerConstants.min], params[DartamakerConstants.max]);
         break;
       case DartamakerTagNames.date:
         ret = DartamakerPluginDate(
-            params[DartamakerConstants.min], params[DartamakerConstants.max]);
+            params![DartamakerConstants.min], params[DartamakerConstants.max]);
         break;
       case DartamakerTagNames.latitude:
         ret = DartamakerPluginLatitude();
@@ -99,26 +99,26 @@ class DartamakerPluginManager {
         ret = DartamakerPluginLongitude();
         break;
       case DartamakerTagNames.letters:
-        ret = DartamakerPluginLetters(params[DartamakerConstants.numletters]);
+        ret = DartamakerPluginLetters(params![DartamakerConstants.numletters]);
         break;
       case DartamakerTagNames.name:
         ret = DartamakerPluginName();
         break;
       case DartamakerTagNames.normal:
         ret = DartamakerPluginNormal(
-            params[DartamakerConstants.mean],
+            params![DartamakerConstants.mean],
             params[DartamakerConstants.stddev],
             params[DartamakerConstants.decimalplaces]);
         break;
       case DartamakerTagNames.oneof:
-        ret = DartamakerPluginOneof(params[DartamakerConstants.args]);
+        ret = DartamakerPluginOneof(params![DartamakerConstants.args]);
         break;
       case DartamakerTagNames.postcode:
         ret = DartamakerPluginPostcode();
         break;
       case DartamakerTagNames.price:
         ret = DartamakerPluginPrice(
-            params[DartamakerConstants.min], params[DartamakerConstants.max]);
+            params![DartamakerConstants.min], params[DartamakerConstants.max]);
         break;
       case DartamakerTagNames.state:
         ret = DartamakerPluginState();
@@ -145,7 +145,7 @@ class DartamakerPluginManager {
         ret = DartamakerPluginTown();
         break;
       case DartamakerTagNames.uuid:
-        ret = DartamakerPluginUuid(params[DartamakerConstants.length]);
+        ret = DartamakerPluginUuid(params![DartamakerConstants.length]);
         break;
       case DartamakerTagNames.website:
         ret = DartamakerPluginWebsite();
@@ -154,14 +154,14 @@ class DartamakerPluginManager {
         ret = DartamakerPluginUrl();
         break;
       case DartamakerTagNames.words:
-        ret = DartamakerPluginWords(params[DartamakerConstants.count]);
+        ret = DartamakerPluginWords(params![DartamakerConstants.count]);
         break;
       case DartamakerTagNames.zip:
         ret = DartamakerPluginZip();
         break;
       case DartamakerTagNames.last:
         ret = DartamakerPluginLast(
-            cache?.valueByStringTagName(params[DartamakerConstants.name]));
+            cache?.valueByStringTagName(params![DartamakerConstants.name]));
         break;
     }
 
@@ -169,19 +169,19 @@ class DartamakerPluginManager {
   }
 
   /// Get a plugin by its string tag name
-  DartamakerPlugin byStringTagName(
-      String tagName, String params, DartamakerCache cache) {
+  DartamakerPlugin? byStringTagName(
+      String? tagName, String params, DartamakerCache cache) {
     final name = DartamakerTagname.fromString(tagName);
     final p = _getParamList(name, params);
     return plugin(name, p, cache);
   }
 
   /// Get a parameter list for a tag from its string representation
-  Map<String, String> _getParamList(DartamakerTagNames name, String params) {
+  Map<String, String?> _getParamList(DartamakerTagNames? name, String params) {
     if (params.isEmpty) {
       return DartamakerConstants.pluginNullParam;
     }
-    final ret = <String, String>{};
+    final ret = <String, String?>{};
     final paramArray = params.split(' ');
     switch (name) {
       case DartamakerTagNames.boolean:

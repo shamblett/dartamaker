@@ -11,8 +11,8 @@ part of dartamaker;
 abstract class DartamakerFormatter {
   /// Filter
 
-  String filter(dynamic obj);
+  String? filter(dynamic obj);
 
   /// Post commit operation
-  String postCommit(String str);
+  String? postCommit(String str);
 }

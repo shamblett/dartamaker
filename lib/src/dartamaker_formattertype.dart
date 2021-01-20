@@ -13,8 +13,8 @@ enum DartamakerFormatterTypes { none, csv, json, xml }
 /// Formatter name support
 class DartamakerFormattertype {
   /// From string
-  static DartamakerFormatterTypes fromString(String formatterType) {
-    DartamakerFormatterTypes ret;
+  static DartamakerFormatterTypes? fromString(String formatterType) {
+    DartamakerFormatterTypes? ret;
     for (final type in DartamakerFormatterTypes.values) {
       if (formatterType == type.toString().split('.')[1]) {
         ret = type;

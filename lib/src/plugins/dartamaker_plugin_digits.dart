@@ -10,7 +10,7 @@ part of dartamaker;
 /// String of digits
 class DartamakerPluginDigits implements DartamakerPlugin {
   /// Default
-  DartamakerPluginDigits(String numdigits) {
+  DartamakerPluginDigits(String? numdigits) {
     if (numdigits != null) {
       final val = int.tryParse(numdigits);
       if (val != null && val > 0) {

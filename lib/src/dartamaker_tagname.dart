@@ -59,8 +59,8 @@ enum DartamakerTagNames {
 /// Tag name support
 class DartamakerTagname {
   /// From string
-  static DartamakerTagNames fromString(String tagName) {
-    DartamakerTagNames ret;
+  static DartamakerTagNames? fromString(String? tagName) {
+    DartamakerTagNames? ret;
     for (final tag in DartamakerTagNames.values) {
       if (tagName == tag.toString().split('.')[1]) {
         ret = tag;

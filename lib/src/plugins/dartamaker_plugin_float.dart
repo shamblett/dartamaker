@@ -10,7 +10,7 @@ part of dartamaker;
 /// Float
 class DartamakerPluginFloat implements DartamakerPlugin {
   /// Default
-  DartamakerPluginFloat(String min, String max, String decimalplaces) {
+  DartamakerPluginFloat(String? min, String? max, String? decimalplaces) {
     if (min != null) {
       final val = double.tryParse(min);
       if (val != null && val > 0.0) {

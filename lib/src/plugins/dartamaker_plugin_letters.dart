@@ -10,7 +10,7 @@ part of dartamaker;
 /// Letters
 class DartamakerPluginLetters implements DartamakerPlugin {
   /// Default
-  DartamakerPluginLetters(String numletters) {
+  DartamakerPluginLetters(String? numletters) {
     if (numletters != null) {
       final val = int.tryParse(numletters);
       if (val != null && val > 0) {

@@ -53,7 +53,7 @@ int main(List<String> args) {
   try {
     results = parser.parse(args);
   } on FormatException catch (e) {
-    print('${e.message}');
+    print(e.message);
     return -1;
   }
 

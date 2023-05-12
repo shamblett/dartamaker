@@ -1,6 +1,6 @@
-SPDXVersion: SPDX-2.2DataLicense: CC0-1.0SPDXID: SPDXRef-DOCUMENTDocumentName: dartamakerDocumentNamespace: https://pub.dev/packages/dartamakerLicenseListVersion: 3.8Creator: Tool: https://pub.dev/packages/sbomCreated: 2022-09-07T09:15:45Z
+SPDXVersion: SPDX-2.2DataLicense: CC0-1.0SPDXID: SPDXRef-DOCUMENTDocumentName: dartamakerDocumentNamespace: https://pub.dev/packages/dartamakerLicenseListVersion: 3.8Creator: Tool: https://pub.dev/packages/sbomCreated: 2023-05-12T14:08:04Z
 
-PackageName: dartamakerSPDXID: SPDXRef-Package-dartamakerPackageVersion: 2.0.1PackageFileName: dartamakerPackageSupplier: NOASSERTIONPackageOriginator: NOASSERTIONPackageDownloadLocation: https://pub.dev/packages/dartamakerFilesAnalyzed: truePackageVerificationCode: 02d9b369f2a82498feece597dd5faee5d7ce62cfPackageHomePage: https://pub.dev/packages/dartamakerPackageLicenseConcluded: NOASSERTIONPackageLicenseInfoFromFiles: NOASSERTIONPackageLicenseDeclared: NOASSERTIONPackageCopyrightText: NOASSERTIONPackageSummary: <text>A command-line Dart script and library that generates JSON or CSV data in bulk.</text>
+PackageName: dartamakerSPDXID: SPDXRef-Package-dartamakerPackageVersion: 3.0.0PackageFileName: dartamakerPackageSupplier: NOASSERTIONPackageOriginator: NOASSERTIONPackageDownloadLocation: https://pub.dev/packages/dartamakerFilesAnalyzed: truePackageVerificationCode: a59af3cdccbdce8990734f69615a27ceb6074302PackageHomePage: https://pub.dev/packages/dartamakerPackageLicenseConcluded: NOASSERTIONPackageLicenseInfoFromFiles: NOASSERTIONPackageLicenseDeclared: NOASSERTIONPackageCopyrightText: NOASSERTIONPackageSummary: <text>A command-line Dart script and library that generates JSON or CSV data in bulk.</text>
 
 FileName: /bin/dartamaker.dartSPDXID: SPDXRef-dartamaker-0FileType: SOURCEFileChecksum: SHA1: 78da2f76851ca5e1b5bf2b615ef7bbf4533a89c1LicenseConcluded: NOASSERTIONLicenseInfoInFile: NOASSERTIONFileCopyrightText: NOASSERTION
 
@@ -126,7 +126,7 @@ FileName: /lib/src/plugins/dartamaker_plugin_words.dartSPDXID: SPDXRef-dartamak
 
 FileName: /lib/src/plugins/dartamaker_plugin_zip.dartSPDXID: SPDXRef-dartamaker-plugin-zip-61FileType: SOURCEFileChecksum: SHA1: a3a44285d14f95cc8b164fb7722f7c79e43dbafaLicenseConcluded: NOASSERTIONLicenseInfoInFile: NOASSERTIONFileCopyrightText: NOASSERTION
 
-FileName: /pubspec.yamlSPDXID: SPDXRef-pubspec-62FileType: TEXTFileChecksum: SHA1: 7cdac4677e9a9d753d77ddee06a479884756ab53LicenseConcluded: NOASSERTIONLicenseInfoInFile: NOASSERTIONFileCopyrightText: NOASSERTION
+FileName: /pubspec.yamlSPDXID: SPDXRef-pubspec-62FileType: TEXTFileChecksum: SHA1: 3df0223fe6478ac42738abad9f5ed7337703ef7cLicenseConcluded: NOASSERTIONLicenseInfoInFile: NOASSERTIONFileCopyrightText: NOASSERTION
 
 Relationship: SPDXRef-pubspec-62 DEPENDENCY_MANIFEST_OF SPDXRef-Package-dartamaker
 

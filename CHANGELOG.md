@@ -1,3 +1,6 @@
+# 3.0.0
+Issue 3 - Dart 3
+
 # 2.0.1
 Issue 2
 

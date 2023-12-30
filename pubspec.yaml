@@ -1,6 +1,6 @@
 name: dartamaker
 description: A command-line Dart script and library that generates JSON or CSV data in bulk.
-version: 3.0.0
+version: 3.0.1
 homepage: https://github.com/shamblett/dartamaker
 
 funding:

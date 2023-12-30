@@ -5,7 +5,7 @@
  * Copyright :  S.Hamblett
  */
 
-part of dartamaker;
+part of '../../dartamaker.dart';
 
 /// Normal
 class DartamakerPluginNormal implements DartamakerPlugin {

@@ -5,7 +5,7 @@
  * Copyright :  S.Hamblett
  */
 
-part of dartamaker;
+part of '../../dartamaker.dart';
 
 /// US state names
 class DartamakerPluginState implements DartamakerPlugin {

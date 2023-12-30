@@ -5,7 +5,7 @@
  * Copyright :  S.Hamblett
  */
 
-part of dartamaker;
+part of '../../dartamaker.dart';
 
 /// The abstract base class for formatter plugins
 abstract class DartamakerPlugin {

@@ -5,7 +5,7 @@
  * Copyright :  S.Hamblett
  */
 
-part of dartamaker;
+part of '../../dartamaker.dart';
 
 /// Domain name
 class DartamakerPluginDomainname implements DartamakerPlugin {

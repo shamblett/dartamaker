@@ -5,7 +5,7 @@
  * Copyright :  S.Hamblett
  */
 
-part of dartamaker;
+part of '../../dartamaker.dart';
 
 /// Random boolean based on probability parameter
 class DartamakerPluginBoolean implements DartamakerPlugin {

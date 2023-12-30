@@ -5,7 +5,7 @@
  * Copyright :  S.Hamblett
  */
 
-part of dartamaker;
+part of '../../dartamaker.dart';
 
 /// Auto increment
 class DartamakerPluginAutoinc implements DartamakerPlugin {

@@ -5,7 +5,7 @@
  * Copyright :  S.Hamblett
  */
 
-part of dartamaker;
+part of '../../dartamaker.dart';
 
 /// ISO Time
 class DartamakerPluginTime implements DartamakerPlugin {

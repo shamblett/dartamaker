@@ -5,7 +5,7 @@
  * Copyright :  S.Hamblett
  */
 
-part of dartamaker;
+part of '../../dartamaker.dart';
 
 /// First names
 class DartamakerPluginFirstname implements DartamakerPlugin {

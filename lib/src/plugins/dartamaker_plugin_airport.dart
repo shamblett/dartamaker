@@ -1009,7 +1009,7 @@ class DartamakerPluginAirport implements DartamakerPlugin {
     'OUK',
     'MDO',
     'UXT',
-    'PWR'
+    'PWR',
   ];
 
   /// Airports list

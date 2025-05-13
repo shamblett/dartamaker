@@ -54,7 +54,7 @@ class DartamakerPluginDog implements DartamakerPlugin {
     'Shadow',
     'Sam',
     'Cody',
-    'Gregg'
+    'Gregg',
   ];
 
   /// Dogs list

@@ -130,7 +130,7 @@ class DartamakerPluginPostcode implements DartamakerPlugin {
     'WS',
     'WV',
     'YO',
-    'ZE'
+    'ZE',
   ];
 
   /// Postcode list

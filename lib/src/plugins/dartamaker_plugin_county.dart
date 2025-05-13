@@ -102,7 +102,7 @@ class DartamakerPluginCounty implements DartamakerPlugin {
     'Down',
     'Fermanagh',
     'Derry and Londonderry',
-    'Tyrone'
+    'Tyrone',
   ];
 
   /// Counties list

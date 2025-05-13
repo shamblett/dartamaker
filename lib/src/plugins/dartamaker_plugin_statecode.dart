@@ -59,7 +59,7 @@ class DartamakerPluginStatecode implements DartamakerPlugin {
     'WA',
     'WV',
     'WI',
-    'WY'
+    'WY',
   ];
 
   /// State codes list

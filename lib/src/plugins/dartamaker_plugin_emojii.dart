@@ -1300,7 +1300,7 @@ class DartamakerPluginEmojii implements DartamakerPlugin {
     '🇾🇹',
     '🇿🇦',
     '🇿🇲',
-    '🇿🇼'
+    '🇿🇼',
   ];
 
   int _numchars = 1;

@@ -22,7 +22,7 @@ class DartamakerPluginCreditcard implements DartamakerPlugin {
     '65',
     '35',
     '34',
-    '37'
+    '37',
   ];
 
   /// Numbers list

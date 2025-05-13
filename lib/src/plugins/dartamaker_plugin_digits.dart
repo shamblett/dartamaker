@@ -29,7 +29,7 @@ class DartamakerPluginDigits implements DartamakerPlugin {
     '6',
     '7',
     '8',
-    '9'
+    '9',
   ];
 
   int _numdigits = 5;

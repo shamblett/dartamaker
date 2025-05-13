@@ -59,7 +59,7 @@ class DartamakerPluginState implements DartamakerPlugin {
     'Washington',
     'West Virginia',
     'Wisconsin',
-    'Wyoming'
+    'Wyoming',
   ];
 
   /// States list

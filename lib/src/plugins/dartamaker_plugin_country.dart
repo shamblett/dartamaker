@@ -205,7 +205,7 @@ class DartamakerPluginCountry implements DartamakerPlugin {
     'Vietnam',
     'Yemen',
     'Zambia',
-    'Zimbabwe'
+    'Zimbabwe',
   ];
 
   /// Countries list

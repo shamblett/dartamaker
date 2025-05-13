@@ -5,7 +5,7 @@
  * Copyright :  S.Hamblett
  */
 
-library dartamaker;
+library;
 
 import 'dart:convert';
 import 'dart:math';

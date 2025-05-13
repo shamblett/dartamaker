@@ -16,8 +16,9 @@ class Dartamaker {
 
   /// Get a plugin by tag name and supplied mapped parameters
   DartamakerPlugin? plugin(
-          DartamakerTagNames tagName, Map<String, String>? params) =>
-      _pluginManager.plugin(tagName, params, _cache);
+    DartamakerTagNames tagName,
+    Map<String, String>? params,
+  ) => _pluginManager.plugin(tagName, params, _cache);
 
   /// Get a plugin by its string tag name and string parameters
   DartamakerPlugin? byTagName(String tagName, String params) =>
@@ -47,18 +48,19 @@ class Dartamaker {
       // removing trailing }}
       // split into words
       // remove whitespace
-      final t = s
-          .replaceAll(RegExp('^{{'), '')
-          .replaceAll(RegExp('}}\$'), '')
-          .split(RegExp('(\\s+)'))
-          .map((String e) => e.trim())
-          .where(((String e) => e.isNotEmpty))
-          .toList();
+      final t =
+          s
+              .replaceAll(RegExp('^{{'), '')
+              .replaceAll(RegExp('}}\$'), '')
+              .split(RegExp('(\\s+)'))
+              .map((String e) => e.trim())
+              .where(((String e) => e.isNotEmpty))
+              .toList();
       final params = t.length == 2 ? t[1] : '';
       tags.add(<String, String>{
         DartamakerConstants.original: s,
         DartamakerConstants.tag: t[0],
-        DartamakerConstants.params: params
+        DartamakerConstants.params: params,
       });
     }
     return tags;
@@ -67,15 +69,20 @@ class Dartamaker {
   /// Using the supplied template and list of tag objects found within it
   /// and a the supplied formatter object, make all the substitutions and
   /// return the new string.
-  String? swap(String template, List<Map<String, String>> tags,
-      DartamakerFormatter formatter) {
+  String? swap(
+    String template,
+    List<Map<String, String>> tags,
+    DartamakerFormatter formatter,
+  ) {
     var str = template;
     // Iterate through the tags
     for (final tag in tags) {
-      final plugin = _pluginManager.byStringTagName(
-          tag[DartamakerConstants.tag],
-          tag[DartamakerConstants.params]!,
-          _cache)!;
+      final plugin =
+          _pluginManager.byStringTagName(
+            tag[DartamakerConstants.tag],
+            tag[DartamakerConstants.params]!,
+            _cache,
+          )!;
 
       // Calculate the replacement
       final replacement = formatter.filter(plugin.apply());
@@ -96,7 +103,10 @@ class Dartamaker {
   /// Generate some data based on the template, the format and the
   /// number of iterations
   List<String?> generate(
-      String str, DartamakerFormatter? formatter, int iterations) {
+    String str,
+    DartamakerFormatter? formatter,
+    int iterations,
+  ) {
     if (iterations <= 0) {
       return <String>[str];
     }

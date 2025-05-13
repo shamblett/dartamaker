@@ -5009,7 +5009,7 @@ class DartamakerPluginSurname implements DartamakerPlugin {
     'Jarman',
     'Hume',
     'Holliman',
-    'Hofmann'
+    'Hofmann',
   ];
 
   /// Names list

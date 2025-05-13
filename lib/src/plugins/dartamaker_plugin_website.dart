@@ -13,13 +13,14 @@ class DartamakerPluginWebsite implements DartamakerPlugin {
     'http://',
     'https://',
     'http://www.',
-    'https://www.'
+    'https://www.',
   ];
 
   /// Roots
   List<String> get roots => _roots;
 
   @override
-  String apply() => '${_roots[Random().nextInt(_roots.length - 1)]}'
+  String apply() =>
+      '${_roots[Random().nextInt(_roots.length - 1)]}'
       '${DartamakerPluginDomainname().apply()}';
 }

@@ -394,7 +394,7 @@ class DartamakerPluginCity implements DartamakerPlugin {
     'Yakima',
     'Yonkers',
     'York',
-    'Youngstown'
+    'Youngstown',
   ];
 
   /// Cities list

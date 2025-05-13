@@ -55,7 +55,7 @@ class DartamakerPluginUuid implements DartamakerPlugin {
     '6',
     '7',
     '8',
-    '9'
+    '9',
   ];
 
   /// Alpha numerics

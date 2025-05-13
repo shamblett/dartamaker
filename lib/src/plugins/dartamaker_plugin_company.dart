@@ -20,7 +20,7 @@ class DartamakerPluginCompany implements DartamakerPlugin {
     'Holdings',
     'International',
     'Stores',
-    'Mutual'
+    'Mutual',
   ];
 
   final List<String> _suffix = <String>[
@@ -39,7 +39,7 @@ class DartamakerPluginCompany implements DartamakerPlugin {
     'B.V',
     'GmbH',
     'SIA',
-    'Pte. Ltd'
+    'Pte. Ltd',
   ];
 
   final DartamakerPluginWord _word = DartamakerPluginWord();

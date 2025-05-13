@@ -13,7 +13,7 @@ class DartamakerPluginEmail implements DartamakerPlugin {
   final List<String> _domains = <String>[
     'gmail.com',
     'hotmail.com',
-    'yahoo.com'
+    'yahoo.com',
   ];
 
   /// Options

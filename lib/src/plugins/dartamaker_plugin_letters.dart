@@ -45,7 +45,7 @@ class DartamakerPluginLetters implements DartamakerPlugin {
     'W',
     'X',
     'Y',
-    'Z'
+    'Z',
   ];
 
   /// Letters

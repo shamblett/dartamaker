@@ -9,16 +9,6 @@ part of '../../dartamaker.dart';
 
 /// String of digits
 class DartamakerPluginDigits implements DartamakerPlugin {
-  /// Default
-  DartamakerPluginDigits(String? numdigits) {
-    if (numdigits != null) {
-      final val = int.tryParse(numdigits);
-      if (val != null && val > 0) {
-        _numdigits = val;
-      }
-    }
-  }
-
   final List<String> _digits = <String>[
     '0',
     '1',
@@ -36,6 +26,16 @@ class DartamakerPluginDigits implements DartamakerPlugin {
 
   /// Digits list
   List<String> get digits => _digits;
+
+  /// Default
+  DartamakerPluginDigits(String? numdigits) {
+    if (numdigits != null) {
+      final val = int.tryParse(numdigits);
+      if (val != null && val > 0) {
+        _numdigits = val;
+      }
+    }
+  }
 
   @override
   String apply() {

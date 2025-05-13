@@ -9,6 +9,10 @@ part of '../../dartamaker.dart';
 
 /// ISO dates and times
 class DartamakerPluginDateiso implements DartamakerPlugin {
+  DateTime _min = DateTime.now();
+
+  DateTime _max = DateTime.now();
+
   /// Default
   DartamakerPluginDateiso(String? min, String? max) {
     if (min != null) {
@@ -25,9 +29,6 @@ class DartamakerPluginDateiso implements DartamakerPlugin {
       }
     }
   }
-
-  DateTime _min = DateTime.now();
-  DateTime _max = DateTime.now();
 
   @override
   String apply() =>

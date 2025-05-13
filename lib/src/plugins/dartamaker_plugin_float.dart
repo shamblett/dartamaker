@@ -9,6 +9,12 @@ part of '../../dartamaker.dart';
 
 /// Float
 class DartamakerPluginFloat implements DartamakerPlugin {
+  double _min = 1;
+
+  double _max = 100;
+
+  int _decimalplaces = 4;
+
   /// Default
   DartamakerPluginFloat(String? min, String? max, String? decimalplaces) {
     if (min != null) {
@@ -32,10 +38,6 @@ class DartamakerPluginFloat implements DartamakerPlugin {
       }
     }
   }
-
-  double _min = 1;
-  double _max = 100;
-  int _decimalplaces = 4;
 
   @override
   String apply() => (_min + Random().nextDouble() * (_max - _min))

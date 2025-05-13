@@ -9,6 +9,10 @@ part of '../../dartamaker.dart';
 
 /// Integer
 class DartamakerPluginInteger implements DartamakerPlugin {
+  int _min = 1;
+
+  int _max = 100;
+
   /// Default
   DartamakerPluginInteger(String? min, String? max) {
     if (min != null) {
@@ -25,9 +29,6 @@ class DartamakerPluginInteger implements DartamakerPlugin {
       }
     }
   }
-
-  int _min = 1;
-  int _max = 100;
 
   @override
   String apply() => (_min + (Random().nextInt(_max - _min))).toString();

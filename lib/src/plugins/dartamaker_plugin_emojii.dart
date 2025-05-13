@@ -9,16 +9,6 @@ part of '../../dartamaker.dart';
 
 /// Emojii's
 class DartamakerPluginEmojii implements DartamakerPlugin {
-  /// Default
-  DartamakerPluginEmojii(String? numchars) {
-    if (numchars != null) {
-      final val = int.tryParse(numchars);
-      if (val != null && val > 0) {
-        _numchars = val;
-      }
-    }
-  }
-
   final List<String> _emojiis = <String>[
     '©',
     '®',
@@ -1307,6 +1297,16 @@ class DartamakerPluginEmojii implements DartamakerPlugin {
 
   /// Emojii's list
   List<String> get emojiis => _emojiis;
+
+  /// Default
+  DartamakerPluginEmojii(String? numchars) {
+    if (numchars != null) {
+      final val = int.tryParse(numchars);
+      if (val != null && val > 0) {
+        _numchars = val;
+      }
+    }
+  }
 
   @override
   String apply() {

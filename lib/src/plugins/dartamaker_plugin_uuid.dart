@@ -9,7 +9,6 @@ part of '../../dartamaker.dart';
 
 /// Uuid
 class DartamakerPluginUuid implements DartamakerPlugin {
-
   final List<String> _anums = <String>[
     'A',
     'B',

@@ -10009,7 +10009,7 @@ class DartamakerPluginWord implements DartamakerPlugin {
     'arbor',
     'mediawiki',
     'configurations',
-    'poison'
+    'poison',
   ];
 
   /// Words list

@@ -21,33 +21,42 @@ int main(List<String> args) {
   // Initialize the argument parser
   final parser = ArgParser();
   final formatOptions = DartamakerFormattertype.asStringList();
-  parser.addOption('format',
-      abbr: 'f',
-      defaultsTo: 'none',
-      help: 'Format of the output data',
-      allowed: formatOptions, callback: (String? param) {
-    formatter = datagen.formatter(DartamakerFormattertype.fromString(param!));
-  });
-  parser.addOption('iterations',
-      abbr: 'i',
-      defaultsTo: '1',
-      help: 'Number of records to generate, must be greater than 0',
-      callback: (String? param) {
-    final tmp = int.tryParse(param!);
-    if (tmp != null && tmp >= 1) {
-      iterations = tmp;
-    } else {
-      print('Invalid iteration value entered, defaulting');
-    }
-  });
+  parser.addOption(
+    'format',
+    abbr: 'f',
+    defaultsTo: 'none',
+    help: 'Format of the output data',
+    allowed: formatOptions,
+    callback: (String? param) {
+      formatter = datagen.formatter(DartamakerFormattertype.fromString(param!));
+    },
+  );
+  parser.addOption(
+    'iterations',
+    abbr: 'i',
+    defaultsTo: '1',
+    help: 'Number of records to generate, must be greater than 0',
+    callback: (String? param) {
+      final tmp = int.tryParse(param!);
+      if (tmp != null && tmp >= 1) {
+        iterations = tmp;
+      } else {
+        print('Invalid iteration value entered, defaulting');
+      }
+    },
+  );
   parser.addOption(
     'template',
     abbr: 't',
     help: 'The path of the template file',
     callback: (String? param) => templatePath = param,
   );
-  parser.addFlag('list',
-      abbr: 'l', help: 'List available tags', negatable: false);
+  parser.addFlag(
+    'list',
+    abbr: 'l',
+    help: 'List available tags',
+    negatable: false,
+  );
   parser.addFlag('help', abbr: 'h', negatable: false);
 
   try {

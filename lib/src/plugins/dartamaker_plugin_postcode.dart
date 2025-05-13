@@ -1,3 +1,5 @@
+// ignore_for_file: no-magic-number
+
 /*
  * Package : dartamaker
  * Author : S. Hamblett <steve.hamblett@linux.com>
@@ -130,7 +132,7 @@ class DartamakerPluginPostcode implements DartamakerPlugin {
     'WS',
     'WV',
     'YO',
-    'ZE'
+    'ZE',
   ];
 
   /// Postcode list

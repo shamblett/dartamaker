@@ -9,11 +9,14 @@ part of '../../dartamaker.dart';
 
 /// ISO Time
 class DartamakerPluginTimestamp implements DartamakerPlugin {
+  static const randomizer = 100;
+
   @override
   String apply() {
     final now = DateTime.now();
     final r =
-        (Random().nextDouble() * 100).round() * now.millisecondsSinceEpoch;
+        (Random().nextDouble() * randomizer).round() *
+        now.millisecondsSinceEpoch;
     return r.toString();
   }
 }

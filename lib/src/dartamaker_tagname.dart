@@ -53,7 +53,7 @@ enum DartamakerTagNames {
   website,
   word,
   words,
-  zip
+  zip,
 }
 
 /// Tag name support

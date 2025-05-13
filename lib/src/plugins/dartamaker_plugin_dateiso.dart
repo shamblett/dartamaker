@@ -9,6 +9,10 @@ part of '../../dartamaker.dart';
 
 /// ISO dates and times
 class DartamakerPluginDateiso implements DartamakerPlugin {
+  DateTime _min = DateTime.now();
+
+  DateTime _max = DateTime.now();
+
   /// Default
   DartamakerPluginDateiso(String? min, String? max) {
     if (min != null) {
@@ -26,14 +30,12 @@ class DartamakerPluginDateiso implements DartamakerPlugin {
     }
   }
 
-  DateTime _min = DateTime.now();
-  DateTime _max = DateTime.now();
-
   @override
-  String apply() => DateTime.fromMillisecondsSinceEpoch(_min
-              .millisecondsSinceEpoch +
-          (Random().nextDouble() *
-                  (_max.millisecondsSinceEpoch - _min.millisecondsSinceEpoch))
-              .floor())
-      .toIso8601String();
+  String apply() =>
+      DateTime.fromMillisecondsSinceEpoch(
+        _min.millisecondsSinceEpoch +
+            (Random().nextDouble() *
+                    (_max.millisecondsSinceEpoch - _min.millisecondsSinceEpoch))
+                .floor(),
+      ).toIso8601String();
 }

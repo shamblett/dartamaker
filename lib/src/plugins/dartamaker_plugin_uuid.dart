@@ -9,16 +9,6 @@ part of '../../dartamaker.dart';
 
 /// Uuid
 class DartamakerPluginUuid implements DartamakerPlugin {
-  /// Default
-  DartamakerPluginUuid(String? length) {
-    if (length != null) {
-      final val = int.tryParse(length);
-      if (val != null && val > 0) {
-        _length = val;
-      }
-    }
-  }
-
   final List<String> _anums = <String>[
     'A',
     'B',
@@ -55,13 +45,23 @@ class DartamakerPluginUuid implements DartamakerPlugin {
     '6',
     '7',
     '8',
-    '9'
+    '9',
   ];
+
+  int _length = 16;
 
   /// Alpha numerics
   List<String> get anums => _anums;
 
-  int _length = 16;
+  /// Default
+  DartamakerPluginUuid(String? length) {
+    if (length != null) {
+      final val = int.tryParse(length);
+      if (val != null && val > 0) {
+        _length = val;
+      }
+    }
+  }
 
   @override
   String apply() {

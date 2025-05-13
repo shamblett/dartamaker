@@ -286,7 +286,7 @@ class DartamakerPluginCurrency implements DartamakerPlugin {
     'XAU',
     'XPD',
     'XPT',
-    'XAG'
+    'XAG',
   ];
 
   /// Currencies list

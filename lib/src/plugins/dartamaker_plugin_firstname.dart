@@ -5172,7 +5172,7 @@ class DartamakerPluginFirstname implements DartamakerPlugin {
     'Zoraida',
     'Zula',
     'Zulema',
-    'Zulma'
+    'Zulma',
   ];
 
   /// Names list

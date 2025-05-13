@@ -108,7 +108,7 @@ class DartamakerPluginCat implements DartamakerPlugin {
     'Leo',
     'Noodle',
     'Panda',
-    'Peaches'
+    'Peaches',
   ];
 
   /// Cats list

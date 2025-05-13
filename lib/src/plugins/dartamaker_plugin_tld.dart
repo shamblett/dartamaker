@@ -1009,7 +1009,7 @@ class DartamakerPluginTLD implements DartamakerPlugin {
     'vlaanderen',
     'insurance',
     'kunneppu.hokkaido.jp',
-    'takikawa.hokkaido.jp'
+    'takikawa.hokkaido.jp',
   ];
 
   /// TLD list

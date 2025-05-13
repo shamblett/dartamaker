@@ -56,7 +56,8 @@ void main() {
       expect(res[2][DartamakerConstants.params], '10000,70000,0');
     });
     test('Valid tags mixed', () {
-      const tags = '{{words 20}} {{boolean 0.75}}, {{date}} '
+      const tags =
+          '{{words 20}} {{boolean 0.75}}, {{date}} '
           '{{email}} {{float 100,1000,2}}';
       final res = maker.findTags(tags);
       expect(res.length, 5);
@@ -78,7 +79,8 @@ void main() {
     });
 
     test('Valid tags mixed with words', () {
-      const tags = '{{words 20}} hello {{boolean 0.75}}, again {{date}} '
+      const tags =
+          '{{words 20}} hello {{boolean 0.75}}, again {{date}} '
           '{{email}} its me {{float 100,1000,2}}';
       final res = maker.findTags(tags);
       expect(res.length, 5);
@@ -99,7 +101,8 @@ void main() {
       expect(res[4][DartamakerConstants.params], '100,1000,2');
     });
     test('Invalid tags', () {
-      const tags = '{{words 20} {{boolean 0.75}}, {date}} '
+      const tags =
+          '{{words 20} {{boolean 0.75}}, {date}} '
           '{{email}} {{float 100,1000,2}}';
       final res = maker.findTags(tags);
       expect(res.length, 3);
@@ -123,7 +126,7 @@ void main() {
       final params = <String, String>{
         DartamakerConstants.original: '{{uuid}}',
         DartamakerConstants.tag: 'uuid',
-        DartamakerConstants.params: ''
+        DartamakerConstants.params: '',
       };
       const template = 'Here is the {{uuid}} for you';
       final res =
@@ -136,7 +139,7 @@ void main() {
       final params = <String, String>{
         DartamakerConstants.original: '{{uuid}}',
         DartamakerConstants.tag: 'uuid',
-        DartamakerConstants.params: ''
+        DartamakerConstants.params: '',
       };
       const template = 'Here is the {{uuid}} for you and again {{uuid}}';
       final res =
@@ -149,7 +152,7 @@ void main() {
       final params = <String, String>{
         DartamakerConstants.original: '{{words}}',
         DartamakerConstants.tag: 'words',
-        DartamakerConstants.params: ''
+        DartamakerConstants.params: '',
       };
       const template = 'Here are the {{words}} for you';
       final res =
@@ -162,7 +165,7 @@ void main() {
       final params = <String, String>{
         DartamakerConstants.original: '{{words}}',
         DartamakerConstants.tag: 'words',
-        DartamakerConstants.params: '10'
+        DartamakerConstants.params: '10',
       };
       const template = 'Here is the {{words}} for you and again {{words}}';
       final res =
@@ -175,17 +178,20 @@ void main() {
       final params = <String, String>{
         DartamakerConstants.original: '{{words}}',
         DartamakerConstants.tag: 'words',
-        DartamakerConstants.params: '2'
+        DartamakerConstants.params: '2',
       };
       final params1 = <String, String>{
         DartamakerConstants.original: '{{uuid}}',
         DartamakerConstants.tag: 'uuid',
-        DartamakerConstants.params: ''
+        DartamakerConstants.params: '',
       };
       const template =
           'Here are 2 words "{{words}}" for you and a uuid "{{uuid}}"';
-      final res = maker.swap(
-          template, <Map<String, String>>[params, params1], formatter)!;
+      final res =
+          maker.swap(template, <Map<String, String>>[
+            params,
+            params1,
+          ], formatter)!;
       expect(res.contains('{{'), isFalse);
       expect(res.contains('}}'), isFalse);
       expect(res.length > template.length, isTrue);
@@ -195,14 +201,14 @@ void main() {
       final params1 = <String, String>{
         DartamakerConstants.original: '{{uuid}}',
         DartamakerConstants.tag: 'uuid',
-        DartamakerConstants.params: ''
+        DartamakerConstants.params: '',
       };
       maker.swap(template, <Map<String, String>>[params1], formatter);
       template = 'Here is the second uuid -{{uuid}}';
       final params2 = <String, String>{
         DartamakerConstants.original: '{{uuid}}',
         DartamakerConstants.tag: 'uuid',
-        DartamakerConstants.params: ''
+        DartamakerConstants.params: '',
       };
       final res1 =
           maker.swap(template, <Map<String, String>>[params2], formatter)!;
@@ -210,7 +216,7 @@ void main() {
       final params = <String, String>{
         DartamakerConstants.original: '{{last uuid}}',
         DartamakerConstants.tag: 'last',
-        DartamakerConstants.params: 'uuid'
+        DartamakerConstants.params: 'uuid',
       };
       final res2 =
           maker.swap(template, <Map<String, String>>[params], formatter)!;

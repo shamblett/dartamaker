@@ -4509,7 +4509,7 @@ class DartamakerPluginStreet implements DartamakerPlugin {
     'Bridgenorth',
     'Manipur',
     'Josephine',
-    'Allen'
+    'Allen',
   ];
 
   /// Streets list

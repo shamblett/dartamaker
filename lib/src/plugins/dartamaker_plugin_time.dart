@@ -9,13 +9,16 @@ part of '../../dartamaker.dart';
 
 /// ISO Time
 class DartamakerPluginTime implements DartamakerPlugin {
+  static const randomizer = 100;
+
   @override
   String apply() {
     final now = DateTime.now();
     final r =
-        (Random().nextDouble() * 100).round() * now.millisecondsSinceEpoch;
+        (Random().nextDouble() * randomizer).round() *
+        now.millisecondsSinceEpoch;
     final d = DateTime.fromMillisecondsSinceEpoch(r).toIso8601String();
     final parts = d.split('T');
-    return parts[1].split('.')[0];
+    return parts[1].split('.').first;
   }
 }

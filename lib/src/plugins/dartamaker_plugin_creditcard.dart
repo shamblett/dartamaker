@@ -1,3 +1,5 @@
+// ignore_for_file: no-magic-number
+
 /*
  * Package : dartamaker
  * Author : S. Hamblett <steve.hamblett@linux.com>
@@ -22,7 +24,7 @@ class DartamakerPluginCreditcard implements DartamakerPlugin {
     '65',
     '35',
     '34',
-    '37'
+    '37',
   ];
 
   /// Numbers list

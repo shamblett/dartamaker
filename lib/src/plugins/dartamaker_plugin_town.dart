@@ -1697,7 +1697,7 @@ class DartamakerPluginTown implements DartamakerPlugin {
     'Cefnllys',
     'Crickhowell',
     'Hay on Wye',
-    'Knighton'
+    'Knighton',
   ];
 
   /// Towns

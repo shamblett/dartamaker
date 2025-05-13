@@ -9,6 +9,8 @@ part of '../../dartamaker.dart';
 
 /// Words
 class DartamakerPluginWords implements DartamakerPlugin {
+  int _count = 5;
+
   /// Default
   DartamakerPluginWords(String? count) {
     if (count != null) {
@@ -18,8 +20,6 @@ class DartamakerPluginWords implements DartamakerPlugin {
       }
     }
   }
-
-  int _count = 5;
 
   @override
   String apply() {

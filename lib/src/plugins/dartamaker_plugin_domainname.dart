@@ -9,10 +9,12 @@ part of '../../dartamaker.dart';
 
 /// Domain name
 class DartamakerPluginDomainname implements DartamakerPlugin {
+  static const randomOffset = 0.2;
+
   @override
   String apply() {
     final t = StringBuffer();
-    if (Random().nextDouble() > 0.2) {
+    if (Random().nextDouble() > randomOffset) {
       t.write('com');
     } else {
       t.write(DartamakerPluginTLD().apply().toLowerCase());

@@ -53,7 +53,7 @@ class DartamakerPluginTitle implements DartamakerPlugin {
     'Sir',
     'Sister',
     'Sœur',
-    'Staff Sergeant'
+    'Staff Sergeant',
   ];
 
   /// Titles

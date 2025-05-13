@@ -120,13 +120,14 @@ class DartamakerPluginTel implements DartamakerPlugin {
     '509',
     '599',
     '508',
-    '91'
+    '91',
   ];
 
   /// Code list
   List<String> get codes => _codes;
 
   @override
-  String apply() => '+${_codes[Random().nextInt(_codes.length - 1)]}-'
+  String apply() =>
+      '+${_codes[Random().nextInt(_codes.length - 1)]}-'
       '${DartamakerPluginDigits('4').apply()}-${DartamakerPluginDigits('3').apply()}-${DartamakerPluginDigits('3').apply()}';
 }

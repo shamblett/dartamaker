@@ -9,6 +9,12 @@ part of '../../dartamaker.dart';
 
 /// Price
 class DartamakerPluginPrice implements DartamakerPlugin {
+  static const priceMultiplier = 100;
+
+  double _min = 1;
+
+  double _max = 100;
+
   /// Default
   DartamakerPluginPrice(String? min, String? max) {
     if (min != null) {
@@ -26,14 +32,11 @@ class DartamakerPluginPrice implements DartamakerPlugin {
     }
   }
 
-  double _min = 1;
-  double _max = 100;
-
   @override
   String apply() {
-    final min = (_min.round() * 100).toString();
-    final max = (_max.round() * 100).toString();
+    final min = (_min.round() * priceMultiplier).toString();
+    final max = (_max.round() * priceMultiplier).toString();
     final res = DartamakerPluginInteger(min, max).apply();
-    return (int.tryParse(res)! / 100).round().toString();
+    return (int.tryParse(res)! / priceMultiplier).round().toString();
   }
 }

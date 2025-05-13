@@ -1,3 +1,5 @@
+// ignore_for_file: no-magic-number
+
 /*
  * Package : dartamaker
  * Author : S. Hamblett <steve.hamblett@linux.com>
@@ -204,16 +206,16 @@ class DartamakerPluginManager {
     final paramArray = params.split(' ');
     switch (name) {
       case DartamakerTagNames.boolean:
-        ret[DartamakerConstants.probability] = paramArray[0];
+        ret[DartamakerConstants.probability] = paramArray.first;
         break;
       case DartamakerTagNames.digits:
-        ret[DartamakerConstants.numdigits] = paramArray[0];
+        ret[DartamakerConstants.numdigits] = paramArray.first;
         break;
       case DartamakerTagNames.emojii:
-        ret[DartamakerConstants.numchars] = paramArray[0];
+        ret[DartamakerConstants.numchars] = paramArray.first;
         break;
       case DartamakerTagNames.float:
-        ret[DartamakerConstants.min] = paramArray[0];
+        ret[DartamakerConstants.min] = paramArray.first;
         paramArray.length >= 2
             ? ret[DartamakerConstants.max] = paramArray[1]
             : ret[DartamakerConstants.max] = null;
@@ -222,28 +224,28 @@ class DartamakerPluginManager {
             : ret[DartamakerConstants.decimalplaces] = null;
         break;
       case DartamakerTagNames.integer:
-        ret[DartamakerConstants.min] = paramArray[0];
+        ret[DartamakerConstants.min] = paramArray.first;
         paramArray.length == 2
             ? ret[DartamakerConstants.max] = paramArray[1]
             : ret[DartamakerConstants.max] = null;
         break;
       case DartamakerTagNames.dateiso:
-        ret[DartamakerConstants.min] = paramArray[0];
+        ret[DartamakerConstants.min] = paramArray.first;
         paramArray.length == 2
             ? ret[DartamakerConstants.max] = paramArray[1]
             : ret[DartamakerConstants.max] = null;
         break;
       case DartamakerTagNames.date:
-        ret[DartamakerConstants.min] = paramArray[0];
+        ret[DartamakerConstants.min] = paramArray.first;
         paramArray.length == 2
             ? ret[DartamakerConstants.max] = paramArray[1]
             : ret[DartamakerConstants.max] = null;
         break;
       case DartamakerTagNames.letters:
-        ret[DartamakerConstants.numletters] = paramArray[0];
+        ret[DartamakerConstants.numletters] = paramArray.first;
         break;
       case DartamakerTagNames.normal:
-        ret[DartamakerConstants.min] = paramArray[0];
+        ret[DartamakerConstants.min] = paramArray.first;
         paramArray.length >= 2
             ? ret[DartamakerConstants.stddev] = paramArray[1]
             : ret[DartamakerConstants.stddev] = null;
@@ -252,22 +254,22 @@ class DartamakerPluginManager {
             : ret[DartamakerConstants.decimalplaces] = null;
         break;
       case DartamakerTagNames.oneof:
-        ret[DartamakerConstants.args] = paramArray[0];
+        ret[DartamakerConstants.args] = paramArray.first;
         break;
       case DartamakerTagNames.price:
-        ret[DartamakerConstants.min] = paramArray[0];
+        ret[DartamakerConstants.min] = paramArray.first;
         paramArray.length == 2
             ? ret[DartamakerConstants.max] = paramArray[1]
             : ret[DartamakerConstants.max] = null;
         break;
       case DartamakerTagNames.uuid:
-        ret[DartamakerConstants.length] = paramArray[0];
+        ret[DartamakerConstants.length] = paramArray.first;
         break;
       case DartamakerTagNames.words:
-        ret[DartamakerConstants.count] = paramArray[0];
+        ret[DartamakerConstants.count] = paramArray.first;
         break;
       case DartamakerTagNames.last:
-        ret[DartamakerConstants.name] = paramArray[0];
+        ret[DartamakerConstants.name] = paramArray.first;
         break;
       default:
         break;

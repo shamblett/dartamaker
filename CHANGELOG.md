@@ -1,3 +1,6 @@
+# 3.0.2
+- [Issue 6](https://github.com/shamblett/dartamaker/issues/6)
+
 # 3.0.1
 - [Issue 4](https://github.com/shamblett/dartamaker/issues/4)
 

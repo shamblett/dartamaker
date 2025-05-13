@@ -1,132 +1,597 @@
-SPDXVersion: SPDX-2.2DataLicense: CC0-1.0SPDXID: SPDXRef-DOCUMENTDocumentName: dartamakerDocumentNamespace: https://pub.dev/packages/dartamakerLicenseListVersion: 3.8Creator: Tool: https://pub.dev/packages/sbomCreated: 2023-12-30T10:47:45Z
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: dartamaker
+DocumentNamespace: https://pub.dev/packages/dartamaker
+LicenseListVersion: 3.8
+Creator: Tool: https://pub.dev/packages/sbom
+Created: 2025-05-13T10:47:02Z
+
+
+PackageName: dartamaker
+SPDXID: SPDXRef-Package-dartamaker
+PackageVersion: 3.0.2
+PackageFileName: dartamaker
+PackageSupplier: NOASSERTION
+PackageOriginator: NOASSERTION
+PackageDownloadLocation: https://pub.dev/packages/dartamaker
+FilesAnalyzed: true
+PackageVerificationCode: 4bbbd5f3c1c545a2a3f0a95d29b8de42ea797597
+PackageHomePage: https://pub.dev/packages/dartamaker
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseInfoFromFiles: NOASSERTION
+PackageLicenseDeclared: NOASSERTION
+PackageCopyrightText: NOASSERTION
+PackageSummary: <text>A command-line Dart script and library that generates JSON or CSV data in bulk.</text>
+
+
+FileName: bin/dartamaker.dart
+SPDXID: SPDXRef-dartamaker-0
+FileType: SOURCE
+FileChecksum: SHA1: b741c102b8cb31decd978235525d22a9ee8ae3de
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+
+FileName: lib/dartamaker.dart
+SPDXID: SPDXRef-dartamaker-1
+FileType: SOURCE
+FileChecksum: SHA1: 8d2f4df9bf9f9f401330c91a4f5cbadc7ac5efef
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+
+FileName: lib/src/dartamaker.dart
+SPDXID: SPDXRef-dartamaker-2
+FileType: SOURCE
+FileChecksum: SHA1: 80432c2d38bd3b7857fe05c6a39f06edecc60454
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+
+FileName: lib/src/dartamaker_cache.dart
+SPDXID: SPDXRef-dartamaker-cache-3
+FileType: SOURCE
+FileChecksum: SHA1: e986d36d3cc131c21811a06719713533322d443a
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+
+FileName: lib/src/dartamaker_constants.dart
+SPDXID: SPDXRef-dartamaker-constants-4
+FileType: SOURCE
+FileChecksum: SHA1: 2866115deaa7943ad6dba35a4146fa9a0f0aba57
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+
+FileName: lib/src/dartamaker_formattertype.dart
+SPDXID: SPDXRef-dartamaker-formattertype-5
+FileType: SOURCE
+FileChecksum: SHA1: 1e3e0394a649af54ee6a0daaa86ba4531b32a58a
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+
+FileName: lib/src/dartamaker_tagname.dart
+SPDXID: SPDXRef-dartamaker-tagname-6
+FileType: SOURCE
+FileChecksum: SHA1: 2319ad880ad0c41f97d73f3b0964bffd3a68a6fa
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+
+FileName: lib/src/formatters/dartamaker_formatter.dart
+SPDXID: SPDXRef-dartamaker-formatter-7
+FileType: SOURCE
+FileChecksum: SHA1: 6858930f5e934765776b2e5b09bdc10a9653a5a4
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+
+FileName: lib/src/formatters/dartamaker_formatter_csv.dart
+SPDXID: SPDXRef-dartamaker-formatter-csv-8
+FileType: SOURCE
+FileChecksum: SHA1: df3d35742984da92949362d6c0b479d7b80b00fc
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+
+FileName: lib/src/formatters/dartamaker_formatter_json.dart
+SPDXID: SPDXRef-dartamaker-formatter-json-9
+FileType: SOURCE
+FileChecksum: SHA1: 21e02d742f723953fa8223e35ec7c3d8515b9a73
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+
+FileName: lib/src/formatters/dartamaker_formatter_manager.dart
+SPDXID: SPDXRef-dartamaker-formatter-manager-10
+FileType: SOURCE
+FileChecksum: SHA1: 9a5b48e98f74ca08cb937e94b296e0a9af97c773
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+
+FileName: lib/src/formatters/dartamaker_formatter_none.dart
+SPDXID: SPDXRef-dartamaker-formatter-none-11
+FileType: SOURCE
+FileChecksum: SHA1: f3d6654727893e3018de9eae263493df6b2c2802
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+
+FileName: lib/src/formatters/dartamaker_formatter_xml.dart
+SPDXID: SPDXRef-dartamaker-formatter-xml-12
+FileType: SOURCE
+FileChecksum: SHA1: 48aae8eb03afb29e3836a770682812bd4222a3e5
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+
+FileName: lib/src/plugins/dartamaker_plugin.dart
+SPDXID: SPDXRef-dartamaker-plugin-13
+FileType: SOURCE
+FileChecksum: SHA1: c500d3c33155a387dc4bcf7bc83612e2c762fa3f
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+
+FileName: lib/src/plugins/dartamaker_plugin_airport.dart
+SPDXID: SPDXRef-dartamaker-plugin-airport-14
+FileType: SOURCE
+FileChecksum: SHA1: 4e9e4b10e7596db3c87cd8ee11cb8053aef5611f
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+
+FileName: lib/src/plugins/dartamaker_plugin_autoinc.dart
+SPDXID: SPDXRef-dartamaker-plugin-autoinc-15
+FileType: SOURCE
+FileChecksum: SHA1: 05832dbba37364a2f95788f74a9f0fb1c2672544
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+
+FileName: lib/src/plugins/dartamaker_plugin_boolean.dart
+SPDXID: SPDXRef-dartamaker-plugin-boolean-16
+FileType: SOURCE
+FileChecksum: SHA1: 6f1c26ef292dd98bc78f1e44d3556ebad7584dad
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+
+FileName: lib/src/plugins/dartamaker_plugin_cat.dart
+SPDXID: SPDXRef-dartamaker-plugin-cat-17
+FileType: SOURCE
+FileChecksum: SHA1: 51cd829c19d70edeec102f77bb71f26b87bf817e
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+
+FileName: lib/src/plugins/dartamaker_plugin_city.dart
+SPDXID: SPDXRef-dartamaker-plugin-city-18
+FileType: SOURCE
+FileChecksum: SHA1: 0290af6ab968f10c21397f0e30f790b5bebec272
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+
+FileName: lib/src/plugins/dartamaker_plugin_company.dart
+SPDXID: SPDXRef-dartamaker-plugin-company-19
+FileType: SOURCE
+FileChecksum: SHA1: 6a2c8bf088a49f1b3c3d33cf301dd7917ea40571
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+
+FileName: lib/src/plugins/dartamaker_plugin_country.dart
+SPDXID: SPDXRef-dartamaker-plugin-country-20
+FileType: SOURCE
+FileChecksum: SHA1: f2e32c01a2186fd4a1e5f0f8885645282c685a0f
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+
+FileName: lib/src/plugins/dartamaker_plugin_county.dart
+SPDXID: SPDXRef-dartamaker-plugin-county-21
+FileType: SOURCE
+FileChecksum: SHA1: 1a67baf550e8305d8e15de70f4fd47a23ebe0556
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+
+FileName: lib/src/plugins/dartamaker_plugin_creditcard.dart
+SPDXID: SPDXRef-dartamaker-plugin-creditcard-22
+FileType: SOURCE
+FileChecksum: SHA1: 6545904b9af0b1862905729f9cded4078567e9ca
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+
+FileName: lib/src/plugins/dartamaker_plugin_currency.dart
+SPDXID: SPDXRef-dartamaker-plugin-currency-23
+FileType: SOURCE
+FileChecksum: SHA1: faf0e50120e6b2aabaa1a3a34d531d26e5e3adb0
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+
+FileName: lib/src/plugins/dartamaker_plugin_date.dart
+SPDXID: SPDXRef-dartamaker-plugin-date-24
+FileType: SOURCE
+FileChecksum: SHA1: 8c36c32a57a9e908d7e8435301348eedbd4f0678
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+
+FileName: lib/src/plugins/dartamaker_plugin_dateiso.dart
+SPDXID: SPDXRef-dartamaker-plugin-dateiso-25
+FileType: SOURCE
+FileChecksum: SHA1: 58ea42fbaf2431756d0e3e3dadf814d223428997
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+
+FileName: lib/src/plugins/dartamaker_plugin_digits.dart
+SPDXID: SPDXRef-dartamaker-plugin-digits-26
+FileType: SOURCE
+FileChecksum: SHA1: 70f05635a1ee4d06f453c0c22193655e3be990fe
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+
+FileName: lib/src/plugins/dartamaker_plugin_dog.dart
+SPDXID: SPDXRef-dartamaker-plugin-dog-27
+FileType: SOURCE
+FileChecksum: SHA1: 19f7f34702b856afc11c536b55d05c1ba6dc6977
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+
+FileName: lib/src/plugins/dartamaker_plugin_domainname.dart
+SPDXID: SPDXRef-dartamaker-plugin-domainname-28
+FileType: SOURCE
+FileChecksum: SHA1: 4666a4ff90b335b8a9e66b7195ea88e6d35fccde
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+
+FileName: lib/src/plugins/dartamaker_plugin_dummy.dart
+SPDXID: SPDXRef-dartamaker-plugin-dummy-29
+FileType: SOURCE
+FileChecksum: SHA1: 7d7aa576f51931d1250d49ded5ee6fb961bfeb08
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+
+FileName: lib/src/plugins/dartamaker_plugin_email.dart
+SPDXID: SPDXRef-dartamaker-plugin-email-30
+FileType: SOURCE
+FileChecksum: SHA1: 38a2422e8c9e819e4b321be3605a1edc74ac9e5e
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+
+FileName: lib/src/plugins/dartamaker_plugin_emojii.dart
+SPDXID: SPDXRef-dartamaker-plugin-emojii-31
+FileType: SOURCE
+FileChecksum: SHA1: a0773f475a7b4a2e0d1212953c19cca37cffcdb1
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+
+FileName: lib/src/plugins/dartamaker_plugin_firstname.dart
+SPDXID: SPDXRef-dartamaker-plugin-firstname-32
+FileType: SOURCE
+FileChecksum: SHA1: 98395ce6cbda20f2eee6f1a2f41ffbeb516bda4f
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+
+FileName: lib/src/plugins/dartamaker_plugin_float.dart
+SPDXID: SPDXRef-dartamaker-plugin-float-33
+FileType: SOURCE
+FileChecksum: SHA1: 6a526177590202b069350ed58a15e7bbf25fcdb8
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+
+FileName: lib/src/plugins/dartamaker_plugin_integer.dart
+SPDXID: SPDXRef-dartamaker-plugin-integer-34
+FileType: SOURCE
+FileChecksum: SHA1: f70fe617762e3ac2dc5a8778621fedda2e543620
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+
+FileName: lib/src/plugins/dartamaker_plugin_last.dart
+SPDXID: SPDXRef-dartamaker-plugin-last-35
+FileType: SOURCE
+FileChecksum: SHA1: af553d35bec64c6058c10d4b3033617c7338fddb
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+
+FileName: lib/src/plugins/dartamaker_plugin_latitude.dart
+SPDXID: SPDXRef-dartamaker-plugin-latitude-36
+FileType: SOURCE
+FileChecksum: SHA1: 81692ba92e1a7cbde578ddbe9d7f8aec97d7f8e4
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+
+FileName: lib/src/plugins/dartamaker_plugin_letters.dart
+SPDXID: SPDXRef-dartamaker-plugin-letters-37
+FileType: SOURCE
+FileChecksum: SHA1: c9faea6c2ca07325c2e3df65e132dd7e1d3c6e13
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+
+FileName: lib/src/plugins/dartamaker_plugin_longitude.dart
+SPDXID: SPDXRef-dartamaker-plugin-longitude-38
+FileType: SOURCE
+FileChecksum: SHA1: a9b82a65102eaa6997bc83ad2785c05feb332da5
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+
+FileName: lib/src/plugins/dartamaker_plugin_manager.dart
+SPDXID: SPDXRef-dartamaker-plugin-manager-39
+FileType: SOURCE
+FileChecksum: SHA1: 3441ed80f9edfd6ae1040579ad7077abd75fb568
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+
+FileName: lib/src/plugins/dartamaker_plugin_name.dart
+SPDXID: SPDXRef-dartamaker-plugin-name-40
+FileType: SOURCE
+FileChecksum: SHA1: 1ad85a7e86f2ee4491df3b3101a08dc71740cf52
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+
+FileName: lib/src/plugins/dartamaker_plugin_normal.dart
+SPDXID: SPDXRef-dartamaker-plugin-normal-41
+FileType: SOURCE
+FileChecksum: SHA1: 0eb1a89934ea75dbc3b1f202794da3a9e0c5938a
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+
+FileName: lib/src/plugins/dartamaker_plugin_null.dart
+SPDXID: SPDXRef-dartamaker-plugin-null-42
+FileType: SOURCE
+FileChecksum: SHA1: e3846e772ebcf606962b03138768ebaaeb3fb2e1
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+
+FileName: lib/src/plugins/dartamaker_plugin_oneof.dart
+SPDXID: SPDXRef-dartamaker-plugin-oneof-43
+FileType: SOURCE
+FileChecksum: SHA1: 55860b72229b8a63378d480e6261eedd730b3254
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+
+FileName: lib/src/plugins/dartamaker_plugin_postcode.dart
+SPDXID: SPDXRef-dartamaker-plugin-postcode-44
+FileType: SOURCE
+FileChecksum: SHA1: 5d91c4e174fe1005105a68275819d801bbb9404a
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+
+FileName: lib/src/plugins/dartamaker_plugin_price.dart
+SPDXID: SPDXRef-dartamaker-plugin-price-45
+FileType: SOURCE
+FileChecksum: SHA1: cd5c6bfcb3722c7694ea7972414f47ead84a8847
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+
+FileName: lib/src/plugins/dartamaker_plugin_state.dart
+SPDXID: SPDXRef-dartamaker-plugin-state-46
+FileType: SOURCE
+FileChecksum: SHA1: 021c908e485068a995238b16ce4fef4a74bc492c
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+
+FileName: lib/src/plugins/dartamaker_plugin_statecode.dart
+SPDXID: SPDXRef-dartamaker-plugin-statecode-47
+FileType: SOURCE
+FileChecksum: SHA1: bd92415773189e73b586e30a7ec27539ea961f84
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+
+FileName: lib/src/plugins/dartamaker_plugin_street.dart
+SPDXID: SPDXRef-dartamaker-plugin-street-48
+FileType: SOURCE
+FileChecksum: SHA1: 13b4dc1f1dfe163f0f8330b890c96744586aa92e
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+
+FileName: lib/src/plugins/dartamaker_plugin_surname.dart
+SPDXID: SPDXRef-dartamaker-plugin-surname-49
+FileType: SOURCE
+FileChecksum: SHA1: ed356f288ffe279e0671f6dd975d824ae8d72da8
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+
+FileName: lib/src/plugins/dartamaker_plugin_tel.dart
+SPDXID: SPDXRef-dartamaker-plugin-tel-50
+FileType: SOURCE
+FileChecksum: SHA1: de115f00f4b5affbafd95c4b9cd80717cf5d24ed
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+
+FileName: lib/src/plugins/dartamaker_plugin_time.dart
+SPDXID: SPDXRef-dartamaker-plugin-time-51
+FileType: SOURCE
+FileChecksum: SHA1: 3b74b89854fe19186c71d76e6588a6c5b2fa91db
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+
+FileName: lib/src/plugins/dartamaker_plugin_timestamp.dart
+SPDXID: SPDXRef-dartamaker-plugin-timestamp-52
+FileType: SOURCE
+FileChecksum: SHA1: 699f41e1daf8e8803f06572a4af62abac5646f05
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+
+FileName: lib/src/plugins/dartamaker_plugin_title.dart
+SPDXID: SPDXRef-dartamaker-plugin-title-53
+FileType: SOURCE
+FileChecksum: SHA1: 8c65dab34bf51f1215acf3d8ce4ccd7aeb75be82
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+
+FileName: lib/src/plugins/dartamaker_plugin_tld.dart
+SPDXID: SPDXRef-dartamaker-plugin-tld-54
+FileType: SOURCE
+FileChecksum: SHA1: aade74e3b25455b3d7f312b6f8459fa1cd2f2fa9
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+
+FileName: lib/src/plugins/dartamaker_plugin_town.dart
+SPDXID: SPDXRef-dartamaker-plugin-town-55
+FileType: SOURCE
+FileChecksum: SHA1: 7888e8659e5ecef4b5fc47af6666e57fada21482
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+
+FileName: lib/src/plugins/dartamaker_plugin_url.dart
+SPDXID: SPDXRef-dartamaker-plugin-url-56
+FileType: SOURCE
+FileChecksum: SHA1: f55f78ea1995b10b6749e5493fe00823fddbb8d7
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+
+FileName: lib/src/plugins/dartamaker_plugin_uuid.dart
+SPDXID: SPDXRef-dartamaker-plugin-uuid-57
+FileType: SOURCE
+FileChecksum: SHA1: 2ffb05cbccf808637101b6b996a49e4228b23e3d
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+
+FileName: lib/src/plugins/dartamaker_plugin_website.dart
+SPDXID: SPDXRef-dartamaker-plugin-website-58
+FileType: SOURCE
+FileChecksum: SHA1: fb077090a378d600cc3dcba1e58ef192ff582acc
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+
+FileName: lib/src/plugins/dartamaker_plugin_word.dart
+SPDXID: SPDXRef-dartamaker-plugin-word-59
+FileType: SOURCE
+FileChecksum: SHA1: 499c584c9285546e5510dfd761d04fc0262901cb
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+
+FileName: lib/src/plugins/dartamaker_plugin_words.dart
+SPDXID: SPDXRef-dartamaker-plugin-words-60
+FileType: SOURCE
+FileChecksum: SHA1: a04695b46721794b9afc37c09a4308315c24b4f4
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+
+FileName: lib/src/plugins/dartamaker_plugin_zip.dart
+SPDXID: SPDXRef-dartamaker-plugin-zip-61
+FileType: SOURCE
+FileChecksum: SHA1: 122015f5beac017974890a7deba23ff12a5591f4
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+
+FileName: pubspec.yaml
+SPDXID: SPDXRef-pubspec-62
+FileType: TEXT
+FileChecksum: SHA1: 3e6a2eb88c078fcc8b153aaceaab7b4d1a135d0c
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
 
-PackageName: dartamakerSPDXID: SPDXRef-Package-dartamakerPackageVersion: 3.0.1PackageFileName: dartamakerPackageSupplier: NOASSERTIONPackageOriginator: NOASSERTIONPackageDownloadLocation: https://pub.dev/packages/dartamakerFilesAnalyzed: truePackageVerificationCode: f7efca928c3323c87c099797349acdad7ac96ab7PackageHomePage: https://pub.dev/packages/dartamakerPackageLicenseConcluded: NOASSERTIONPackageLicenseInfoFromFiles: NOASSERTIONPackageLicenseDeclared: NOASSERTIONPackageCopyrightText: NOASSERTIONPackageSummary: <text>A command-line Dart script and library that generates JSON or CSV data in bulk.</text>
-
-FileName: /bin/dartamaker.dartSPDXID: SPDXRef-dartamaker-0FileType: SOURCEFileChecksum: SHA1: b741c102b8cb31decd978235525d22a9ee8ae3deLicenseConcluded: NOASSERTIONLicenseInfoInFile: NOASSERTIONFileCopyrightText: NOASSERTION
-
-FileName: /lib/dartamaker.dartSPDXID: SPDXRef-dartamaker-1FileType: SOURCEFileChecksum: SHA1: 8d2f4df9bf9f9f401330c91a4f5cbadc7ac5efefLicenseConcluded: NOASSERTIONLicenseInfoInFile: NOASSERTIONFileCopyrightText: NOASSERTION
-
-FileName: /lib/src/dartamaker.dartSPDXID: SPDXRef-dartamaker-2FileType: SOURCEFileChecksum: SHA1: 80432c2d38bd3b7857fe05c6a39f06edecc60454LicenseConcluded: NOASSERTIONLicenseInfoInFile: NOASSERTIONFileCopyrightText: NOASSERTION
-
-FileName: /lib/src/dartamaker_cache.dartSPDXID: SPDXRef-dartamaker-cache-3FileType: SOURCEFileChecksum: SHA1: e986d36d3cc131c21811a06719713533322d443aLicenseConcluded: NOASSERTIONLicenseInfoInFile: NOASSERTIONFileCopyrightText: NOASSERTION
-
-FileName: /lib/src/dartamaker_constants.dartSPDXID: SPDXRef-dartamaker-constants-4FileType: SOURCEFileChecksum: SHA1: 2866115deaa7943ad6dba35a4146fa9a0f0aba57LicenseConcluded: NOASSERTIONLicenseInfoInFile: NOASSERTIONFileCopyrightText: NOASSERTION
-
-FileName: /lib/src/dartamaker_formattertype.dartSPDXID: SPDXRef-dartamaker-formattertype-5FileType: SOURCEFileChecksum: SHA1: 1e3e0394a649af54ee6a0daaa86ba4531b32a58aLicenseConcluded: NOASSERTIONLicenseInfoInFile: NOASSERTIONFileCopyrightText: NOASSERTION
-
-FileName: /lib/src/dartamaker_tagname.dartSPDXID: SPDXRef-dartamaker-tagname-6FileType: SOURCEFileChecksum: SHA1: 2319ad880ad0c41f97d73f3b0964bffd3a68a6faLicenseConcluded: NOASSERTIONLicenseInfoInFile: NOASSERTIONFileCopyrightText: NOASSERTION
-
-FileName: /lib/src/formatters/dartamaker_formatter.dartSPDXID: SPDXRef-dartamaker-formatter-7FileType: SOURCEFileChecksum: SHA1: 11b21d48044ad6c3d721ca6ee6b80b3d01c174e9LicenseConcluded: NOASSERTIONLicenseInfoInFile: NOASSERTIONFileCopyrightText: NOASSERTION
-
-FileName: /lib/src/formatters/dartamaker_formatter_csv.dartSPDXID: SPDXRef-dartamaker-formatter-csv-8FileType: SOURCEFileChecksum: SHA1: 6858930f5e934765776b2e5b09bdc10a9653a5a4LicenseConcluded: NOASSERTIONLicenseInfoInFile: NOASSERTIONFileCopyrightText: NOASSERTION
-
-FileName: /lib/src/formatters/dartamaker_formatter_json.dartSPDXID: SPDXRef-dartamaker-formatter-json-9FileType: SOURCEFileChecksum: SHA1: df0cc3eba0da31c9465985f66f58ef2ef60ffbd2LicenseConcluded: NOASSERTIONLicenseInfoInFile: NOASSERTIONFileCopyrightText: NOASSERTION
-
-FileName: /lib/src/formatters/dartamaker_formatter_manager.dartSPDXID: SPDXRef-dartamaker-formatter-manager-10FileType: SOURCEFileChecksum: SHA1: 50ba34b6a3b75726c2b259a18be2bf1e2d28f1b1LicenseConcluded: NOASSERTIONLicenseInfoInFile: NOASSERTIONFileCopyrightText: NOASSERTION
-
-FileName: /lib/src/formatters/dartamaker_formatter_none.dartSPDXID: SPDXRef-dartamaker-formatter-none-11FileType: SOURCEFileChecksum: SHA1: 02f64abb1cfb32f55d4a7372e380e809e5545e20LicenseConcluded: NOASSERTIONLicenseInfoInFile: NOASSERTIONFileCopyrightText: NOASSERTION
-
-FileName: /lib/src/formatters/dartamaker_formatter_xml.dartSPDXID: SPDXRef-dartamaker-formatter-xml-12FileType: SOURCEFileChecksum: SHA1: e04abd053707c5d289652e3359459db152f080eaLicenseConcluded: NOASSERTIONLicenseInfoInFile: NOASSERTIONFileCopyrightText: NOASSERTION
-
-FileName: /lib/src/plugins/dartamaker_plugin.dartSPDXID: SPDXRef-dartamaker-plugin-13FileType: SOURCEFileChecksum: SHA1: 187a909b4406990af93bc113f19e497800b903cbLicenseConcluded: NOASSERTIONLicenseInfoInFile: NOASSERTIONFileCopyrightText: NOASSERTION
-
-FileName: /lib/src/plugins/dartamaker_plugin_airport.dartSPDXID: SPDXRef-dartamaker-plugin-airport-14FileType: SOURCEFileChecksum: SHA1: 89574e02be451669274d604a531719a7f8d50f50LicenseConcluded: NOASSERTIONLicenseInfoInFile: NOASSERTIONFileCopyrightText: NOASSERTION
-
-FileName: /lib/src/plugins/dartamaker_plugin_autoinc.dartSPDXID: SPDXRef-dartamaker-plugin-autoinc-15FileType: SOURCEFileChecksum: SHA1: 0d653587295e27d865c9eeac89d79798c5389101LicenseConcluded: NOASSERTIONLicenseInfoInFile: NOASSERTIONFileCopyrightText: NOASSERTION
-
-FileName: /lib/src/plugins/dartamaker_plugin_boolean.dartSPDXID: SPDXRef-dartamaker-plugin-boolean-16FileType: SOURCEFileChecksum: SHA1: 5bd1834013c2985a27d651d0f39b6e9089111c24LicenseConcluded: NOASSERTIONLicenseInfoInFile: NOASSERTIONFileCopyrightText: NOASSERTION
-
-FileName: /lib/src/plugins/dartamaker_plugin_cat.dartSPDXID: SPDXRef-dartamaker-plugin-cat-17FileType: SOURCEFileChecksum: SHA1: 30770816f27880c7b7b9226ee2a5c8a1df1a9aadLicenseConcluded: NOASSERTIONLicenseInfoInFile: NOASSERTIONFileCopyrightText: NOASSERTION
-
-FileName: /lib/src/plugins/dartamaker_plugin_city.dartSPDXID: SPDXRef-dartamaker-plugin-city-18FileType: SOURCEFileChecksum: SHA1: f5ee0a3f791dc4117c6e2a8f9ea2edf6a759cc23LicenseConcluded: NOASSERTIONLicenseInfoInFile: NOASSERTIONFileCopyrightText: NOASSERTION
-
-FileName: /lib/src/plugins/dartamaker_plugin_company.dartSPDXID: SPDXRef-dartamaker-plugin-company-19FileType: SOURCEFileChecksum: SHA1: 515f04a5274b978240229c98eee24a260d7d71b5LicenseConcluded: NOASSERTIONLicenseInfoInFile: NOASSERTIONFileCopyrightText: NOASSERTION
-
-FileName: /lib/src/plugins/dartamaker_plugin_country.dartSPDXID: SPDXRef-dartamaker-plugin-country-20FileType: SOURCEFileChecksum: SHA1: 2ba25749c692e0f5580527580a7e2b356efa4d54LicenseConcluded: NOASSERTIONLicenseInfoInFile: NOASSERTIONFileCopyrightText: NOASSERTION
-
-FileName: /lib/src/plugins/dartamaker_plugin_county.dartSPDXID: SPDXRef-dartamaker-plugin-county-21FileType: SOURCEFileChecksum: SHA1: c4c40ad92362a695b9a7c5451046c4f4e3070677LicenseConcluded: NOASSERTIONLicenseInfoInFile: NOASSERTIONFileCopyrightText: NOASSERTION
-
-FileName: /lib/src/plugins/dartamaker_plugin_creditcard.dartSPDXID: SPDXRef-dartamaker-plugin-creditcard-22FileType: SOURCEFileChecksum: SHA1: df3d35742984da92949362d6c0b479d7b80b00fcLicenseConcluded: NOASSERTIONLicenseInfoInFile: NOASSERTIONFileCopyrightText: NOASSERTION
-
-FileName: /lib/src/plugins/dartamaker_plugin_currency.dartSPDXID: SPDXRef-dartamaker-plugin-currency-23FileType: SOURCEFileChecksum: SHA1: 43878ecb6641f017b27c6b64e8eafc57d6522c88LicenseConcluded: NOASSERTIONLicenseInfoInFile: NOASSERTIONFileCopyrightText: NOASSERTION
-
-FileName: /lib/src/plugins/dartamaker_plugin_date.dartSPDXID: SPDXRef-dartamaker-plugin-date-24FileType: SOURCEFileChecksum: SHA1: 51da0b2c6080364ce8bf1e34fbefc8ea71054f07LicenseConcluded: NOASSERTIONLicenseInfoInFile: NOASSERTIONFileCopyrightText: NOASSERTION
-
-FileName: /lib/src/plugins/dartamaker_plugin_dateiso.dartSPDXID: SPDXRef-dartamaker-plugin-dateiso-25FileType: SOURCEFileChecksum: SHA1: 4c45484abba2473c67b09423715c81c70bee70c9LicenseConcluded: NOASSERTIONLicenseInfoInFile: NOASSERTIONFileCopyrightText: NOASSERTION
-
-FileName: /lib/src/plugins/dartamaker_plugin_digits.dartSPDXID: SPDXRef-dartamaker-plugin-digits-26FileType: SOURCEFileChecksum: SHA1: 900e91ffca964282b65444ee293549ab3a550dddLicenseConcluded: NOASSERTIONLicenseInfoInFile: NOASSERTIONFileCopyrightText: NOASSERTION
-
-FileName: /lib/src/plugins/dartamaker_plugin_dog.dartSPDXID: SPDXRef-dartamaker-plugin-dog-27FileType: SOURCEFileChecksum: SHA1: 22f6782a8d2b4a57d112ebace9824cdee85d2bb4LicenseConcluded: NOASSERTIONLicenseInfoInFile: NOASSERTIONFileCopyrightText: NOASSERTION
-
-FileName: /lib/src/plugins/dartamaker_plugin_domainname.dartSPDXID: SPDXRef-dartamaker-plugin-domainname-28FileType: SOURCEFileChecksum: SHA1: 36a17844bf573f1584e08856800b7e3279ca7ca8LicenseConcluded: NOASSERTIONLicenseInfoInFile: NOASSERTIONFileCopyrightText: NOASSERTION
-
-FileName: /lib/src/plugins/dartamaker_plugin_dummy.dartSPDXID: SPDXRef-dartamaker-plugin-dummy-29FileType: SOURCEFileChecksum: SHA1: 21e02d742f723953fa8223e35ec7c3d8515b9a73LicenseConcluded: NOASSERTIONLicenseInfoInFile: NOASSERTIONFileCopyrightText: NOASSERTION
-
-FileName: /lib/src/plugins/dartamaker_plugin_email.dartSPDXID: SPDXRef-dartamaker-plugin-email-30FileType: SOURCEFileChecksum: SHA1: 35ecb03ac0899939f2857a5e3214933a9ebe4852LicenseConcluded: NOASSERTIONLicenseInfoInFile: NOASSERTIONFileCopyrightText: NOASSERTION
-
-FileName: /lib/src/plugins/dartamaker_plugin_emojii.dartSPDXID: SPDXRef-dartamaker-plugin-emojii-31FileType: SOURCEFileChecksum: SHA1: 9a5b48e98f74ca08cb937e94b296e0a9af97c773LicenseConcluded: NOASSERTIONLicenseInfoInFile: NOASSERTIONFileCopyrightText: NOASSERTION
-
-FileName: /lib/src/plugins/dartamaker_plugin_firstname.dartSPDXID: SPDXRef-dartamaker-plugin-firstname-32FileType: SOURCEFileChecksum: SHA1: 89ae1b6a45cec5af7ddf6d71fff491325bd91a74LicenseConcluded: NOASSERTIONLicenseInfoInFile: NOASSERTIONFileCopyrightText: NOASSERTION
-
-FileName: /lib/src/plugins/dartamaker_plugin_float.dartSPDXID: SPDXRef-dartamaker-plugin-float-33FileType: SOURCEFileChecksum: SHA1: 64b877ebddb75395ade07fc550eaf44e69ad162aLicenseConcluded: NOASSERTIONLicenseInfoInFile: NOASSERTIONFileCopyrightText: NOASSERTION
-
-FileName: /lib/src/plugins/dartamaker_plugin_integer.dartSPDXID: SPDXRef-dartamaker-plugin-integer-34FileType: SOURCEFileChecksum: SHA1: 9101a56f1c540eaf6215ed303078f2dceb0deb98LicenseConcluded: NOASSERTIONLicenseInfoInFile: NOASSERTIONFileCopyrightText: NOASSERTION
-
-FileName: /lib/src/plugins/dartamaker_plugin_last.dartSPDXID: SPDXRef-dartamaker-plugin-last-35FileType: SOURCEFileChecksum: SHA1: f3d6654727893e3018de9eae263493df6b2c2802LicenseConcluded: NOASSERTIONLicenseInfoInFile: NOASSERTIONFileCopyrightText: NOASSERTION
-
-FileName: /lib/src/plugins/dartamaker_plugin_latitude.dartSPDXID: SPDXRef-dartamaker-plugin-latitude-36FileType: SOURCEFileChecksum: SHA1: cefbcefe656b7d42e97fb3642ebbda7b7bd50843LicenseConcluded: NOASSERTIONLicenseInfoInFile: NOASSERTIONFileCopyrightText: NOASSERTION
-
-FileName: /lib/src/plugins/dartamaker_plugin_letters.dartSPDXID: SPDXRef-dartamaker-plugin-letters-37FileType: SOURCEFileChecksum: SHA1: 782a59b086c82ea447384d792d4332262236a6e0LicenseConcluded: NOASSERTIONLicenseInfoInFile: NOASSERTIONFileCopyrightText: NOASSERTION
-
-FileName: /lib/src/plugins/dartamaker_plugin_longitude.dartSPDXID: SPDXRef-dartamaker-plugin-longitude-38FileType: SOURCEFileChecksum: SHA1: d1e161d28cb47cb0764090ff342ad5ce498be7e1LicenseConcluded: NOASSERTIONLicenseInfoInFile: NOASSERTIONFileCopyrightText: NOASSERTION
-
-FileName: /lib/src/plugins/dartamaker_plugin_manager.dartSPDXID: SPDXRef-dartamaker-plugin-manager-39FileType: SOURCEFileChecksum: SHA1: 16fa5737ad085d5fbaa7034502b49a6dec37af1dLicenseConcluded: NOASSERTIONLicenseInfoInFile: NOASSERTIONFileCopyrightText: NOASSERTION
-
-FileName: /lib/src/plugins/dartamaker_plugin_name.dartSPDXID: SPDXRef-dartamaker-plugin-name-40FileType: SOURCEFileChecksum: SHA1: 9055d6fe21984d4b9a406b6a969ead77294b8773LicenseConcluded: NOASSERTIONLicenseInfoInFile: NOASSERTIONFileCopyrightText: NOASSERTION
-
-FileName: /lib/src/plugins/dartamaker_plugin_normal.dartSPDXID: SPDXRef-dartamaker-plugin-normal-41FileType: SOURCEFileChecksum: SHA1: 63f8949741884b36d8aa93378443c671958f7f24LicenseConcluded: NOASSERTIONLicenseInfoInFile: NOASSERTIONFileCopyrightText: NOASSERTION
-
-FileName: /lib/src/plugins/dartamaker_plugin_null.dartSPDXID: SPDXRef-dartamaker-plugin-null-42FileType: SOURCEFileChecksum: SHA1: a6d296de826987cbe5ca5663b37733a2118268d1LicenseConcluded: NOASSERTIONLicenseInfoInFile: NOASSERTIONFileCopyrightText: NOASSERTION
-
-FileName: /lib/src/plugins/dartamaker_plugin_oneof.dartSPDXID: SPDXRef-dartamaker-plugin-oneof-43FileType: SOURCEFileChecksum: SHA1: 33dbb5b37fca70a787456369e41b6bb82ca9158bLicenseConcluded: NOASSERTIONLicenseInfoInFile: NOASSERTIONFileCopyrightText: NOASSERTION
-
-FileName: /lib/src/plugins/dartamaker_plugin_postcode.dartSPDXID: SPDXRef-dartamaker-plugin-postcode-44FileType: SOURCEFileChecksum: SHA1: 9e1eb869463e45842b2bb3283b305e0abd435ee6LicenseConcluded: NOASSERTIONLicenseInfoInFile: NOASSERTIONFileCopyrightText: NOASSERTION
-
-FileName: /lib/src/plugins/dartamaker_plugin_price.dartSPDXID: SPDXRef-dartamaker-plugin-price-45FileType: SOURCEFileChecksum: SHA1: c978126cbef194adad82c88ef64593c76470dcb3LicenseConcluded: NOASSERTIONLicenseInfoInFile: NOASSERTIONFileCopyrightText: NOASSERTION
-
-FileName: /lib/src/plugins/dartamaker_plugin_state.dartSPDXID: SPDXRef-dartamaker-plugin-state-46FileType: SOURCEFileChecksum: SHA1: 4c1b568e09f659f440a4b728ea519acbf5c1384aLicenseConcluded: NOASSERTIONLicenseInfoInFile: NOASSERTIONFileCopyrightText: NOASSERTION
-
-FileName: /lib/src/plugins/dartamaker_plugin_statecode.dartSPDXID: SPDXRef-dartamaker-plugin-statecode-47FileType: SOURCEFileChecksum: SHA1: c6a2fe64446bafa3424529ce7fda87872fcbc14dLicenseConcluded: NOASSERTIONLicenseInfoInFile: NOASSERTIONFileCopyrightText: NOASSERTION
-
-FileName: /lib/src/plugins/dartamaker_plugin_street.dartSPDXID: SPDXRef-dartamaker-plugin-street-48FileType: SOURCEFileChecksum: SHA1: 48eda948b24bf449c167944ca963746ff41bf5acLicenseConcluded: NOASSERTIONLicenseInfoInFile: NOASSERTIONFileCopyrightText: NOASSERTION
-
-FileName: /lib/src/plugins/dartamaker_plugin_surname.dartSPDXID: SPDXRef-dartamaker-plugin-surname-49FileType: SOURCEFileChecksum: SHA1: 7ca149b3739fa671d9935bd6680ca77b64df8d02LicenseConcluded: NOASSERTIONLicenseInfoInFile: NOASSERTIONFileCopyrightText: NOASSERTION
-
-FileName: /lib/src/plugins/dartamaker_plugin_tel.dartSPDXID: SPDXRef-dartamaker-plugin-tel-50FileType: SOURCEFileChecksum: SHA1: befc7ffd2fd1e1ae13189e3f8e7cfdfcb1a47cadLicenseConcluded: NOASSERTIONLicenseInfoInFile: NOASSERTIONFileCopyrightText: NOASSERTION
-
-FileName: /lib/src/plugins/dartamaker_plugin_time.dartSPDXID: SPDXRef-dartamaker-plugin-time-51FileType: SOURCEFileChecksum: SHA1: 6a1c07ca1f4f95a8cd08b19fa86dbccb4da41b35LicenseConcluded: NOASSERTIONLicenseInfoInFile: NOASSERTIONFileCopyrightText: NOASSERTION
-
-FileName: /lib/src/plugins/dartamaker_plugin_timestamp.dartSPDXID: SPDXRef-dartamaker-plugin-timestamp-52FileType: SOURCEFileChecksum: SHA1: bac36abd305ccdbdb630eb457b9276ba7d01518cLicenseConcluded: NOASSERTIONLicenseInfoInFile: NOASSERTIONFileCopyrightText: NOASSERTION
-
-FileName: /lib/src/plugins/dartamaker_plugin_title.dartSPDXID: SPDXRef-dartamaker-plugin-title-53FileType: SOURCEFileChecksum: SHA1: 0275d0a35b927c42a4f7d912ef79ec45473c2327LicenseConcluded: NOASSERTIONLicenseInfoInFile: NOASSERTIONFileCopyrightText: NOASSERTION
-
-FileName: /lib/src/plugins/dartamaker_plugin_tld.dartSPDXID: SPDXRef-dartamaker-plugin-tld-54FileType: SOURCEFileChecksum: SHA1: 48aae8eb03afb29e3836a770682812bd4222a3e5LicenseConcluded: NOASSERTIONLicenseInfoInFile: NOASSERTIONFileCopyrightText: NOASSERTION
-
-FileName: /lib/src/plugins/dartamaker_plugin_town.dartSPDXID: SPDXRef-dartamaker-plugin-town-55FileType: SOURCEFileChecksum: SHA1: c3c9503b0937b011348cc9adf90fa148bc838cc2LicenseConcluded: NOASSERTIONLicenseInfoInFile: NOASSERTIONFileCopyrightText: NOASSERTION
-
-FileName: /lib/src/plugins/dartamaker_plugin_url.dartSPDXID: SPDXRef-dartamaker-plugin-url-56FileType: SOURCEFileChecksum: SHA1: 7888e8659e5ecef4b5fc47af6666e57fada21482LicenseConcluded: NOASSERTIONLicenseInfoInFile: NOASSERTIONFileCopyrightText: NOASSERTION
-
-FileName: /lib/src/plugins/dartamaker_plugin_uuid.dartSPDXID: SPDXRef-dartamaker-plugin-uuid-57FileType: SOURCEFileChecksum: SHA1: 31aeaaf6d71421eee79c015caabcdd7b1bac9451LicenseConcluded: NOASSERTIONLicenseInfoInFile: NOASSERTIONFileCopyrightText: NOASSERTION
-
-FileName: /lib/src/plugins/dartamaker_plugin_website.dartSPDXID: SPDXRef-dartamaker-plugin-website-58FileType: SOURCEFileChecksum: SHA1: f55f78ea1995b10b6749e5493fe00823fddbb8d7LicenseConcluded: NOASSERTIONLicenseInfoInFile: NOASSERTIONFileCopyrightText: NOASSERTION
-
-FileName: /lib/src/plugins/dartamaker_plugin_word.dartSPDXID: SPDXRef-dartamaker-plugin-word-59FileType: SOURCEFileChecksum: SHA1: 6e3623c0a555fb41595d2cb29e3429142f048d7cLicenseConcluded: NOASSERTIONLicenseInfoInFile: NOASSERTIONFileCopyrightText: NOASSERTION
-
-FileName: /lib/src/plugins/dartamaker_plugin_words.dartSPDXID: SPDXRef-dartamaker-plugin-words-60FileType: SOURCEFileChecksum: SHA1: 1d5199d42d9a190d72518505a3dfaa330b35cb16LicenseConcluded: NOASSERTIONLicenseInfoInFile: NOASSERTIONFileCopyrightText: NOASSERTION
-
-FileName: /lib/src/plugins/dartamaker_plugin_zip.dartSPDXID: SPDXRef-dartamaker-plugin-zip-61FileType: SOURCEFileChecksum: SHA1: a3a44285d14f95cc8b164fb7722f7c79e43dbafaLicenseConcluded: NOASSERTIONLicenseInfoInFile: NOASSERTIONFileCopyrightText: NOASSERTION
-
-FileName: /pubspec.yamlSPDXID: SPDXRef-pubspec-62FileType: TEXTFileChecksum: SHA1: ceb5ba6f3cf85324b6421a777d774a9a0a626e9cLicenseConcluded: NOASSERTIONLicenseInfoInFile: NOASSERTIONFileCopyrightText: NOASSERTION
 
 Relationship: SPDXRef-pubspec-62 DEPENDENCY_MANIFEST_OF SPDXRef-Package-dartamaker
+
 

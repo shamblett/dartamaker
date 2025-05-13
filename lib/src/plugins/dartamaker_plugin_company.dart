@@ -49,7 +49,7 @@ class DartamakerPluginCompany implements DartamakerPlugin {
     final r1 = Random().nextInt(_middle.length - 1);
     final r2 = Random().nextInt(_suffix.length - 1);
     var w = _word.apply();
-    w = w.substring(0, 1).toUpperCase() + w.substring(1);
+    w = '${w.characters.getRange(0, 1).toUpperCase() + w.characters.getRange(1)}';
     return "$w ${_middle[r1]} ${_suffix[r2].replaceAll(RegExp('/ {2}/g'), ' ')}";
   }
 }

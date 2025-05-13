@@ -11,6 +11,7 @@ environment:
 
 dependencies:
  args: '^2.7.0'
+ characters: '^1.4.0'
 
 executables:
  dartamaker: dartamaker
@@ -19,5 +20,6 @@ dev_dependencies:
  test: '^1.26.0'
  mockito: '^5.4.6'
  lints: '^5.1.1'
+ dart_code_metrics_presets: '^2.22.0'
 
 

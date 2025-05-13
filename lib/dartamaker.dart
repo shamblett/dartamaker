@@ -10,6 +10,8 @@ library;
 import 'dart:convert';
 import 'dart:math';
 
+import 'package:characters/characters.dart';
+
 /// The dartamaker package exported interface
 
 part 'src/dartamaker.dart';

@@ -43,7 +43,7 @@ class DartamakerConstants {
   static const String name = 'name';
 
   /// Plugin null parameter
-  static Map<String, String> pluginNullParam = <String, String>{};
+  static final Map<String, String> pluginNullParam = <String, String>{};
 
   /// Tag descriptor
   static const String original = 'original';

@@ -1,3 +1,5 @@
+// ignore_for_file: no-magic-number
+
 /*
  * Package : dartamaker
  * Author : S. Hamblett <steve.hamblett@linux.com>
@@ -59,7 +61,7 @@ class Dartamaker {
       final params = t.length == 2 ? t[1] : '';
       tags.add(<String, String>{
         DartamakerConstants.original: s,
-        DartamakerConstants.tag: t[0],
+        DartamakerConstants.tag: t.first,
         DartamakerConstants.params: params,
       });
     }

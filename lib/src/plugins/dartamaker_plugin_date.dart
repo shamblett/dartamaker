@@ -9,12 +9,13 @@ part of '../../dartamaker.dart';
 
 /// ISO dates
 class DartamakerPluginDate implements DartamakerPlugin {
-  /// Default
-  DartamakerPluginDate(this._min, this._max);
-
   final String? _min;
   final String? _max;
 
+  /// Default
+  DartamakerPluginDate(this._min, this._max);
+
   @override
-  String apply() => DartamakerPluginDateiso(_min, _max).apply().split('T')[0];
+  String apply() =>
+      DartamakerPluginDateiso(_min, _max).apply().split('T').first;
 }

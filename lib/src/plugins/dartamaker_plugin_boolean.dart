@@ -9,6 +9,11 @@ part of '../../dartamaker.dart';
 
 /// Random boolean based on probability parameter
 class DartamakerPluginBoolean implements DartamakerPlugin {
+  double _probability = 0.5;
+
+  /// The probability
+  double get probability => _probability;
+
   /// Default, probability in the range 0.0 to 1.0
   DartamakerPluginBoolean(String? probability) {
     if (probability != null) {
@@ -20,11 +25,6 @@ class DartamakerPluginBoolean implements DartamakerPlugin {
       }
     }
   }
-
-  double _probability = 0.5;
-
-  /// The probability
-  double get probability => _probability;
 
   @override
   String apply() => Random().nextDouble() <= _probability ? 'true' : 'false';

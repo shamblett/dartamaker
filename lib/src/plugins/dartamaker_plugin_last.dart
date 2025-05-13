@@ -9,10 +9,10 @@ part of '../../dartamaker.dart';
 
 /// Last tag value
 class DartamakerPluginLast implements DartamakerPlugin {
+  final String? _value;
+
   /// Default
   DartamakerPluginLast(this._value);
-
-  final String? _value;
 
   @override
   String? apply() => _value;

@@ -9,16 +9,6 @@ part of '../../dartamaker.dart';
 
 /// Letters
 class DartamakerPluginLetters implements DartamakerPlugin {
-  /// Default
-  DartamakerPluginLetters(String? numletters) {
-    if (numletters != null) {
-      final val = int.tryParse(numletters);
-      if (val != null && val > 0) {
-        _numletters = val;
-      }
-    }
-  }
-
   final List<String> _letters = <String>[
     'A',
     'B',
@@ -48,10 +38,20 @@ class DartamakerPluginLetters implements DartamakerPlugin {
     'Z',
   ];
 
+  int _numletters = 5;
+
   /// Letters
   List<String> get letters => _letters;
 
-  int _numletters = 5;
+  /// Default
+  DartamakerPluginLetters(String? numletters) {
+    if (numletters != null) {
+      final val = int.tryParse(numletters);
+      if (val != null && val > 0) {
+        _numletters = val;
+      }
+    }
+  }
 
   @override
   String apply() {
